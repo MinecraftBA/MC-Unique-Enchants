@@ -1,6 +1,8 @@
 package ba.minecraft.uniqueenchants.common.core;
 
 import com.mojang.logging.LogUtils;
+
+import ba.minecraft.uniqueenchants.common.enchantments.WeaponEnchants;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -22,6 +24,8 @@ public class UniqueEnchantsMod
     public UniqueEnchantsMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        
+        WeaponEnchants.REGISTRY.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
