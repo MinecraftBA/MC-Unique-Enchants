@@ -3,12 +3,11 @@ package ba.minecraft.uniqueenchants.common.enchantments.weapon;
 import ba.minecraft.uniqueenchants.common.enchantments.weapon.base.ApplyEffectEnchant;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.enchantment.Enchantment.Rarity;
 
-public final class LevitateEnchantment extends ApplyEffectEnchant {
+public final class HarmEnchantment extends ApplyEffectEnchant {
 	
-	public LevitateEnchantment() {
-		super(Rarity.RARE);
+	public HarmEnchantment() {
+		super(Rarity.UNCOMMON);
 	}
 	
 	@Override
@@ -28,22 +27,23 @@ public final class LevitateEnchantment extends ApplyEffectEnchant {
 
 	@Override
 	protected MobEffect getMobEffect() {
-		return MobEffects.LEVITATION;
+		return MobEffects.HARM;
 	}
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return enchantmentLevel * 5;
+		return 0;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return enchantmentLevel * 10;
+		return enchantmentLevel * 50;
 	}
 
 	@Override
 	protected boolean isInstant() {
-		return false;
+		return true;
 	}
 
 }
+

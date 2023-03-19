@@ -1,6 +1,7 @@
 package ba.minecraft.uniqueenchants.common.enchantments;
 
 import ba.minecraft.uniqueenchants.common.core.UniqueEnchantsMod;
+import ba.minecraft.uniqueenchants.common.enchantments.weapon.HarmEnchantment;
 import ba.minecraft.uniqueenchants.common.enchantments.weapon.LevitateEnchantment;
 import ba.minecraft.uniqueenchants.common.enchantments.weapon.LifeStealEnchantment;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -18,5 +19,8 @@ public class WeaponEnchants {
 	
 	public static final RegistryObject<Enchantment> LIFE_STEAL = 
 			REGISTRY.register("life_steal",  () -> new LifeStealEnchantment());
+	
+	public static final RegistryObject<Enchantment> HARM = 
+			REGISTRY.register("harm",  () -> new HarmEnchantment());
 	
 }

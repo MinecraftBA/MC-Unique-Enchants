@@ -39,6 +39,12 @@ public abstract class ApplyEffectEnchant extends Enchantment{
 	 */
 	protected abstract int getChance(int enchantmentLevel);
 	
+	/**
+	 * Override to define whether enchantment should apply effect that is instant (lasts 1 tick).
+	 * @return True if it is instant.
+	 */
+	protected abstract boolean isInstant();
+	
 	@Override
 	public void doPostAttack(LivingEntity attacker, Entity target, int enchantmentLevel) {
 		
@@ -79,9 +85,24 @@ public abstract class ApplyEffectEnchant extends Enchantment{
 		if (roll >= hitChance) {
 			return;
 		}
-		
-		// Calculate duration of the effect in seconds (1 sec = 20 ticks).
-		int duration = this.getSecondsDuration(enchantmentLevel) * 20;
+
+		int duration;
+
+		// IF: Enchant should apply instant effect.
+		if(this.isInstant()) {
+
+			 // A single tick enchant duration will be applied.
+			duration = 1;
+
+			// Override to ensure that amplifier will be set to 1.
+			//enchantmentLevel = 2;
+			
+		} else {
+
+			// Calculate duration of the effect in seconds (1 sec = 20 ticks).
+			duration = this.getSecondsDuration(enchantmentLevel) * 20;
+
+		}
 
 		// Create instance of effect.
 		MobEffectInstance effect = new MobEffectInstance(mobEffect, duration, enchantmentLevel - 1);
