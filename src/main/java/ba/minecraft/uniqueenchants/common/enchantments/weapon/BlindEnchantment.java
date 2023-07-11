@@ -3,12 +3,11 @@ package ba.minecraft.uniqueenchants.common.enchantments.weapon;
 import ba.minecraft.uniqueenchants.common.enchantments.weapon.base.ApplyEffectEnchant;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.enchantment.Enchantment.Rarity;
 
-public final class LevitateEnchantment extends ApplyEffectEnchant {
+public class BlindEnchantment  extends ApplyEffectEnchant {
 	
-	public LevitateEnchantment() {
-		super(Rarity.UNCOMMON);
+	public BlindEnchantment() {
+		super(Rarity.RARE);
 	}
 	
 	@Override
@@ -28,7 +27,7 @@ public final class LevitateEnchantment extends ApplyEffectEnchant {
 
 	@Override
 	protected MobEffect getMobEffect() {
-		return MobEffects.LEVITATION;
+		return MobEffects.BLINDNESS;
 	}
 
 	@Override
@@ -38,12 +37,11 @@ public final class LevitateEnchantment extends ApplyEffectEnchant {
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return enchantmentLevel * 25;
+		return enchantmentLevel * 50;
 	}
 
 	@Override
 	protected boolean isInstant() {
 		return false;
 	}
-
 }
