@@ -3,7 +3,6 @@ package ba.minecraft.uniqueenchants.common.enchantments.weapon;
 import ba.minecraft.uniqueenchants.common.enchantments.weapon.base.ApplyEffectEnchant;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.enchantment.Enchantment.Rarity;
 
 public final class LevitateEnchantment extends ApplyEffectEnchant {
 	

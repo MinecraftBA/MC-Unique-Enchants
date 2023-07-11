@@ -30,7 +30,7 @@ public final class LifeStealEnchantEventHandler {
 		}
 
 		// Get reference to level where event has occurred.
-		Level level = attacker.getLevel();
+		Level level = attacker.level();
 		
 		// IF: Code is executing on the client side.
 		if (level.isClientSide()) {

@@ -8,7 +8,7 @@ import net.minecraftforge.common.data.LanguageProvider;
 public final class EnUsLanguageProvider extends LanguageProvider {
 
 	public EnUsLanguageProvider(DataGenerator dataGen) {
-		super(dataGen, UniqueEnchantsMod.MODID, "en_us");
+		super(dataGen.getPackOutput(), UniqueEnchantsMod.MODID, "en_us");
 	}
 
 	@Override

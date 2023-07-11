@@ -49,7 +49,7 @@ public abstract class ApplyEffectEnchant extends Enchantment{
 	public void doPostAttack(LivingEntity attacker, Entity target, int enchantmentLevel) {
 		
 		// Get reference to a level.
-		Level level = attacker.level;
+		Level level = attacker.level();
 		
 		// IF: Code is executing on the client.
 		if (level.isClientSide()) {
