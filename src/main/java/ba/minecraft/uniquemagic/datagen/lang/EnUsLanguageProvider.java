@@ -1,7 +1,7 @@
-package ba.minecraft.uniqueenchants.datagen.lang;
+package ba.minecraft.uniquemagic.datagen.lang;
 
-import ba.minecraft.uniqueenchants.common.core.UniqueEnchantsMod;
-import ba.minecraft.uniqueenchants.common.enchantments.WeaponEnchants;
+import ba.minecraft.uniquemagic.common.core.UniqueEnchantsMod;
+import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchants;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 

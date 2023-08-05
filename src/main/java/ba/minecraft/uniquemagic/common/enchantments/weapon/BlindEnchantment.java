@@ -1,13 +1,13 @@
-package ba.minecraft.uniqueenchants.common.enchantments.weapon;
+package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
-import ba.minecraft.uniqueenchants.common.enchantments.weapon.base.ApplyEffectEnchant;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.base.ApplyEffectEnchant;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public final class HarmEnchantment extends ApplyEffectEnchant {
+public class BlindEnchantment  extends ApplyEffectEnchant {
 	
-	public HarmEnchantment() {
-		super(Rarity.UNCOMMON);
+	public BlindEnchantment() {
+		super(Rarity.RARE);
 	}
 	
 	@Override
@@ -27,12 +27,12 @@ public final class HarmEnchantment extends ApplyEffectEnchant {
 
 	@Override
 	protected MobEffect getMobEffect() {
-		return MobEffects.HARM;
+		return MobEffects.BLINDNESS;
 	}
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return 0;
+		return enchantmentLevel * 5;
 	}
 
 	@Override
@@ -42,8 +42,6 @@ public final class HarmEnchantment extends ApplyEffectEnchant {
 
 	@Override
 	protected boolean isInstant() {
-		return true;
+		return false;
 	}
-
 }
-
