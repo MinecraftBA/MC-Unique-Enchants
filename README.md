@@ -1,2 +1,2 @@
 # MC-Unique-Enchants
-Minecraft mod that adds new enchants based on Forge
+Minecraft mod that adds unique enchants to the game.
