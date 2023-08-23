@@ -2,6 +2,7 @@ package ba.minecraft.uniquemagic.common.enchantments;
 
 import ba.minecraft.uniquemagic.common.enchantments.weapon.PoisonEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.StarveEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.WeakenEnchantment;
 import ba.minecraft.uniquemagic.common.core.UniqueEnchantsMod;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.BlindEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.HarmEnchantment;

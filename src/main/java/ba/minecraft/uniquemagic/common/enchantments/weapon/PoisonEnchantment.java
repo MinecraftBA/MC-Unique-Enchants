@@ -4,15 +4,15 @@ import ba.minecraft.uniquemagic.common.enchantments.weapon.base.ApplyEffectEncha
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class WeakenEnchantment extends ApplyEffectEnchant {
+public class PoisonEnchantment extends ApplyEffectEnchant {
 	
-	public WeakenEnchantment() {
+	public PoisonEnchantment() {
 		super(Rarity.UNCOMMON);
 	}
 	
 	@Override
 	public int getMaxLevel() {
-		return 2;
+		return 5;
 	}
 	
 	@Override
@@ -27,12 +27,12 @@ public class WeakenEnchantment extends ApplyEffectEnchant {
 
 	@Override
 	protected MobEffect getMobEffect() {
-		return MobEffects.WEAKNESS;
+		return MobEffects.POISON;
 	}
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return enchantmentLevel * 5;
+		return enchantmentLevel * 2;
 	}
 
 	@Override
