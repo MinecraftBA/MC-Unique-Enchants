@@ -1,8 +1,8 @@
-package ba.minecraft.uniqueenchants.common.core;
+package ba.minecraft.uniquemagic.common.core;
 
 import com.mojang.logging.LogUtils;
 
-import ba.minecraft.uniqueenchants.common.enchantments.WeaponEnchants;
+import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchants;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,7 +16,7 @@ import org.slf4j.Logger;
 @Mod(UniqueEnchantsMod.MODID)
 public class UniqueEnchantsMod
 {
-    public static final String MODID = "uniqueenchants";
+    public static final String MODID = "uniquemagic";
 
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();

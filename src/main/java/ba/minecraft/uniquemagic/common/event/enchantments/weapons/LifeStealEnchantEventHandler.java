@@ -1,7 +1,7 @@
-package ba.minecraft.uniqueenchants.common.event.enchantments.weapons;
+package ba.minecraft.uniquemagic.common.event.enchantments.weapons;
 
-import ba.minecraft.uniqueenchants.common.core.UniqueEnchantsMod;
-import ba.minecraft.uniqueenchants.common.enchantments.WeaponEnchants;
+import ba.minecraft.uniquemagic.common.core.UniqueEnchantsMod;
+import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchants;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;

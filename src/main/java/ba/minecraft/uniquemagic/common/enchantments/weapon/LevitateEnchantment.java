@@ -1,13 +1,12 @@
-package ba.minecraft.uniqueenchants.common.enchantments.weapon;
+package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
-import ba.minecraft.uniqueenchants.common.enchantments.weapon.base.ApplyEffectEnchant;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.base.ApplyEffectEnchant;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.enchantment.Enchantment.Rarity;
 
-public class PoisonEnchantment extends ApplyEffectEnchant {
+public final class LevitateEnchantment extends ApplyEffectEnchant {
 	
-	public PoisonEnchantment() {
+	public LevitateEnchantment() {
 		super(Rarity.UNCOMMON);
 	}
 	
@@ -28,21 +27,22 @@ public class PoisonEnchantment extends ApplyEffectEnchant {
 
 	@Override
 	protected MobEffect getMobEffect() {
-		return MobEffects.POISON;
+		return MobEffects.LEVITATION;
 	}
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return enchantmentLevel * 2;
+		return enchantmentLevel * 5;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return enchantmentLevel * 10;
+		return enchantmentLevel * 25;
 	}
 
 	@Override
 	protected boolean isInstant() {
 		return false;
 	}
+
 }

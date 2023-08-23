@@ -1,12 +1,12 @@
-package ba.minecraft.uniqueenchants.common.enchantments.weapon;
+package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
-import ba.minecraft.uniqueenchants.common.enchantments.weapon.base.ApplyEffectEnchant;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.base.ApplyEffectEnchant;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class StarveEnchantment extends ApplyEffectEnchant {
+public final class HarmEnchantment extends ApplyEffectEnchant {
 	
-	public StarveEnchantment() {
+	public HarmEnchantment() {
 		super(Rarity.UNCOMMON);
 	}
 	
@@ -27,21 +27,23 @@ public class StarveEnchantment extends ApplyEffectEnchant {
 
 	@Override
 	protected MobEffect getMobEffect() {
-		return MobEffects.HUNGER;
+		return MobEffects.HARM;
 	}
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return enchantmentLevel * 2;
+		return 0;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return enchantmentLevel * 10;
+		return enchantmentLevel * 50;
 	}
 
 	@Override
 	protected boolean isInstant() {
-		return false;
+		return true;
 	}
+
 }
+

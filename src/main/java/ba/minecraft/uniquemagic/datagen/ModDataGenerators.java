@@ -1,7 +1,7 @@
-package ba.minecraft.uniqueenchants.datagen;
+package ba.minecraft.uniquemagic.datagen;
 
-import ba.minecraft.uniqueenchants.common.core.UniqueEnchantsMod;
-import ba.minecraft.uniqueenchants.datagen.lang.EnUsLanguageProvider;
+import ba.minecraft.uniquemagic.common.core.UniqueEnchantsMod;
+import ba.minecraft.uniquemagic.datagen.lang.EnUsLanguageProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
