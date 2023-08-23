@@ -23,5 +23,8 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 		add(WeaponEnchants.LIFE_STEAL.get(), "Life Steal");
 		add(WeaponEnchants.HARM.get(), "Harm");
 		add(WeaponEnchants.BLIND.get(), "Blind");
+		add(WeaponEnchants.POISON.get(), "Poison");
+		add(WeaponEnchants.STARVE.get(), "Starve");
+		add(WeaponEnchants.WEAKEN.get(),"Weaken");
 	}
 }

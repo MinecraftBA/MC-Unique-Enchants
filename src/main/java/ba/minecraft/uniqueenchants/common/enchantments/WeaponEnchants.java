@@ -5,6 +5,8 @@ import ba.minecraft.uniqueenchants.common.enchantments.weapon.BlindEnchantment;
 import ba.minecraft.uniqueenchants.common.enchantments.weapon.HarmEnchantment;
 import ba.minecraft.uniqueenchants.common.enchantments.weapon.LevitateEnchantment;
 import ba.minecraft.uniqueenchants.common.enchantments.weapon.LifeStealEnchantment;
+import ba.minecraft.uniqueenchants.common.enchantments.weapon.PoisonEnchantment;
+import ba.minecraft.uniqueenchants.common.enchantments.weapon.StarveEnchantment;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -17,6 +19,15 @@ public class WeaponEnchants {
 		
 	public static final RegistryObject<Enchantment> LEVITATE = 
 			REGISTRY.register("levitate",  () -> new LevitateEnchantment());
+	
+	public static final RegistryObject<Enchantment> POISON = 
+			REGISTRY.register("poison",  () -> new PoisonEnchantment());
+	
+	public static final RegistryObject<Enchantment> STARVE = 
+			REGISTRY.register("starve",  () -> new StarveEnchantment());
+	
+	public static final RegistryObject<Enchantment> WEAKEN = 
+			REGISTRY.register("weaken",  () -> new WeakenEnchantment());
 	
 	public static final RegistryObject<Enchantment> LIFE_STEAL = 
 			REGISTRY.register("life_steal",  () -> new LifeStealEnchantment());
