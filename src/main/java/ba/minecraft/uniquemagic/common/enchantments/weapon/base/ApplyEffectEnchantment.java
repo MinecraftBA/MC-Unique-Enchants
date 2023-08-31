@@ -6,13 +6,12 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.Level;
 
-public abstract class ApplyEffectEnchant extends Enchantment{
+public abstract class ApplyEffectEnchantment extends ModEnchantment {
 	
-	protected ApplyEffectEnchant(Rarity rarity) {
+	protected ApplyEffectEnchantment(Rarity rarity) {
 		super(rarity, EnchantmentCategory.WEAPON, new EquipmentSlot[] { EquipmentSlot.MAINHAND });
 	}
 	
@@ -110,5 +109,7 @@ public abstract class ApplyEffectEnchant extends Enchantment{
 		// Apply effect to mob.
 		livingTarget.addEffect(effect);
 	}
+	
+	
 
 }

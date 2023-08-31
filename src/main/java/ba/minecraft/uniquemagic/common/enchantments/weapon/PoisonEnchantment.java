@@ -4,15 +4,15 @@ import ba.minecraft.uniquemagic.common.enchantments.weapon.base.ApplyEffectEncha
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public final class LevitateEnchantment extends ApplyEffectEnchantment {
+public class PoisonEnchantment extends ApplyEffectEnchantment {
 	
-	public LevitateEnchantment() {
+	public PoisonEnchantment() {
 		super(Rarity.UNCOMMON);
 	}
 	
 	@Override
 	public int getMaxLevel() {
-		return 2;
+		return 5;
 	}
 	
 	@Override
@@ -27,12 +27,12 @@ public final class LevitateEnchantment extends ApplyEffectEnchantment {
 
 	@Override
 	protected MobEffect getMobEffect() {
-		return MobEffects.LEVITATION;
+		return MobEffects.POISON;
 	}
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return enchantmentLevel * 5;
+		return enchantmentLevel * 2;
 	}
 
 	@Override
@@ -44,10 +44,9 @@ public final class LevitateEnchantment extends ApplyEffectEnchantment {
 	protected boolean isInstant() {
 		return false;
 	}
-
+	
 	@Override
 	protected String getBaseName() {
-		return "Levitate";
+		return "Poison";
 	}
-
 }

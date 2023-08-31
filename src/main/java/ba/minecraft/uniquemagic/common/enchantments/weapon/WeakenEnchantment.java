@@ -4,9 +4,9 @@ import ba.minecraft.uniquemagic.common.enchantments.weapon.base.ApplyEffectEncha
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public final class LevitateEnchantment extends ApplyEffectEnchantment {
+public class WeakenEnchantment extends ApplyEffectEnchantment {
 	
-	public LevitateEnchantment() {
+	public WeakenEnchantment() {
 		super(Rarity.UNCOMMON);
 	}
 	
@@ -27,7 +27,7 @@ public final class LevitateEnchantment extends ApplyEffectEnchantment {
 
 	@Override
 	protected MobEffect getMobEffect() {
-		return MobEffects.LEVITATION;
+		return MobEffects.WEAKNESS;
 	}
 
 	@Override
@@ -44,10 +44,9 @@ public final class LevitateEnchantment extends ApplyEffectEnchantment {
 	protected boolean isInstant() {
 		return false;
 	}
-
+	
 	@Override
 	protected String getBaseName() {
-		return "Levitate";
+		return "Weaken";
 	}
-
 }

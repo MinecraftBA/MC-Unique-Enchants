@@ -1,10 +1,10 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
-import ba.minecraft.uniquemagic.common.enchantments.weapon.base.ApplyEffectEnchant;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.base.ApplyEffectEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class BlindEnchantment  extends ApplyEffectEnchant {
+public class BlindEnchantment  extends ApplyEffectEnchantment {
 	
 	public BlindEnchantment() {
 		super(Rarity.RARE);
@@ -43,5 +43,10 @@ public class BlindEnchantment  extends ApplyEffectEnchant {
 	@Override
 	protected boolean isInstant() {
 		return false;
+	}
+
+	@Override
+	protected String getBaseName() {
+		return "Blind";
 	}
 }
