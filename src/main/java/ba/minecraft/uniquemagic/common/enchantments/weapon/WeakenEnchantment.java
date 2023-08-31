@@ -1,10 +1,10 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
-import ba.minecraft.uniquemagic.common.enchantments.weapon.base.ApplyEffectEnchant;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.base.ApplyEffectEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class WeakenEnchantment extends ApplyEffectEnchant {
+public class WeakenEnchantment extends ApplyEffectEnchantment {
 	
 	public WeakenEnchantment() {
 		super(Rarity.UNCOMMON);
@@ -43,5 +43,10 @@ public class WeakenEnchantment extends ApplyEffectEnchant {
 	@Override
 	protected boolean isInstant() {
 		return false;
+	}
+	
+	@Override
+	protected String getBaseName() {
+		return "Weaken";
 	}
 }

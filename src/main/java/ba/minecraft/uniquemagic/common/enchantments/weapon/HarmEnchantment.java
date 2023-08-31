@@ -1,10 +1,10 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
-import ba.minecraft.uniquemagic.common.enchantments.weapon.base.ApplyEffectEnchant;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.base.ApplyEffectEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public final class HarmEnchantment extends ApplyEffectEnchant {
+public final class HarmEnchantment extends ApplyEffectEnchantment {
 	
 	public HarmEnchantment() {
 		super(Rarity.UNCOMMON);
@@ -45,5 +45,9 @@ public final class HarmEnchantment extends ApplyEffectEnchant {
 		return true;
 	}
 
+	@Override
+	protected String getBaseName() {
+		return "Harm";
+	}
 }
 

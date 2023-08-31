@@ -1,10 +1,10 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
-import ba.minecraft.uniquemagic.common.enchantments.weapon.base.ApplyEffectEnchant;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.base.ApplyEffectEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public final class LevitateEnchantment extends ApplyEffectEnchant {
+public final class LevitateEnchantment extends ApplyEffectEnchantment {
 	
 	public LevitateEnchantment() {
 		super(Rarity.UNCOMMON);
@@ -43,6 +43,11 @@ public final class LevitateEnchantment extends ApplyEffectEnchant {
 	@Override
 	protected boolean isInstant() {
 		return false;
+	}
+
+	@Override
+	protected String getBaseName() {
+		return "Levitate";
 	}
 
 }
