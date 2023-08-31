@@ -1,13 +1,13 @@
 package ba.minecraft.uniquemagic.common.enchantments;
 
-import ba.minecraft.uniquemagic.common.enchantments.weapon.PoisonEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.StarveEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.WeakenEnchantment;
 import ba.minecraft.uniquemagic.common.core.UniqueEnchantsMod;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.BlindEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.HarmEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LevitateEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LifeStealEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.PoisonEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.StarveEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.WeakenEnchantment;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
