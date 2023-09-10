@@ -1,6 +1,6 @@
 package ba.minecraft.uniquemagic.common.enchantments;
 
-import ba.minecraft.uniquemagic.common.core.UniqueEnchantsMod;
+import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.BlindEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.HarmEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LevitateEnchantment;
@@ -16,7 +16,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class WeaponEnchants {
 
 	public static final DeferredRegister<Enchantment> REGISTRY = 
-			DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, UniqueEnchantsMod.MODID);
+			DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, UniqueMagicMod.MODID);
 		
 	public static final RegistryObject<Enchantment> LEVITATE = 
 			REGISTRY.register("levitate",  () -> new LevitateEnchantment());

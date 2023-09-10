@@ -13,15 +13,15 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(UniqueEnchantsMod.MODID)
-public class UniqueEnchantsMod
+@Mod(UniqueMagicMod.MODID)
+public class UniqueMagicMod
 {
     public static final String MODID = "uniquemagic";
 
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     
-    public UniqueEnchantsMod()
+    public UniqueMagicMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         
