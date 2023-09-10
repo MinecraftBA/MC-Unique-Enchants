@@ -2,10 +2,12 @@ package ba.minecraft.uniquemagic.common.enchantments;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.BlindEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.ConfuseEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.HarmEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LevitateEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LifeStealEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.PoisonEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.SlowEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.StarveEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.WeakenEnchantment;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -38,5 +40,11 @@ public class WeaponEnchants {
 	
 	public static final RegistryObject<Enchantment> BLIND = 
 			REGISTRY.register("blind",  () -> new BlindEnchantment());
+	
+	public static final RegistryObject<Enchantment> SLOW = 
+			REGISTRY.register("slow",  () -> new SlowEnchantment());
+	
+	public static final RegistryObject<Enchantment> CONFUSE = 
+			REGISTRY.register("confuse",  () -> new ConfuseEnchantment());
 	
 }
