@@ -47,6 +47,6 @@ public class ConfuseEnchantment extends ApplyEffectEnchantment {
 	
 	@Override
 	protected String getBaseName() {
-		return "Weaken";
+		return "Confuse";
 	}
 }

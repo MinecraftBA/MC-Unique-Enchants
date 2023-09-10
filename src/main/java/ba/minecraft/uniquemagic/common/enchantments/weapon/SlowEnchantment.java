@@ -47,6 +47,6 @@ public class SlowEnchantment extends ApplyEffectEnchantment {
 	
 	@Override
 	protected String getBaseName() {
-		return "Weaken";
+		return "Slow";
 	}
 }
