@@ -1,6 +1,6 @@
 package ba.minecraft.uniquemagic.common.event.enchantments.weapons;
 
-import ba.minecraft.uniquemagic.common.core.UniqueEnchantsMod;
+import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchants;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -12,7 +12,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
-@EventBusSubscriber(modid = UniqueEnchantsMod.MODID, bus = Bus.FORGE)
+@EventBusSubscriber(modid = UniqueMagicMod.MODID, bus = Bus.FORGE)
 public final class LifeStealEnchantEventHandler {
 	
 	@SubscribeEvent
