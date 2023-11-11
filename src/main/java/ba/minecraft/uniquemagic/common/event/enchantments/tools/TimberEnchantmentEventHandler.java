@@ -74,14 +74,13 @@ public final class TimberEnchantmentEventHandler {
         // Destroy the block without loot drops.
         level.destroyBlock(blockPos, false);
 
-        // Mine nearby blocks.
-
         // IF: It is not starting hit.
         if(!isStartingHit) {
         	// It is ok to chop branches that are hanging.
     		chopLog(level, blockPos.below(), item, false);
         }
         
+        // Mine nearby blocks.
 		chopLog(level, blockPos.north(), item, false);
 		chopLog(level, blockPos.south(), item, false);
 		chopLog(level, blockPos.east(), item, false);

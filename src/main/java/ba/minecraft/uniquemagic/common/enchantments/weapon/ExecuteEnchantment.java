@@ -5,7 +5,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -13,7 +12,7 @@ import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.monster.Zombie;
-import net.minecraft.world.entity.monster.ZombifiedPiglin;
+import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.Item;
@@ -51,27 +50,27 @@ public class ExecuteEnchantment extends ModEnchantment{
 		Item headType = null;
 
 		// IF: Target is zombie piglin.
-		if(headType == null && target instanceof ZombifiedPiglin) {
+		if(headType == null && target.getClass() == Piglin.class) {
 			headType = Items.PIGLIN_HEAD;
 		}
 
 		// IF: Target is zombie.
-		if(headType == null && target instanceof Zombie) {
+		if(headType == null && target.getClass() == Zombie.class) {
 			headType = Items.ZOMBIE_HEAD;
 		}
 		
 		//IF:Target is wither skeleton
-		if(headType == null && target instanceof WitherSkeleton) {
+		if(headType == null && target.getClass() == WitherSkeleton.class) {
 			headType = Items.WITHER_SKELETON_SKULL;
 		}
 		
 		// IF: Target was Skeleton.
-		if(headType == null && target instanceof Skeleton) {
+		if(headType == null && target.getClass() == Skeleton.class) {
 			headType = Items.SKELETON_SKULL;
 		}
 		
 		//IF: Target is creeper
-		if(headType == null && target instanceof Creeper) {
+		if(headType == null && target.getClass() == Creeper.class) {
 			headType = Items.CREEPER_HEAD;
 		}
 		
@@ -83,14 +82,11 @@ public class ExecuteEnchantment extends ModEnchantment{
 		// IF: Head type is defined.
 		if(headType != null) 
 		{
-			// Calculate proc chance - 5% for every level of enchantment.
-			int hitChance = enchantmentLevel * 3;
+			// Calculate proc chance - 2% for every level of enchantment.
+			int hitChance = enchantmentLevel * 2;
 			
 			// Create random generator.
 			RandomSource random = serverLevel.getRandom();
-			
-			// TEMP OVERRIDE
-			hitChance = 100;
 			
 			// Get number between 0 and 99.
 			int roll = random.nextInt(100);
