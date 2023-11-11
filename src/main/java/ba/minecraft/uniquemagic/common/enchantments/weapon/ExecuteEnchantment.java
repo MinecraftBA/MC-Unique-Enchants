@@ -5,12 +5,15 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
@@ -40,9 +43,22 @@ public class ExecuteEnchantment extends ModEnchantment{
 		{
 			return;
 		}
-
+		
+		// Variable to hold head type.
+		Item headType = null;
+		
 		// IF: Target is zombie.
-		if(target instanceof Zombie) 
+		if(target instanceof Zombie) {
+			headType = Items.ZOMBIE_HEAD;
+		}
+		
+		// IF: Target was Skeleton.
+		if(headType == null && target instanceof Skeleton) {
+			headType = Items.SKELETON_SKULL;
+		}
+		
+		// IF: Head type is defined.
+		if(headType != null) 
 		{
 			// Calculate proc chance - 5% for every level of enchantment.
 			int hitChance = enchantmentLevel * 3;
@@ -65,7 +81,7 @@ public class ExecuteEnchantment extends ModEnchantment{
 			BlockPos targetPosition = target.blockPosition();
 			
 			// Crate Zombie Head item stack.
-			ItemStack head = new ItemStack(Items.ZOMBIE_HEAD);
+			ItemStack head = new ItemStack(headType);
 
 			// Create item entity for Zombie Head.
 			ItemEntity headEntity = new ItemEntity(serverLevel, targetPosition.getX(), targetPosition.getY(), targetPosition.getZ(), head);
