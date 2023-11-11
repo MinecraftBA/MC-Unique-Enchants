@@ -9,8 +9,11 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Skeleton;
+import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.monster.ZombifiedPiglin;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.Item;
@@ -20,7 +23,7 @@ import net.minecraft.world.item.Items;
 public class ExecuteEnchantment extends ModEnchantment{
 	
 	public ExecuteEnchantment() {
-		super(Rarity.RARE, EnchantmentCategory.WEAPON, new EquipmentSlot[] { EquipmentSlot.MAINHAND});
+		super(Rarity.VERY_RARE, EnchantmentCategory.WEAPON, new EquipmentSlot[] { EquipmentSlot.MAINHAND});
 	}
 	
 	@Override
@@ -46,15 +49,35 @@ public class ExecuteEnchantment extends ModEnchantment{
 		
 		// Variable to hold head type.
 		Item headType = null;
-		
+
+		// IF: Target is zombie piglin.
+		if(headType == null && target instanceof ZombifiedPiglin) {
+			headType = Items.PIGLIN_HEAD;
+		}
+
 		// IF: Target is zombie.
-		if(target instanceof Zombie) {
+		if(headType == null && target instanceof Zombie) {
 			headType = Items.ZOMBIE_HEAD;
+		}
+		
+		//IF:Target is wither skeleton
+		if(headType == null && target instanceof WitherSkeleton) {
+			headType = Items.WITHER_SKELETON_SKULL;
 		}
 		
 		// IF: Target was Skeleton.
 		if(headType == null && target instanceof Skeleton) {
 			headType = Items.SKELETON_SKULL;
+		}
+		
+		//IF: Target is creeper
+		if(headType == null && target instanceof Creeper) {
+			headType = Items.CREEPER_HEAD;
+		}
+		
+		//IF: Target is player
+		if(headType == null && target instanceof Player) {
+			headType = Items.PLAYER_HEAD;
 		}
 		
 		// IF: Head type is defined.
