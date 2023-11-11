@@ -3,6 +3,7 @@ package ba.minecraft.uniquemagic.common.enchantments;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.BlindEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.ConfuseEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.ExecuteEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.HarmEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LevitateEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LifeStealEnchantment;
@@ -54,5 +55,8 @@ public class WeaponEnchants {
 	
 	public static final RegistryObject<Enchantment> LIGHTNING_STRIKER = 
 			REGISTRY.register("lightning_striker",  () -> new LightningStrikerEnchantment());
+	
+	public static final RegistryObject<Enchantment> EXECUTE = 
+			REGISTRY.register("execute",  () -> new ExecuteEnchantment());
 	
 }
