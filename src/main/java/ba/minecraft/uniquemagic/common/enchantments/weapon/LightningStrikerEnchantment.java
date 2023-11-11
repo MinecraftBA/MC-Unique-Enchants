@@ -33,16 +33,15 @@ public class LightningStrikerEnchantment extends ModEnchantment {
 		// Get reference to world where event attack was done.
 		ServerLevel serverLevel = (ServerLevel)attacker.level();
 		
-		// Create variable to hold player information.
-		Player player = null;
-		
-		// IF: Attacker is player.
-		if(attacker instanceof Player) 
+		// IF: Attacker is not player.
+		if(!(attacker instanceof Player)) 
 		{
-			// Cast it to player.
-			player = (Player)attacker;
+			return;
 		}
-		
+
+		// Cast attacker to player.
+		Player player = (Player)attacker;
+
 		// Calculate proc chance - 3% for every level of enchantment.
 		int hitChance = enchantmentLevel * 3;
 		
@@ -62,7 +61,6 @@ public class LightningStrikerEnchantment extends ModEnchantment {
 		
 		// Spawn lightning bolt at mob's location.
 		EntityType.LIGHTNING_BOLT.spawn(serverLevel, null, player, targetPosition, MobSpawnType.TRIGGERED, true, true);
-		
 	}
 	
 	@Override
