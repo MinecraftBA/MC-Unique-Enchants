@@ -6,6 +6,7 @@ import ba.minecraft.uniquemagic.common.enchantments.weapon.ConfuseEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.HarmEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LevitateEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LifeStealEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.LightningStrikerEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.PoisonEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.SlowEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.StarveEnchantment;
@@ -50,5 +51,8 @@ public class WeaponEnchants {
 	
 	public static final RegistryObject<Enchantment> WITHERING = 
 			REGISTRY.register("withering",  () -> new WitheringEnchantment());
+	
+	public static final RegistryObject<Enchantment> LIGHTNING_STRIKER = 
+			REGISTRY.register("lightning_striker",  () -> new LightningStrikerEnchantment());
 	
 }
