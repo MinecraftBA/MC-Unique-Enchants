@@ -51,10 +51,10 @@ public final class TimberEnchantmentEventHandler {
 		BlockPos blockPos = event.getPos();
 
 		// Try chop log at the position.
-		chopLog(serverLevel, blockPos, item);
+		chopLog(serverLevel, blockPos, item, true);
 	}
 	
-	private static void chopLog(ServerLevel level, BlockPos blockPos, ItemStack item) {
+	private static void chopLog(ServerLevel level, BlockPos blockPos, ItemStack item, boolean isStartingHit) {
 
 		// Get type of block that was hit.
 		BlockState blockState = level.getBlockState(blockPos);
@@ -75,11 +75,17 @@ public final class TimberEnchantmentEventHandler {
         level.destroyBlock(blockPos, false);
 
         // Mine nearby blocks.
-		chopLog(level, blockPos.below(), item);
-		chopLog(level, blockPos.above(), item);
-		chopLog(level, blockPos.north(), item);
-		chopLog(level, blockPos.south(), item);
-		chopLog(level, blockPos.east(), item);
-		chopLog(level, blockPos.west(), item);
+
+        // IF: It is not starting hit.
+        if(!isStartingHit) {
+        	// It is ok to chop branches that are hanging.
+    		chopLog(level, blockPos.below(), item, false);
+        }
+        
+		chopLog(level, blockPos.above(), item, false);
+		chopLog(level, blockPos.north(), item, false);
+		chopLog(level, blockPos.south(), item, false);
+		chopLog(level, blockPos.east(), item, false);
+		chopLog(level, blockPos.west(), item, false);
 	}
 }

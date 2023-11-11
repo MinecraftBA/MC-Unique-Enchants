@@ -43,8 +43,8 @@ public class LightningStrikerEnchantment extends ModEnchantment {
 			player = (Player)attacker;
 		}
 		
-		// Calculate proc chance - 5% for every level of enchantment.
-		int hitChance = enchantmentLevel * 20;
+		// Calculate proc chance - 3% for every level of enchantment.
+		int hitChance = enchantmentLevel * 3;
 		
 		// Create random generator.
 		RandomSource random = serverLevel.getRandom();
