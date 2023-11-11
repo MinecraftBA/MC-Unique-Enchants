@@ -82,10 +82,14 @@ public final class TimberEnchantmentEventHandler {
     		chopLog(level, blockPos.below(), item, false);
         }
         
-		chopLog(level, blockPos.above(), item, false);
 		chopLog(level, blockPos.north(), item, false);
 		chopLog(level, blockPos.south(), item, false);
 		chopLog(level, blockPos.east(), item, false);
 		chopLog(level, blockPos.west(), item, false);
+		chopLog(level, blockPos.above(), item, false);
+		chopLog(level, blockPos.above().north(), item, false);
+		chopLog(level, blockPos.above().south(), item, false);
+		chopLog(level, blockPos.above().east(), item, false);
+		chopLog(level, blockPos.above().west(), item, false);
 	}
 }
