@@ -10,6 +10,7 @@ import ba.minecraft.uniquemagic.common.enchantments.weapon.PoisonEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.SlowEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.StarveEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.WeakenEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.WitheringEnchantment;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -46,5 +47,8 @@ public class WeaponEnchants {
 	
 	public static final RegistryObject<Enchantment> CONFUSE = 
 			REGISTRY.register("confuse",  () -> new ConfuseEnchantment());
+	
+	public static final RegistryObject<Enchantment> WITHERING = 
+			REGISTRY.register("withering",  () -> new WitheringEnchantment());
 	
 }
