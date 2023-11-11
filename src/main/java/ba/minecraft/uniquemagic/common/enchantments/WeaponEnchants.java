@@ -3,13 +3,16 @@ package ba.minecraft.uniquemagic.common.enchantments;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.BlindEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.ConfuseEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.ExecuteEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.HarmEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LevitateEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LifeStealEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.LightningStrikerEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.PoisonEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.SlowEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.StarveEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.WeakenEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.WitheringEnchantment;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -46,5 +49,14 @@ public class WeaponEnchants {
 	
 	public static final RegistryObject<Enchantment> CONFUSE = 
 			REGISTRY.register("confuse",  () -> new ConfuseEnchantment());
+	
+	public static final RegistryObject<Enchantment> WITHERING = 
+			REGISTRY.register("withering",  () -> new WitheringEnchantment());
+	
+	public static final RegistryObject<Enchantment> LIGHTNING_STRIKER = 
+			REGISTRY.register("lightning_striker",  () -> new LightningStrikerEnchantment());
+	
+	public static final RegistryObject<Enchantment> EXECUTE = 
+			REGISTRY.register("execute",  () -> new ExecuteEnchantment());
 	
 }

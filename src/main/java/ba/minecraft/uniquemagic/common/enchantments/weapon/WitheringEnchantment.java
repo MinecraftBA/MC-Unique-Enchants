@@ -4,10 +4,10 @@ import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class StarveEnchantment extends ApplyEffectEnchantment {
+public class WitheringEnchantment extends ApplyEffectEnchantment {
 	
-	public StarveEnchantment() {
-		super(Rarity.UNCOMMON);
+	public WitheringEnchantment() {
+		super(Rarity.RARE);
 	}
 	
 	@Override
@@ -27,7 +27,7 @@ public class StarveEnchantment extends ApplyEffectEnchantment {
 
 	@Override
 	protected MobEffect getMobEffect() {
-		return MobEffects.HUNGER;
+		return MobEffects.WITHER;
 	}
 
 	@Override
@@ -47,8 +47,6 @@ public class StarveEnchantment extends ApplyEffectEnchantment {
 	
 	@Override
 	protected String getBaseName() {
-		return "Starve";
+		return "Withering";
 	}
 }
-
-

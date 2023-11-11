@@ -1,4 +1,4 @@
-package ba.minecraft.uniquemagic.common.enchantments.weapon.base;
+package ba.minecraft.uniquemagic.common.enchantments.base;
 
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;

@@ -1,4 +1,4 @@
-package ba.minecraft.uniquemagic.common.enchantments.weapon.base;
+package ba.minecraft.uniquemagic.common.enchantments.base;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.CommonComponents;

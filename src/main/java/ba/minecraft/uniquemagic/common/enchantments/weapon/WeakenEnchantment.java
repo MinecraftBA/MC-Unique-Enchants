@@ -1,6 +1,6 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
-import ba.minecraft.uniquemagic.common.enchantments.weapon.base.ApplyEffectEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 

@@ -4,7 +4,7 @@ import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchants;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
@@ -37,19 +37,19 @@ public final class LifeStealEnchantEventHandler {
 			return;
 		}
 
-		// IF: Attacker was not living entity.
-		if(!(attacker instanceof LivingEntity)) {
+		// IF: Attacker was not player.
+		if(!(attacker instanceof Player)) {
 			return;
 		}
 		
-		// Cast entity to living entity.
-		LivingEntity livingAttacker = (LivingEntity)attacker;
+		// Cast entity to player.
+		Player player = (Player)attacker;
 
 		// Get the amount of damage that was inflicted.
 		float damageDealt = event.getAmount();
 
 		// Get level of enchantment player has on equipped items.
-		int enchantmentLevel = EnchantmentHelper.getEnchantmentLevel(WeaponEnchants.LIFE_STEAL.get(), livingAttacker);
+		int enchantmentLevel = EnchantmentHelper.getEnchantmentLevel(WeaponEnchants.LIFE_STEAL.get(), player);
 				
 		// IF: Enchantment level is not at least 1;
 		if (enchantmentLevel < 1) {
@@ -60,6 +60,6 @@ public final class LifeStealEnchantEventHandler {
 		float healthRestored = damageDealt * (enchantmentLevel + 1) / 30;
 		
 		// Heal attacker.
-		livingAttacker.heal(healthRestored);
+		player.heal(healthRestored);
 	}
 }
