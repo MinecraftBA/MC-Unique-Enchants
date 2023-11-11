@@ -59,8 +59,8 @@ public final class TimberEnchantmentEventHandler {
 		// Get type of block that was hit.
 		BlockState blockState = level.getBlockState(blockPos);
 		
-		// IF: Block was not of type of log (wood).
-		if (!blockState.is(BlockTags.LOGS)) {
+		// IF: Block was not of type of log (wood) or leaves.
+		if (!blockState.is(BlockTags.LOGS) && !blockState.is(BlockTags.LEAVES)) {
 			return;
 		}
 		
