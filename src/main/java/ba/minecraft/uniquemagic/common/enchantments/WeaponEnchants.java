@@ -11,6 +11,7 @@ import ba.minecraft.uniquemagic.common.enchantments.weapon.LightningStrikerEncha
 import ba.minecraft.uniquemagic.common.enchantments.weapon.PoisonEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.SlowEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.StarveEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.TempoTheftEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.WeakenEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.WitheringEnchantment;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -58,5 +59,8 @@ public class WeaponEnchants {
 	
 	public static final RegistryObject<Enchantment> EXECUTE = 
 			REGISTRY.register("execute",  () -> new ExecuteEnchantment());
+	
+	public static final RegistryObject<Enchantment> TEMPO_THEFT = 
+			REGISTRY.register("tempo_theft",  () -> new TempoTheftEnchantment());
 	
 }
