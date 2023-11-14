@@ -27,11 +27,11 @@ public class TempoTheftEnchantment extends ApplyEffectEnchantment {
 
 	@Override
 	protected MobEffect getMobEffect() {
-		return MobEffects.POISON;
+		return MobEffects.MOVEMENT_SLOWDOWN;
 	}
 	
 	protected MobEffect getAttackerEffect() {
-		return MobEffects.POISON;
+		return MobEffects.MOVEMENT_SPEED;
 	}
 
 	@Override
