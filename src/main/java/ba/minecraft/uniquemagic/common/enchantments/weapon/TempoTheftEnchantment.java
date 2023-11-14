@@ -1,10 +1,10 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
-import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.base.TwoEffectEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class TempoTheftEnchantment extends ApplyEffectEnchantment {
+public class TempoTheftEnchantment extends TwoEffectEnchantment {
 	
 	public TempoTheftEnchantment() {
 		super(Rarity.VERY_RARE);
@@ -26,11 +26,12 @@ public class TempoTheftEnchantment extends ApplyEffectEnchantment {
 	}
 
 	@Override
-	protected MobEffect getMobEffect() {
+	protected MobEffect getTargetMobEffect() {
 		return MobEffects.MOVEMENT_SLOWDOWN;
 	}
 	
-	protected MobEffect getAttackerEffect() {
+	@Override
+	protected MobEffect getAttackerMobEffect() {
 		return MobEffects.MOVEMENT_SPEED;
 	}
 
@@ -51,7 +52,7 @@ public class TempoTheftEnchantment extends ApplyEffectEnchantment {
 	
 	@Override
 	protected String getBaseName() {
-		return "Poison";
+		return "Tempo Theft";
 	}
 } 
 
