@@ -3,6 +3,7 @@ package ba.minecraft.uniquemagic.common.enchantments;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.BlindEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.ConfuseEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.CurseOfSlownessEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.ExecuteEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.HarmEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LevitateEnchantment;
@@ -62,5 +63,8 @@ public class WeaponEnchants {
 	
 	public static final RegistryObject<Enchantment> TEMPO_THEFT = 
 			REGISTRY.register("tempo_theft",  () -> new TempoTheftEnchantment());
+	
+	public static final RegistryObject<Enchantment> CURSE_OF_SLOWNESS = 
+			REGISTRY.register("curse_of_slowness",  () -> new CurseOfSlownessEnchantment());
 	
 }
