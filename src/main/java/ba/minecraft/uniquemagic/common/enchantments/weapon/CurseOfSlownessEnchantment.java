@@ -8,7 +8,7 @@ import net.minecraft.world.item.enchantment.Enchantment.Rarity;
 public class CurseOfSlownessEnchantment extends TwoEffectEnchantment{
 
 	
-	public TempoTheftEnchantment() {
+	public CurseOfSlownessEnchantment() {
 		super(Rarity.VERY_RARE);
 	}
 	
