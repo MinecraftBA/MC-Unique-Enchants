@@ -1,5 +1,6 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
+import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.ModEnchantment;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -82,8 +83,8 @@ public class ExecuteEnchantment extends ModEnchantment{
 		// IF: Head type is defined.
 		if(headType != null) 
 		{
-			// Calculate proc chance - 2% for every level of enchantment.
-			int hitChance = enchantmentLevel * 2;
+			// Calculate proc chance - % for every level of enchantment.
+			int hitChance = enchantmentLevel * UniqueMagicModConfig.EXECUTE_BASE_CHANCE;
 			
 			// Create random generator.
 			RandomSource random = serverLevel.getRandom();

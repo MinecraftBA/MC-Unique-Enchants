@@ -3,7 +3,6 @@ package ba.minecraft.uniquemagic.common.enchantments.weapon;
 import ba.minecraft.uniquemagic.common.enchantments.base.TwoEffectEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.enchantment.Enchantment.Rarity;
 
 public class CurseOfSlownessEnchantment extends TwoEffectEnchantment{
 
