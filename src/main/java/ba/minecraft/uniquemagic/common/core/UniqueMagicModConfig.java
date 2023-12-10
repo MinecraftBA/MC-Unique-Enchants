@@ -14,18 +14,30 @@ public final class UniqueMagicModConfig {
     private static final ForgeConfigSpec.IntValue EXECUTE_BASE_CHANCE_CONFIG;
     private static final ForgeConfigSpec.IntValue LIFE_STEAL_BASE_RATIO_CONFIG;
 
+    private static final ForgeConfigSpec.IntValue WITHERING_BASE_CHANCE_CONFIG;
+    private static final ForgeConfigSpec.IntValue WITHERING_BASE_DURATION_CONFIG;
+    
     public static int EXECUTE_BASE_CHANCE;
     public static int LIFE_STEAL_BASE_RATIO;
+    
+    public static int WITHERING_BASE_CHANCE;
+    public static int WITHERING_BASE_DURATION;
     
     static {
     	BUILDER.push("Configs for Unique Magic Mod");
 
     	EXECUTE_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Execute enchantntment to trigger.")
-	            .defineInRange("Execute Base Chance", 1, 1, 20);
+	            .defineInRange("Execute base chance", 1, 1, 20);
 
     	LIFE_STEAL_BASE_RATIO_CONFIG = BUILDER.comment("Base damage-to-heal conversion ratio for life steal enchantment.")
-    	            .defineInRange("Life Steal Base Ratio", 5, 1, 20);
-    	
+    	        .defineInRange("Life Steal base ratio", 5, 1, 20);
+
+    	WITHERING_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Withering enchantment to trigger.")
+    	        .defineInRange("Withering base chance", 5, 1, 20);
+
+    	WITHERING_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Withering enchantment.")
+    	        .defineInRange("Withering base duration", 3, 1, 10);
+
     	BUILDER.pop();
     	
     	SPEC = BUILDER.build();
@@ -36,5 +48,8 @@ public final class UniqueMagicModConfig {
     {
     	EXECUTE_BASE_CHANCE = EXECUTE_BASE_CHANCE_CONFIG.get();
     	LIFE_STEAL_BASE_RATIO = LIFE_STEAL_BASE_RATIO_CONFIG.get();
-    }
+    	
+    	WITHERING_BASE_CHANCE = WITHERING_BASE_CHANCE_CONFIG.get();
+    	WITHERING_BASE_DURATION = WITHERING_BASE_DURATION_CONFIG.get();
+	}
 }

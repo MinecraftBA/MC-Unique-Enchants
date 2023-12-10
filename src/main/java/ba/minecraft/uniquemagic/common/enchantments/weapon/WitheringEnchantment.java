@@ -1,5 +1,6 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
+import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
@@ -32,12 +33,12 @@ public class WitheringEnchantment extends ApplyEffectEnchantment {
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return enchantmentLevel * 2;
+		return UniqueMagicModConfig.WITHERING_BASE_DURATION * enchantmentLevel;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return enchantmentLevel * 25;
+		return UniqueMagicModConfig.WITHERING_BASE_CHANCE * enchantmentLevel;
 	}
 
 	@Override
