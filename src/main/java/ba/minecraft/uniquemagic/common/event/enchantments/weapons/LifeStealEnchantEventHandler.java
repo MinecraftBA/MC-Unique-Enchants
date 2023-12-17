@@ -1,6 +1,7 @@
 package ba.minecraft.uniquemagic.common.event.enchantments.weapons;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
+import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchants;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -57,7 +58,7 @@ public final class LifeStealEnchantEventHandler {
 		}
 		
 		// Calculate health to be restored based on the damage dealt and enchantment level.
-		float healthRestored = damageDealt * (enchantmentLevel + 1) / 30;
+		float healthRestored = damageDealt * UniqueMagicModConfig.LIFE_STEAL_BASE_RATIO / 100;
 		
 		// Heal attacker.
 		player.heal(healthRestored);

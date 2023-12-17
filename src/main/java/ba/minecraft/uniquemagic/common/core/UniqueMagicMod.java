@@ -7,9 +7,14 @@ import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchants;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.event.server.ServerStoppedEvent;
+import net.minecraftforge.event.server.ServerStoppingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
@@ -34,17 +39,36 @@ public class UniqueMagicMod
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        
+        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, UniqueMagicModConfig.SPEC, MODID + "-server.toml");
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
     {
-        // Do something when the server starts
-        LOGGER.info("Unique Enchants loading...");
+        LOGGER.info("Unique Magic loading...");
+    }
+
+    @SubscribeEvent
+    public void onServerStarted(ServerStartedEvent event)
+    {
+        LOGGER.info("Unique Magic loaded!");
+    }
+    
+    @SubscribeEvent
+    public void onServerStopping(ServerStoppingEvent event)
+    {
+        LOGGER.info("Unique Magic unloading...");
+    }
+
+    @SubscribeEvent
+    public void onServerStopped(ServerStoppedEvent event)
+    {
+        LOGGER.info("Unique Magic unloaded!");
     }
 }

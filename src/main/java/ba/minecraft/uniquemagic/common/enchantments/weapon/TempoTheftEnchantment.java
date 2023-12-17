@@ -1,19 +1,18 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
-import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
-import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.base.TwoEffectEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class WitheringEnchantment extends ApplyEffectEnchantment {
+public class TempoTheftEnchantment extends TwoEffectEnchantment {
 	
-	public WitheringEnchantment() {
-		super(Rarity.RARE);
+	public TempoTheftEnchantment() {
+		super(Rarity.VERY_RARE);
 	}
 	
 	@Override
 	public int getMaxLevel() {
-		return 5;
+		return 1;
 	}
 	
 	@Override
@@ -27,18 +26,23 @@ public class WitheringEnchantment extends ApplyEffectEnchantment {
 	}
 
 	@Override
-	protected MobEffect getMobEffect() {
-		return MobEffects.WITHER;
+	protected MobEffect getTargetMobEffect() {
+		return MobEffects.MOVEMENT_SLOWDOWN;
+	}
+	
+	@Override
+	protected MobEffect getAttackerMobEffect() {
+		return MobEffects.MOVEMENT_SPEED;
 	}
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return UniqueMagicModConfig.WITHERING_BASE_DURATION * enchantmentLevel;
+		return enchantmentLevel * 3;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return UniqueMagicModConfig.WITHERING_BASE_CHANCE * enchantmentLevel;
+		return enchantmentLevel * 40;
 	}
 
 	@Override
@@ -48,6 +52,8 @@ public class WitheringEnchantment extends ApplyEffectEnchantment {
 	
 	@Override
 	protected String getBaseName() {
-		return "Withering";
+		return "Tempo Theft";
 	}
-}
+} 
+
+
