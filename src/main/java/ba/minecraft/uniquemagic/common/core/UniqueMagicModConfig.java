@@ -26,17 +26,17 @@ public final class UniqueMagicModConfig {
     static {
     	BUILDER.push("Configs for Unique Magic Mod");
 
-    	EXECUTE_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Execute enchantntment to trigger.")
+    	EXECUTE_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Execute enchantment to trigger.")
 	            .defineInRange("Execute base chance", 1, 1, 20);
 
-    	LIFE_STEAL_BASE_RATIO_CONFIG = BUILDER.comment("Base damage-to-heal conversion ratio for life steal enchantment.")
+    	LIFE_STEAL_BASE_RATIO_CONFIG = BUILDER.comment("Base damage-to-heal conversion ratio for Life Steal enchantment.")
     	        .defineInRange("Life Steal base ratio", 5, 1, 20);
 
     	WITHERING_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Withering enchantment to trigger.")
     	        .defineInRange("Withering base chance", 5, 1, 20);
 
-    	WITHERING_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Withering enchantment.")
-    	        .defineInRange("Withering base duration", 3, 1, 10);
+    	WITHERING_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Withering enchantment in seconds.")
+    	        .defineInRange("Withering base duration", 3, 1, 60);
 
     	BUILDER.pop();
     	
