@@ -28,6 +28,11 @@ public class CurseOfSlownessEnchantment extends TwoEffectEnchantment{
 	}
 
 	@Override
+	public boolean isCurse() {
+		return true;
+	}
+
+	@Override
 	protected MobEffect getTargetMobEffect() {
 		return MobEffects.MOVEMENT_SPEED;
 	}
