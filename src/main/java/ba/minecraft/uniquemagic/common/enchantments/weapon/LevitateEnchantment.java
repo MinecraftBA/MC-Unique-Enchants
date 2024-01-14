@@ -33,12 +33,12 @@ public final class LevitateEnchantment extends ApplyEffectEnchantment {
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return UniqueMagicModConfig.LEVITATE_BASE_DURATION * 5;
+		return UniqueMagicModConfig.LEVITATE_BASE_DURATION * enchantmentLevel;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return UniqueMagicModConfig.LEVITATE_BASE_CHANCE * 25;
+		return UniqueMagicModConfig.LEVITATE_BASE_CHANCE * enchantmentLevel;
 	}
 
 	@Override

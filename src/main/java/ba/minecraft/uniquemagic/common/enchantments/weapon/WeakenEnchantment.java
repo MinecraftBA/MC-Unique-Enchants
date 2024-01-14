@@ -33,12 +33,12 @@ public class WeakenEnchantment extends ApplyEffectEnchantment {
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return UniqueMagicModConfig.WEAKEN_BASE_DURATION * 5;
+		return UniqueMagicModConfig.WEAKEN_BASE_DURATION * enchantmentLevel;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return UniqueMagicModConfig.WEAKEN_BASE_CHANCE * 25;
+		return UniqueMagicModConfig.WEAKEN_BASE_CHANCE * enchantmentLevel;
 	}
 
 	@Override

@@ -38,12 +38,12 @@ public class TempoTheftEnchantment extends TwoEffectEnchantment {
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return UniqueMagicModConfig.TEMPO_THEFT_BASE_DURATION * 3;
+		return UniqueMagicModConfig.TEMPO_THEFT_BASE_DURATION * enchantmentLevel;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return UniqueMagicModConfig.WEAKEN_BASE_CHANCE * 40;
+		return UniqueMagicModConfig.TEMPO_THEFT_BASE_CHANCE * enchantmentLevel;
 	}
 
 	@Override

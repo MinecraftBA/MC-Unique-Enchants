@@ -33,12 +33,12 @@ public final class HarmEnchantment extends ApplyEffectEnchantment {
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return UniqueMagicModConfig.WEAKEN_BASE_DURATION * 0;
+		return UniqueMagicModConfig.HARM_BASE_DURATION * enchantmentLevel;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return UniqueMagicModConfig.HARM_BASE_CHANCE * 50;
+		return UniqueMagicModConfig.HARM_BASE_CHANCE * enchantmentLevel;
 	}
 
 	@Override

@@ -39,12 +39,12 @@ public class CurseOfSlownessEnchantment extends TwoEffectEnchantment{
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return UniqueMagicModConfig.CURSE_OF_SLOWNESS_BASE_DURATION * 3;
+		return UniqueMagicModConfig.CURSE_OF_SLOWNESS_BASE_DURATION * enchantmentLevel;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return UniqueMagicModConfig.CURSE_OF_SLOWNESS_BASE_CHANCE * 40;
+		return UniqueMagicModConfig.CURSE_OF_SLOWNESS_BASE_CHANCE * enchantmentLevel;
 	}
 
 	@Override

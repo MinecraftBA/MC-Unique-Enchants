@@ -33,12 +33,12 @@ public class BlindEnchantment  extends ApplyEffectEnchantment {
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return UniqueMagicModConfig.BLIND_BASE_DURATION * 5;
+		return UniqueMagicModConfig.BLIND_BASE_DURATION * enchantmentLevel;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return enchantmentLevel * 50;
+		return UniqueMagicModConfig.BLIND_BASE_CHANCE * enchantmentLevel;
 	}
 
 	@Override
