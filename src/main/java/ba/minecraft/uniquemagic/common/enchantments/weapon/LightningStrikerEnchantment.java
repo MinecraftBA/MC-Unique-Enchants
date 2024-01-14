@@ -1,5 +1,6 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
+import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.ModEnchantment;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -43,7 +44,7 @@ public class LightningStrikerEnchantment extends ModEnchantment {
 		Player player = (Player)attacker;
 
 		// Calculate proc chance - 3% for every level of enchantment.
-		int hitChance = enchantmentLevel * 3;
+		int hitChance = enchantmentLevel * UniqueMagicModConfig.LIGHTNING_STRIKER_BASE_CHANCE;
 		
 		// Create random generator.
 		RandomSource random = serverLevel.getRandom();

@@ -1,5 +1,6 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
+import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
@@ -32,7 +33,7 @@ public class BlindEnchantment  extends ApplyEffectEnchantment {
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return enchantmentLevel * 5;
+		return UniqueMagicModConfig.BLIND_BASE_DURATION * 5;
 	}
 
 	@Override
