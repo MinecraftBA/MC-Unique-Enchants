@@ -14,7 +14,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent.Finish;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -30,27 +29,6 @@ public final class OmnivoreEnchantmentEventHandler {
 		// Get reference to entity that has used the item.
 		LivingEntity livingEntity = event.getEntity();
 		
-		// IF: Entity is not player.
-		if(!(livingEntity instanceof Player)) {
-			// Do nothing.
-			return;
-		}
-		
-		
-		
-		// Cast living entity to player.
-		Player player = (Player)livingEntity;
-		
-		ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
-		
-		if(helmet == null) {
-			return;
-		}
-		//IF: enchant is not applied
-		if (helmet.getEnchantmentLevel(ArmorEnchants.OMNIVORE.get()) < 1) {
-			return;
-		}
-		
 		// Get reference to a level where code is executing.
 		Level level = livingEntity.level();
 		
@@ -61,13 +39,37 @@ public final class OmnivoreEnchantmentEventHandler {
 			return;
 		}
 		
+		// IF: Entity is not player.
+		if(!(livingEntity instanceof Player)) {
+			// Do nothing.
+			return;
+		}
+		
+		// Cast living entity to player.
+		Player player = (Player)livingEntity;
+		
+		// Get item on head.
+		ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
+		
+		// IF: There is nothing on head.
+		if(helmet == null) {
+			
+			// Do nothing.
+			return;
+		}
+		
+		// IF: Enchant is not applied on head item.
+		if (helmet.getEnchantmentLevel(ArmorEnchants.OMNIVORE.get()) < 1) {
+
+			// Do nothing.
+			return;
+		}
+		
 		// Get reference to item that was used.
 		ItemStack itemStack = event.getItem();
 		
 		// Get reference to item type.
 		Item item = itemStack.getItem();
-		
-		
 		
 		// IF: Item is not food.
 		if(!item.isEdible()) {
@@ -82,12 +84,8 @@ public final class OmnivoreEnchantmentEventHandler {
 		// Get list of effects that are applied when food is eaten.
 		List<Pair<MobEffectInstance, Float>> effectPairs = foodProperties.getEffects();
 		
-		
-		
 		// Iterate through all effect pairs.
 		for(Pair<MobEffectInstance, Float> effectPair : effectPairs ) {
-			
-			
 			
 			// Get mob effect instance from pair.
 			MobEffectInstance mobEffectInstance = effectPair.getFirst();
@@ -98,8 +96,6 @@ public final class OmnivoreEnchantmentEventHandler {
 				// Remove mob effect from player.
 				player.removeEffect(mobEffect);
 			} 
-			
-			
 		}
 	}
 }
