@@ -54,7 +54,7 @@ public class OmnivoreEnchantment extends ModEnchantment {
         if (target instanceof Player) {
             Player player = (Player) target;
             ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
-
+            	
             if (EnchantmentHelper.getItemEnchantmentLevel(this, helmet) > 0) {
                 FoodProperties food = player.getUseItem().getItem().getFoodProperties();
                 
