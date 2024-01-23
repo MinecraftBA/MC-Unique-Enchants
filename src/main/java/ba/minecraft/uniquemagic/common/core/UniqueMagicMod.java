@@ -2,6 +2,7 @@ package ba.minecraft.uniquemagic.common.core;
 
 import com.mojang.logging.LogUtils;
 
+import ba.minecraft.uniquemagic.common.enchantments.ArmorEnchants;
 import ba.minecraft.uniquemagic.common.enchantments.DiggerEnchants;
 import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchants;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,6 +34,7 @@ public class UniqueMagicMod
         
         WeaponEnchants.REGISTRY.register(modEventBus);
         DiggerEnchants.REGISTRY.register(modEventBus);
+        ArmorEnchants.REGISTRY.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
