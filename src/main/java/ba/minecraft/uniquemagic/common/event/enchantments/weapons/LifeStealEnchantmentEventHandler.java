@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
 @EventBusSubscriber(modid = UniqueMagicMod.MODID, bus = Bus.FORGE)
-public final class LifeStealEnchantEventHandler {
+public final class LifeStealEnchantmentEventHandler {
 	
 	@SubscribeEvent
 	public static void onLivingAttack(final LivingAttackEvent event) {
