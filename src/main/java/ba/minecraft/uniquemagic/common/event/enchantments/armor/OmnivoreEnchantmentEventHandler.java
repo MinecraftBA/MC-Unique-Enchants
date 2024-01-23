@@ -33,6 +33,8 @@ public final class OmnivoreEnchantmentEventHandler {
 			return;
 		}
 		
+		
+		
 		// Cast living entity to player.
 		Player player = (Player)livingEntity;
 		
@@ -74,8 +76,12 @@ public final class OmnivoreEnchantmentEventHandler {
 			// Get reference to mob effect.
 			MobEffect mobEffect = mobEffectInstance.getEffect();
 			
-			// Remove mob effect from player.
-			player.removeEffect(mobEffect);
+			if(!(mobEffect.isBeneficial() == true)) {
+				// Remove mob effect from player.
+				player.removeEffect(mobEffect);
+			} 
+			
+			
 		}
 	}
 }
