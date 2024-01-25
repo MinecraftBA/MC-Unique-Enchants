@@ -51,6 +51,9 @@ public final class UniqueMagicModConfig {
     private static final ForgeConfigSpec.IntValue WITHERING_BASE_CHANCE_CONFIG;
     private static final ForgeConfigSpec.IntValue WITHERING_BASE_DURATION_CONFIG;
     
+    private static final ForgeConfigSpec.IntValue STUN_BASE_CHANCE_CONFIG;
+    private static final ForgeConfigSpec.IntValue STUN_BASE_DURATION_CONFIG;
+    
     public static int EXECUTE_BASE_CHANCE;
     public static int LIFE_STEAL_BASE_RATIO;
     
@@ -89,6 +92,9 @@ public final class UniqueMagicModConfig {
     
     public static int WEAKEN_BASE_CHANCE;
     public static int WEAKEN_BASE_DURATION;
+    
+    public static int STUN_BASE_CHANCE;
+    public static int STUN_BASE_DURATION;
     static {
     	BUILDER.push("Configs for Unique Magic Mod");
 
@@ -169,6 +175,12 @@ public final class UniqueMagicModConfig {
 
     	WEAKEN_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Weaken enchantment in seconds.")
     	        .defineInRange("Weaken base duration", 3, 1, 60);
+    	
+    	STUN_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Stun enchantment to trigger.")
+    	        .defineInRange("Weaken base chance", 5, 1, 20);
+
+    	STUN_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Stun enchantment in seconds.")
+    	        .defineInRange("Stun base duration", 3, 1, 60);
 
     	BUILDER.pop();
     	
@@ -217,5 +229,8 @@ public final class UniqueMagicModConfig {
     	
     	WITHERING_BASE_CHANCE = WITHERING_BASE_CHANCE_CONFIG.get();
     	WITHERING_BASE_DURATION = WITHERING_BASE_DURATION_CONFIG.get();
+    	
+    	STUN_BASE_CHANCE = STUN_BASE_CHANCE_CONFIG.get();
+    	STUN_BASE_DURATION = STUN_BASE_DURATION_CONFIG.get();
 	}
 }
