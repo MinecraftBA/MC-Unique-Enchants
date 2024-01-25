@@ -4,7 +4,6 @@ import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.BlindEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.ConfuseEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.CurseOfSlownessEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.DisarmEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.ExecuteEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.HarmEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LevitateEnchantment;
@@ -71,7 +70,4 @@ public class WeaponEnchants {
 	
 	public static final RegistryObject<Enchantment> STUN = 
 			REGISTRY.register("stun",  () -> new StunEnchantment());
-	
-	public static final RegistryObject<Enchantment> DISARM = 
-			REGISTRY.register("disarm",  () -> new DisarmEnchantment());
 }
