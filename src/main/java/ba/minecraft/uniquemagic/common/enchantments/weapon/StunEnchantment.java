@@ -1,5 +1,6 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
+import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectEnchantment;
 import ba.minecraft.uniquemagic.common.mobeffects.HarmfulMobEffects;
 import net.minecraft.world.effect.MobEffect;
@@ -32,12 +33,12 @@ public class StunEnchantment extends ApplyEffectEnchantment {
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return enchantmentLevel;
+		return UniqueMagicModConfig.STUN_BASE_DURATION * enchantmentLevel;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return enchantmentLevel * 3;
+		return UniqueMagicModConfig.SLOW_BASE_CHANCE * enchantmentLevel;
 	}
 
 	@Override
