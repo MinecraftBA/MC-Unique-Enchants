@@ -6,16 +6,12 @@ import net.minecraft.world.entity.LivingEntity;
 
 public final class StunnedMobEffect extends MobEffect {
 
-	private double posX;
-	private double posY;
-	private double posZ;
-	
 	public StunnedMobEffect() {
 		super(MobEffectCategory.HARMFUL, 0x555555);
 	}
 	
 	@Override
-	public boolean shouldApplyEffectTickThisTick(int pDuration, int pAmplifier) {
+	public boolean isDurationEffectTick(int pDuration, int pAmplifier) {
 		return true;
 	}
 
@@ -27,21 +23,17 @@ public final class StunnedMobEffect extends MobEffect {
 		if(livingEntity.level().isClientSide()) {
 			return;
 		}
-		
+
+		// Reduce movement speed to 0.
+		livingEntity.setDeltaMovement(0, 0, 0);
+
+		double posX = livingEntity.getX();
+		double posY = livingEntity.getY();
+		double posZ = livingEntity.getZ();
+
 		// Teleport entity back to starting position.
 		livingEntity.teleportTo(posX, posY, posZ);
 		
-		// Reduce movement speed to 0.
-		livingEntity.setDeltaMovement(0, 0, 0);
-	}
-
-	
-	@Override
-	public void onEffectStarted(LivingEntity livingEntity, int amplifier) {
-		// Capture coordinates of where mob was when effect started.
-		posX = livingEntity.getX();
-		posY = livingEntity.getY();
-		posZ = livingEntity.getZ();
 	}
 
 }
