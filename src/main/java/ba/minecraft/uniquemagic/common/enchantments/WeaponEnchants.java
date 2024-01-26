@@ -4,6 +4,7 @@ import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.BlindEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.ConfuseEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.CurseOfSlownessEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.DisarmEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.ExecuteEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.HarmEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LevitateEnchantment;
@@ -12,6 +13,7 @@ import ba.minecraft.uniquemagic.common.enchantments.weapon.LightningStrikerEncha
 import ba.minecraft.uniquemagic.common.enchantments.weapon.PoisonEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.SlowEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.StarveEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.StunEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.TempoTheftEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.WeakenEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.WitheringEnchantment;
@@ -67,4 +69,10 @@ public class WeaponEnchants {
 	public static final RegistryObject<Enchantment> CURSE_OF_SLOWNESS = 
 			REGISTRY.register("curse_of_slowness",  () -> new CurseOfSlownessEnchantment());
 	
+	public static final RegistryObject<Enchantment> STUN = 
+			REGISTRY.register("stun",  () -> new StunEnchantment());
+
+	public static final RegistryObject<Enchantment> DISARM = 
+			REGISTRY.register("disarm",  () -> new DisarmEnchantment());
 }
+

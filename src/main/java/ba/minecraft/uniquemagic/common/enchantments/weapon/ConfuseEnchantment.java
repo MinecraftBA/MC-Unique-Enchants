@@ -1,11 +1,11 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
-import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectWeaponEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class ConfuseEnchantment extends ApplyEffectEnchantment {
+public class ConfuseEnchantment extends ApplyEffectWeaponEnchantment {
 	
 	public ConfuseEnchantment() {
 		super(Rarity.UNCOMMON);
