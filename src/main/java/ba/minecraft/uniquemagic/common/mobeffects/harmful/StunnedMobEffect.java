@@ -28,13 +28,11 @@ public final class StunnedMobEffect extends MobEffect {
 			return;
 		}
 		
-		// Calculate how much have mob moved from spot where effect was applied.
-		double diffX = posX - livingEntity.getX();
-		double diffY = posY - livingEntity.getY();
-		double diffZ = posZ - livingEntity.getZ();
-
-		// Send it back to the initial spot to prevent movement.
-		livingEntity.setDeltaMovement(diffX, diffY, diffZ);
+		// Teleport entity back to starting position.
+		livingEntity.teleportTo(posX, posY, posZ);
+		
+		// Reduce movement speed to 0.
+		livingEntity.setDeltaMovement(0, 0, 0);
 	}
 
 	
