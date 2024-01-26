@@ -20,7 +20,7 @@ public final class DisarmEnchantmentEventHandler {
 
 	@SubscribeEvent
 	public static void onAttackEntity(final AttackEntityEvent event) {
-
+		
 		// Get reference to entity that was attacked.
 		Entity entity = event.getTarget();
 		
@@ -63,6 +63,22 @@ public final class DisarmEnchantmentEventHandler {
 			// Do nothing.
 			return;
 		}
+		
+		// Create random generator.
+		RandomSource random = level.getRandom();
+		
+		// Calculate proc chance - % for every level of enchantment.
+		int hitChance = enchantmentLevel * UniqueMagicModConfig.DISARM_BASE_CHANCE;
+		
+		// Get number between 0 and 99.
+		int roll = random.nextInt(100);
+		
+		// IF: Apply on hit chance was missed.
+		if (roll >= hitChance) {
+			
+			// Do nothing.
+			return;
+		}
 
 		// Get item that target is holding in hand.
 		ItemStack targetItem = target.getItemInHand(InteractionHand.MAIN_HAND);
@@ -72,20 +88,6 @@ public final class DisarmEnchantmentEventHandler {
 			// Do nothing.
 			return;
 		}
-		
-		// Create random generator.
-					RandomSource random = level.getRandom();
-					
-					// Calculate proc chance - % for every level of enchantment.
-					int hitChance = enchantmentLevel * UniqueMagicModConfig.DISARM_BASE_CHANCE;
-					
-					// Get number between 0 and 99.
-					int roll = random.nextInt(100);
-					
-					// IF: Apply on hit chance was missed.
-					if (roll >= hitChance) {
-						return;
-					}
 
 		// Have target player drop item.
 		target.drop(targetItem, true, true);

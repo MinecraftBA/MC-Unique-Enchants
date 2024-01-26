@@ -6,16 +6,20 @@ import net.minecraft.world.entity.LivingEntity;
 
 public final class StunnedMobEffect extends MobEffect {
 
+	private double posX;
+	private double posY;
+	private double posZ;
+	
 	public StunnedMobEffect() {
 		super(MobEffectCategory.HARMFUL, 0x555555);
 	}
-
-	// Overridden to enable logic in applyEffectTick to be executed on every effect tick.
-	public boolean isDurationEffectTick(int duration, int amplifier) {
+	
+	@Override
+	public boolean shouldApplyEffectTickThisTick(int pDuration, int pAmplifier) {
 		return true;
 	}
 
-	// Overridden to implement logic on what happens when player has this buff.
+	// Overridden to implement logic on what happens when mob has this buff.
 	@Override
 	public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
 
@@ -24,12 +28,26 @@ public final class StunnedMobEffect extends MobEffect {
 			return;
 		}
 		
-		double posX = livingEntity.getX();
-		double posY = livingEntity.getY();
-		double posZ = livingEntity.getZ();
+		double diffX = posX - livingEntity.getX();
+		double diffY = posY - livingEntity.getY();
+		double diffZ = posZ - livingEntity.getZ();
 		
-		livingEntity.teleportTo(posX, posY, posZ);
-		livingEntity.setDeltaMovement(0, 0, 0);
+		//livingEntity.teleportTo(posX, posY, posZ);
+		livingEntity.setDeltaMovement(diffX, diffY, diffZ);
+		
+		System.out.println("ticking");
+	}
+
+	
+	@Override
+	public void onEffectStarted(LivingEntity livingEntity, int amplifier) {
+		
+		System.out.println("started");
+		
+		// Capture coordinates of where mob was when effect started.
+		posX = livingEntity.getX();
+		posY = livingEntity.getY();
+		posZ = livingEntity.getZ();
 	}
 
 }

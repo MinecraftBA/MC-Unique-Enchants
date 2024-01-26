@@ -36,6 +36,7 @@ public class UniqueMagicMod
         WeaponEnchants.REGISTRY.register(modEventBus);
         DiggerEnchants.REGISTRY.register(modEventBus);
         ArmorEnchants.REGISTRY.register(modEventBus);
+        
         HarmfulMobEffects.REGISTRY.register(modEventBus);
 
         // Register the commonSetup method for modloading
