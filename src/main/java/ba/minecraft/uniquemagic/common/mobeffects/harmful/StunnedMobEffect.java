@@ -28,22 +28,18 @@ public final class StunnedMobEffect extends MobEffect {
 			return;
 		}
 		
+		// Calculate how much have mob moved from spot where effect was applied.
 		double diffX = posX - livingEntity.getX();
 		double diffY = posY - livingEntity.getY();
 		double diffZ = posZ - livingEntity.getZ();
-		
-		//livingEntity.teleportTo(posX, posY, posZ);
+
+		// Send it back to the initial spot to prevent movement.
 		livingEntity.setDeltaMovement(diffX, diffY, diffZ);
-		
-		System.out.println("ticking");
 	}
 
 	
 	@Override
 	public void onEffectStarted(LivingEntity livingEntity, int amplifier) {
-		
-		System.out.println("started");
-		
 		// Capture coordinates of where mob was when effect started.
 		posX = livingEntity.getX();
 		posY = livingEntity.getY();
