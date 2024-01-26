@@ -1,7 +1,9 @@
 package ba.minecraft.uniquemagic.common.event.enchantments.weapons;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
+import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchants;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Inventory;
@@ -70,6 +72,20 @@ public final class DisarmEnchantmentEventHandler {
 			// Do nothing.
 			return;
 		}
+		
+		// Create random generator.
+					RandomSource random = level.getRandom();
+					
+					// Calculate proc chance - % for every level of enchantment.
+					int hitChance = enchantmentLevel * UniqueMagicModConfig.DISARM_BASE_CHANCE;
+					
+					// Get number between 0 and 99.
+					int roll = random.nextInt(100);
+					
+					// IF: Apply on hit chance was missed.
+					if (roll >= hitChance) {
+						return;
+					}
 
 		// Have target player drop item.
 		target.drop(targetItem, true, true);
