@@ -38,7 +38,7 @@ public class StunEnchantment extends ApplyEffectEnchantment {
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return UniqueMagicModConfig.SLOW_BASE_CHANCE * enchantmentLevel;
+		return UniqueMagicModConfig.STUN_BASE_CHANCE * enchantmentLevel;
 	}
 
 	@Override
