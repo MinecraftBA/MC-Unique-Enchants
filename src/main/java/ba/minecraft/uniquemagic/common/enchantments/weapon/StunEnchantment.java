@@ -1,11 +1,11 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
-import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectWeaponEnchantment;
 import ba.minecraft.uniquemagic.common.mobeffects.HarmfulMobEffects;
 import net.minecraft.world.effect.MobEffect;
 
-public class StunEnchantment extends ApplyEffectEnchantment {
+public class StunEnchantment extends ApplyEffectWeaponEnchantment {
 
 	public StunEnchantment() {
 		super(Rarity.VERY_RARE);
