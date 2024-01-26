@@ -1,11 +1,11 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
-import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectWeaponEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class BlindEnchantment  extends ApplyEffectEnchantment {
+public class BlindEnchantment  extends ApplyEffectWeaponEnchantment {
 	
 	public BlindEnchantment() {
 		super(Rarity.RARE);

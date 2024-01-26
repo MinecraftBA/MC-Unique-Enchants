@@ -1,11 +1,11 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
-import ba.minecraft.uniquemagic.common.enchantments.base.TwoEffectEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.base.ApplyTwoEffectsWeaponEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class CurseOfSlownessEnchantment extends TwoEffectEnchantment{
+public class CurseOfSlownessEnchantment extends ApplyTwoEffectsWeaponEnchantment{
 
 	
 	public CurseOfSlownessEnchantment() {
