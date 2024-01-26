@@ -181,7 +181,7 @@ public final class UniqueMagicModConfig {
     	        .defineInRange("Weaken base duration", 3, 1, 60);
     	
     	STUN_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Stun enchantment to trigger.")
-    	        .defineInRange("Weaken base chance", 5, 1, 20);
+    	        .defineInRange("Stun base chance", 5, 1, 20);
 
     	STUN_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Stun enchantment in seconds.")
     	        .defineInRange("Stun base duration", 3, 1, 60);
