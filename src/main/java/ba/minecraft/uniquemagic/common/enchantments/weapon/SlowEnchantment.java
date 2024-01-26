@@ -1,11 +1,11 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
-import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectWeaponEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class SlowEnchantment extends ApplyEffectEnchantment {
+public class SlowEnchantment extends ApplyEffectWeaponEnchantment {
 	
 	public SlowEnchantment() {
 		super(Rarity.UNCOMMON);

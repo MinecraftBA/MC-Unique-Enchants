@@ -1,12 +1,11 @@
 package ba.minecraft.uniquemagic.common.event.enchantments.weapons;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
-import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
-import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchants;
+import ba.minecraft.uniquemagic.common.mobeffects.HarmfulMobEffects;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -14,8 +13,8 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
 @EventBusSubscriber(modid = UniqueMagicMod.MODID, bus = Bus.FORGE)
-public final class LifeStealEnchantEventHandler {
-	
+public final class StunEnchantmentEventHandler {
+
 	@SubscribeEvent
 	public static void onLivingAttack(final LivingAttackEvent event) {
 		
@@ -27,6 +26,8 @@ public final class LifeStealEnchantEventHandler {
 
 		// IF: Attack was not done by entity.
 		if (attacker == null) {
+			
+			// Do nothing.
 			return;
 		}
 
@@ -35,32 +36,32 @@ public final class LifeStealEnchantEventHandler {
 		
 		// IF: Code is executing on the client side.
 		if (level.isClientSide()) {
+
+			// Do nothing.
 			return;
 		}
+		
+		// IF: Attacker was not living entity.
+		if(!(attacker instanceof LivingEntity)) {
 
-		// IF: Attacker was not player.
-		if(!(attacker instanceof Player)) {
+			// Do nothing.
 			return;
 		}
 		
 		// Cast entity to player.
-		Player player = (Player)attacker;
+		LivingEntity attackerMob = (LivingEntity)attacker;
 
-		// Get the amount of damage that was inflicted.
-		float damageDealt = event.getAmount();
-
-		// Get level of enchantment player has on equipped items.
-		int enchantmentLevel = EnchantmentHelper.getEnchantmentLevel(WeaponEnchants.LIFE_STEAL.get(), player);
-				
-		// IF: Enchantment level is not at least 1;
-		if (enchantmentLevel < 1) {
+		// Get instance of stun effect.
+		MobEffectInstance stunInstance = attackerMob.getEffect(HarmfulMobEffects.STUNNED.get());
+		
+		// IF: Effect was not applied.
+		if(stunInstance == null) {
+			
+			// Do nothing.
 			return;
 		}
-		
-		// Calculate health to be restored based on the damage dealt and enchantment level.
-		float healthRestored = damageDealt * UniqueMagicModConfig.LIFE_STEAL_BASE_RATIO / 100;
-		
-		// Heal attacker.
-		player.heal(healthRestored);
+
+		// Cancel the attack.
+		event.setCanceled(true);
 	}
 }
