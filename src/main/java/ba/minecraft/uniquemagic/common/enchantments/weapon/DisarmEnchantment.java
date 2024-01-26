@@ -22,7 +22,7 @@ public final class DisarmEnchantment extends ModEnchantment {
 
     @Override
     public int getMaxLevel() {
-        return 1;
+        return 5;
     }
 
 	@Override
