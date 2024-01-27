@@ -1,10 +1,11 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
-import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectEnchantment;
+import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
+import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectWeaponEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class BlindEnchantment  extends ApplyEffectEnchantment {
+public class BlindEnchantment  extends ApplyEffectWeaponEnchantment {
 	
 	public BlindEnchantment() {
 		super(Rarity.RARE);
@@ -32,12 +33,12 @@ public class BlindEnchantment  extends ApplyEffectEnchantment {
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return enchantmentLevel * 5;
+		return UniqueMagicModConfig.BLIND_BASE_DURATION * enchantmentLevel;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return enchantmentLevel * 50;
+		return UniqueMagicModConfig.BLIND_BASE_CHANCE * enchantmentLevel;
 	}
 
 	@Override

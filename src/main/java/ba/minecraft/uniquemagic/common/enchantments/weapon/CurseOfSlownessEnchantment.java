@@ -1,10 +1,11 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
-import ba.minecraft.uniquemagic.common.enchantments.base.TwoEffectEnchantment;
+import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
+import ba.minecraft.uniquemagic.common.enchantments.base.ApplyTwoEffectsWeaponEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class CurseOfSlownessEnchantment extends TwoEffectEnchantment{
+public class CurseOfSlownessEnchantment extends ApplyTwoEffectsWeaponEnchantment{
 
 	
 	public CurseOfSlownessEnchantment() {
@@ -27,6 +28,11 @@ public class CurseOfSlownessEnchantment extends TwoEffectEnchantment{
 	}
 
 	@Override
+	public boolean isCurse() {
+		return true;
+	}
+
+	@Override
 	protected MobEffect getTargetMobEffect() {
 		return MobEffects.MOVEMENT_SPEED;
 	}
@@ -38,12 +44,12 @@ public class CurseOfSlownessEnchantment extends TwoEffectEnchantment{
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return enchantmentLevel * 3;
+		return UniqueMagicModConfig.CURSE_OF_SLOWNESS_BASE_DURATION * enchantmentLevel;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return enchantmentLevel * 40;
+		return UniqueMagicModConfig.CURSE_OF_SLOWNESS_BASE_CHANCE * enchantmentLevel;
 	}
 
 	@Override

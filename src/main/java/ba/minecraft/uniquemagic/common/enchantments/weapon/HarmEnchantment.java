@@ -1,10 +1,11 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
-import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectEnchantment;
+import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
+import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectWeaponEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public final class HarmEnchantment extends ApplyEffectEnchantment {
+public final class HarmEnchantment extends ApplyEffectWeaponEnchantment {
 	
 	public HarmEnchantment() {
 		super(Rarity.UNCOMMON);
@@ -32,12 +33,12 @@ public final class HarmEnchantment extends ApplyEffectEnchantment {
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return 0;
+		return UniqueMagicModConfig.HARM_BASE_DURATION * enchantmentLevel;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return enchantmentLevel * 50;
+		return UniqueMagicModConfig.HARM_BASE_CHANCE * enchantmentLevel;
 	}
 
 	@Override

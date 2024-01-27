@@ -1,10 +1,11 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
-import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectEnchantment;
+import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
+import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectWeaponEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class PoisonEnchantment extends ApplyEffectEnchantment {
+public class PoisonEnchantment extends ApplyEffectWeaponEnchantment {
 	
 	public PoisonEnchantment() {
 		super(Rarity.UNCOMMON);
@@ -32,12 +33,12 @@ public class PoisonEnchantment extends ApplyEffectEnchantment {
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return enchantmentLevel * 2;
+		return UniqueMagicModConfig.POISON_BASE_DURATION * enchantmentLevel;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return enchantmentLevel * 25;
+		return UniqueMagicModConfig.POISON_BASE_CHANCE * enchantmentLevel;
 	}
 
 	@Override

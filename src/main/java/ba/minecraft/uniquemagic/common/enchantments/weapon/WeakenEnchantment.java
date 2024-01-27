@@ -1,10 +1,11 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
-import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectEnchantment;
+import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
+import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectWeaponEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class WeakenEnchantment extends ApplyEffectEnchantment {
+public class WeakenEnchantment extends ApplyEffectWeaponEnchantment {
 	
 	public WeakenEnchantment() {
 		super(Rarity.UNCOMMON);
@@ -32,12 +33,12 @@ public class WeakenEnchantment extends ApplyEffectEnchantment {
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return enchantmentLevel * 5;
+		return UniqueMagicModConfig.WEAKEN_BASE_DURATION * enchantmentLevel;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return enchantmentLevel * 25;
+		return UniqueMagicModConfig.WEAKEN_BASE_CHANCE * enchantmentLevel;
 	}
 
 	@Override

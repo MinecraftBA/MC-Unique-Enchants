@@ -9,9 +9,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.Level;
 
-public abstract class TwoEffectEnchantment extends ModEnchantment {
+public abstract class ApplyEffectWeaponEnchantment extends ModEnchantment {
 	
-	protected TwoEffectEnchantment(Rarity rarity) {
+	protected ApplyEffectWeaponEnchantment(Rarity rarity) {
 		super(rarity, EnchantmentCategory.WEAPON, new EquipmentSlot[] { EquipmentSlot.MAINHAND });
 	}
 	
@@ -19,14 +19,8 @@ public abstract class TwoEffectEnchantment extends ModEnchantment {
 	 * Override to define which effect will be applied to target.
 	 * @return Type of effect.
 	 */
-	protected abstract MobEffect getTargetMobEffect();
-
-	/**
-	 * Override to define which effect will be applied to attacker.
-	 * @return Type of effect.
-	 */
-	protected abstract MobEffect getAttackerMobEffect();
-
+	protected abstract MobEffect getMobEffect();
+	
 	/**
 	 * Override to define duration of the effect in seconds based on the enchantment level.
 	 * @param enchantmentLevel - Level of the enchantment that is applied.
@@ -70,18 +64,10 @@ public abstract class TwoEffectEnchantment extends ModEnchantment {
 		LivingEntity livingTarget = (LivingEntity)target;
 		
 		// Get reference to effect that should be applied.
-		MobEffect targetMobEffect = this.getTargetMobEffect();
-		
-		// Get reference to effect that should be applied.
-		MobEffect attackerMobEffect = this.getAttackerMobEffect();
+		MobEffect mobEffect = this.getMobEffect();
 		
 		// IF: Player already has effect.
-		if (livingTarget.hasEffect(targetMobEffect)){
-			return;
-		}
-		
-		//IF: Attacker already has effect
-		if (attacker.hasEffect(attackerMobEffect)){
+		if (livingTarget.hasEffect(mobEffect)){
 			return;
 		}
 
@@ -118,12 +104,10 @@ public abstract class TwoEffectEnchantment extends ModEnchantment {
 		}
 
 		// Create instance of effect.
-		MobEffectInstance targetMobEffectInstance = new MobEffectInstance(targetMobEffect, duration, enchantmentLevel - 1);
-		MobEffectInstance attackerMobEffectInstance = new MobEffectInstance(attackerMobEffect, duration, enchantmentLevel - 1);
+		MobEffectInstance effect = new MobEffectInstance(mobEffect, duration, enchantmentLevel - 1);
 
 		// Apply effect to mob.
-		livingTarget.addEffect(targetMobEffectInstance);
-		attacker.addEffect(attackerMobEffectInstance);
+		livingTarget.addEffect(effect);
 	}
 	
 	
