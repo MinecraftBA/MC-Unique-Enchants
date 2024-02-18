@@ -1,6 +1,7 @@
 package ba.minecraft.uniquemagic.common.core;
 
 import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraftforge.common.ForgeConfigSpec.IntValue;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
@@ -56,6 +57,8 @@ public final class UniqueMagicModConfig {
     
     private static final ForgeConfigSpec.IntValue DISARM_BASE_CHANCE_CONFIG;
     
+    private static final ForgeConfigSpec.IntValue ILLAGERS_BANE_BASE_DAMAGE_CONFIG;
+    
     public static int EXECUTE_BASE_CHANCE;
     public static int LIFE_STEAL_BASE_RATIO;
     
@@ -99,6 +102,8 @@ public final class UniqueMagicModConfig {
     public static int STUN_BASE_DURATION;
     
     public static int DISARM_BASE_CHANCE;
+    
+    public static int ILLAGERS_BANE_BASE_DAMAGE;
     static {
     	BUILDER.push("Configs for Unique Magic Mod");
 
@@ -188,6 +193,9 @@ public final class UniqueMagicModConfig {
     	
     	DISARM_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Disarm enchantment to trigger.")
     	        .defineInRange("Disarm base chance", 5, 1, 20);
+    	
+    	ILLAGERS_BANE_BASE_DAMAGE_CONFIG = BUILDER.comment("Base damage for Illager's Bane enchantment to deal.")
+    	        .defineInRange("Illager's Bane base damage", 5, 1, 10);
 
     	BUILDER.pop();
     	
@@ -241,5 +249,7 @@ public final class UniqueMagicModConfig {
     	STUN_BASE_DURATION = STUN_BASE_DURATION_CONFIG.get();
     	
     	DISARM_BASE_CHANCE = DISARM_BASE_CHANCE_CONFIG.get();
+    	
+    	ILLAGERS_BANE_BASE_DAMAGE = ILLAGERS_BANE_BASE_DAMAGE_CONFIG.get();
 	}
 }

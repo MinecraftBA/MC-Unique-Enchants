@@ -7,6 +7,7 @@ import ba.minecraft.uniquemagic.common.enchantments.weapon.CurseOfSlownessEnchan
 import ba.minecraft.uniquemagic.common.enchantments.weapon.DisarmEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.ExecuteEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.HarmEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.IllagersBaneEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LevitateEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LifeStealEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LightningStrikerEnchantment;
@@ -74,5 +75,8 @@ public class WeaponEnchants {
 
 	public static final RegistryObject<Enchantment> DISARM = 
 			REGISTRY.register("disarm",  () -> new DisarmEnchantment());
+	
+	public static final RegistryObject<Enchantment> ILLAGERS_BANE = 
+			REGISTRY.register("illagers_bane",  () -> new IllagersBaneEnchantment());
 }
 
