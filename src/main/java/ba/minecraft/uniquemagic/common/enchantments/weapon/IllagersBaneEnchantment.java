@@ -2,6 +2,7 @@ package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
 import ba.minecraft.uniquemagic.common.enchantments.base.ModEnchantment;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraftforge.common.Tags;
@@ -41,4 +42,15 @@ public class IllagersBaneEnchantment extends ModEnchantment {
 	protected String getBaseName() {
 		return "Illager's Bane";
 	}
+
+	@Override
+	public float getDamageBonus(int pLevel, MobType pType) {
+		if(pType == MobType.ILLAGER) {
+			return 10;
+		} else {
+			return 0;
+		}
+	}
+
+	
 }
