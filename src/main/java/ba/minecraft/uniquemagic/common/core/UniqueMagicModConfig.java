@@ -59,6 +59,9 @@ public final class UniqueMagicModConfig {
     
     private static final ForgeConfigSpec.IntValue ILLAGERS_BANE_BASE_DAMAGE_CONFIG;
     
+    private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_CHANCE_CONFIG;
+    private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_DURATION_CONFIG;
+    
     public static int EXECUTE_BASE_CHANCE;
     public static int LIFE_STEAL_BASE_RATIO;
     
@@ -104,6 +107,9 @@ public final class UniqueMagicModConfig {
     public static int DISARM_BASE_CHANCE;
     
     public static int ILLAGERS_BANE_BASE_DAMAGE;
+    
+    public static int RAMPAGE_BASE_CHANCE;
+    public static int RAMPAGE_BASE_DURATION;
     static {
     	BUILDER.push("Configs for Unique Magic Mod");
 
@@ -196,7 +202,12 @@ public final class UniqueMagicModConfig {
     	
     	ILLAGERS_BANE_BASE_DAMAGE_CONFIG = BUILDER.comment("Base damage for Illager's Bane enchantment to deal.")
     	        .defineInRange("Illager's Bane base damage", 5, 1, 10);
+    	
+    	RAMPAGE_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Rampage enchantment to trigger.")
+    	        .defineInRange("Rampage base chance", 3, 1, 20);
 
+    	RAMPAGE_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Rampage enchantment in seconds.")
+    	        .defineInRange("Rampage base duration", 1, 1, 60);
     	BUILDER.pop();
     	
     	SPEC = BUILDER.build();
@@ -251,5 +262,8 @@ public final class UniqueMagicModConfig {
     	DISARM_BASE_CHANCE = DISARM_BASE_CHANCE_CONFIG.get();
     	
     	ILLAGERS_BANE_BASE_DAMAGE = ILLAGERS_BANE_BASE_DAMAGE_CONFIG.get();
-	}
+	
+     	RAMPAGE_BASE_CHANCE = RAMPAGE_BASE_CHANCE_CONFIG.get();
+    	RAMPAGE_BASE_DURATION = RAMPAGE_BASE_DURATION_CONFIG.get();
+    }
 }

@@ -12,6 +12,7 @@ import ba.minecraft.uniquemagic.common.enchantments.weapon.LevitateEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LifeStealEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LightningStrikerEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.PoisonEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.RampageEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.SlowEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.StarveEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.StunEnchantment;
@@ -78,5 +79,8 @@ public class WeaponEnchants {
 	
 	public static final RegistryObject<Enchantment> ILLAGERS_BANE = 
 			REGISTRY.register("illagers_bane",  () -> new IllagersBaneEnchantment());
+	
+	public static final RegistryObject<Enchantment> RAMPAGE = 
+			REGISTRY.register("rampage",  () -> new RampageEnchantment());
 }
 
