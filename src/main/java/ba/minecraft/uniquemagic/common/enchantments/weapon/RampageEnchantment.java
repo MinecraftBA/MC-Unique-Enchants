@@ -4,7 +4,6 @@ import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.AttackerEffectWeaponEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.enchantment.Enchantment.Rarity;
 
 public class RampageEnchantment extends AttackerEffectWeaponEnchantment{
 	

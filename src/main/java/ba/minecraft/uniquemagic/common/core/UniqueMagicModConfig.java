@@ -1,7 +1,6 @@
 package ba.minecraft.uniquemagic.common.core;
 
 import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.IntValue;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
@@ -57,7 +56,7 @@ public final class UniqueMagicModConfig {
     
     private static final ForgeConfigSpec.IntValue DISARM_BASE_CHANCE_CONFIG;
     
-    private static final ForgeConfigSpec.IntValue ILLAGERS_BANE_BASE_DAMAGE_CONFIG;
+    private static final ForgeConfigSpec.IntValue ILLAGERS_BANE_BASE_MULTIPLIER_CONFIG;
     
     private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_CHANCE_CONFIG;
     private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_DURATION_CONFIG;
@@ -106,7 +105,7 @@ public final class UniqueMagicModConfig {
     
     public static int DISARM_BASE_CHANCE;
     
-    public static int ILLAGERS_BANE_BASE_DAMAGE;
+    public static int ILLAGERS_BANE_BASE_MULTIPLIER;
     
     public static int RAMPAGE_BASE_CHANCE;
     public static int RAMPAGE_BASE_DURATION;
@@ -200,8 +199,8 @@ public final class UniqueMagicModConfig {
     	DISARM_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Disarm enchantment to trigger.")
     	        .defineInRange("Disarm base chance", 5, 1, 20);
     	
-    	ILLAGERS_BANE_BASE_DAMAGE_CONFIG = BUILDER.comment("Base damage for Illager's Bane enchantment to deal.")
-    	        .defineInRange("Illager's Bane base damage", 5, 1, 10);
+    	ILLAGERS_BANE_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Illager's Bane enchantment.")
+    	        .defineInRange("Illager's Bane base multiplier", 3, 1, 10);
     	
     	RAMPAGE_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Rampage enchantment to trigger.")
     	        .defineInRange("Rampage base chance", 3, 1, 20);
@@ -261,7 +260,7 @@ public final class UniqueMagicModConfig {
     	
     	DISARM_BASE_CHANCE = DISARM_BASE_CHANCE_CONFIG.get();
     	
-    	ILLAGERS_BANE_BASE_DAMAGE = ILLAGERS_BANE_BASE_DAMAGE_CONFIG.get();
+    	ILLAGERS_BANE_BASE_MULTIPLIER = ILLAGERS_BANE_BASE_MULTIPLIER_CONFIG.get();
 	
      	RAMPAGE_BASE_CHANCE = RAMPAGE_BASE_CHANCE_CONFIG.get();
     	RAMPAGE_BASE_DURATION = RAMPAGE_BASE_DURATION_CONFIG.get();
