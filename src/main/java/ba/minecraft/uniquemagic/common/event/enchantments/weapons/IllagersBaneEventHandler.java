@@ -3,6 +3,7 @@ package ba.minecraft.uniquemagic.common.event.enchantments.weapons;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchants;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -18,53 +19,65 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
 @EventBusSubscriber(modid = UniqueMagicMod.MODID, bus = Bus.FORGE)
-public class IllagersBaneEventHandler {
+public final class IllagersBaneEventHandler {
 	
 	@SubscribeEvent
-    public void onEntityDamageByEntity(LivingAttackEvent event) {
+    public void onEntityDamageByEntity(final LivingAttackEvent event) {
+
 		// Get source of the damage.
-				DamageSource damageSource = event.getSource();
-				
-				// Get reference to entity that caused the damage.
-				Entity attacker = damageSource.getEntity();
+		DamageSource damageSource = event.getSource();
+		
+		// Get reference to entity that caused the damage.
+		Entity attacker = damageSource.getEntity();
 
-				// IF: Attack was not done by entity.
-				if (attacker == null) {
-					return;
-				}
+		// IF: Attack was not done by entity.
+		if (attacker == null) {
+			return;
+		}
 
-				// Get reference to level where event has occurred.
-				Level level = attacker.level();
-				
-				// IF: Code is executing on the client side.
-				if (level.isClientSide()) {
-					return;
-				}
+		// Get reference to level where event has occurred.
+		Level level = attacker.level();
+		
+		// IF: Code is executing on the client side.
+		if (level.isClientSide()) {
+			return;
+		}
 
-				// IF: Attacker was not player.
-				if(!(attacker instanceof Player)) {
-					return;
-				}
-        if (!(event.getEntity() instanceof Raider)) return;
-
+		// IF: Attacker was not player.
+		if(!(attacker instanceof Player)) {
+			return;
+		}
+		
+		// Cast attacker to server player.
+		ServerPlayer player = (ServerPlayer)attacker;
+		
+		// Get reference to entity that was attacked.
+		LivingEntity target = event.getEntity();
+		
+		// IF: Attacked entity is not Raider (Illager).
+        if (!(target instanceof Raider)) 
+        { 
+        	// Do nothing.
+        	return ;
+		}
         
-        LivingEntity raider = event.getEntity();
-     // Get item on head.
-     		ItemStack weapon = ((Player) attacker).getItemBySlot(EquipmentSlot.MAINHAND);
+        // Get item in hand.
+     	ItemStack weapon = player.getItemBySlot(EquipmentSlot.MAINHAND);
 
-     // Get level of enchantment player has on equipped items.
-     		int enchantmentLevel = EnchantmentHelper.getEnchantmentLevel(WeaponEnchants.ILLAGERS_BANE.get(), (LivingEntity) attacker);
+        // Get level of enchantment player has on equipped items.
+     	int enchantmentLevel = EnchantmentHelper.getEnchantmentLevel(WeaponEnchants.ILLAGERS_BANE.get(), player);
      				
-     		// IF: Enchantment level is not at least 1;
-     		if (enchantmentLevel < 1) {
-     			return;
-     		}
+ 		// IF: Enchantment level is not at least 1;
+ 		if (enchantmentLevel < 1) {
+ 			return;
+ 		}
      		
-     		// Get the amount of damage that was inflicted.
-    		float damageDealt = event.getAmount();
+ 		// Get the amount of damage that was inflicted.
+		float damageDealt = event.getAmount();
      		
-            double extraDamage = enchantmentLevel * UniqueMagicModConfig.ILLAGERS_BANE_BASE_DAMAGE; // Example: Level 1 = +2.5 damage, Level 2 = +5, etc.
-            raider.hurt(damageSource,(float) (damageDealt + extraDamage));
+        double extraDamage = enchantmentLevel * UniqueMagicModConfig.ILLAGERS_BANE_BASE_DAMAGE; // Example: Level 1 = +2.5 damage, Level 2 = +5, etc.
+
+        target.hurt(damageSource,(float) (damageDealt + extraDamage));
         
     }
 }
