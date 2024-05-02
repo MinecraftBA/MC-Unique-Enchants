@@ -56,6 +56,11 @@ public final class UniqueMagicModConfig {
     
     private static final ForgeConfigSpec.IntValue DISARM_BASE_CHANCE_CONFIG;
     
+    private static final ForgeConfigSpec.IntValue ILLAGERS_BANE_BASE_MULTIPLIER_CONFIG;
+    
+    private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_CHANCE_CONFIG;
+    private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_DURATION_CONFIG;
+    
     public static int EXECUTE_BASE_CHANCE;
     public static int LIFE_STEAL_BASE_RATIO;
     
@@ -99,6 +104,11 @@ public final class UniqueMagicModConfig {
     public static int STUN_BASE_DURATION;
     
     public static int DISARM_BASE_CHANCE;
+    
+    public static int ILLAGERS_BANE_BASE_MULTIPLIER;
+    
+    public static int RAMPAGE_BASE_CHANCE;
+    public static int RAMPAGE_BASE_DURATION;
     static {
     	BUILDER.push("Configs for Unique Magic Mod");
 
@@ -188,6 +198,15 @@ public final class UniqueMagicModConfig {
     	
     	DISARM_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Disarm enchantment to trigger.")
     	        .defineInRange("Disarm base chance", 5, 1, 20);
+    	
+    	ILLAGERS_BANE_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Illager's Bane enchantment.")
+    	        .defineInRange("Illager's Bane base multiplier", 3, 1, 10);
+    	
+    	RAMPAGE_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Rampage enchantment to trigger.")
+    	        .defineInRange("Rampage base chance", 5, 1, 20);
+
+    	RAMPAGE_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Rampage enchantment in seconds.")
+    	        .defineInRange("Rampage base duration", 3, 1, 60);
 
     	BUILDER.pop();
     	
@@ -241,5 +260,10 @@ public final class UniqueMagicModConfig {
     	STUN_BASE_DURATION = STUN_BASE_DURATION_CONFIG.get();
     	
     	DISARM_BASE_CHANCE = DISARM_BASE_CHANCE_CONFIG.get();
-	}
+    	
+    	ILLAGERS_BANE_BASE_MULTIPLIER = ILLAGERS_BANE_BASE_MULTIPLIER_CONFIG.get();
+	
+     	RAMPAGE_BASE_CHANCE = RAMPAGE_BASE_CHANCE_CONFIG.get();
+    	RAMPAGE_BASE_DURATION = RAMPAGE_BASE_DURATION_CONFIG.get();
+    }
 }

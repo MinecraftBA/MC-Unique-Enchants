@@ -1,11 +1,11 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
-import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectWeaponEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.base.ApplyTargetEffectWeaponEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public final class LevitateEnchantment extends ApplyEffectWeaponEnchantment {
+public final class LevitateEnchantment extends ApplyTargetEffectWeaponEnchantment {
 	
 	public LevitateEnchantment() {
 		super(Rarity.UNCOMMON);

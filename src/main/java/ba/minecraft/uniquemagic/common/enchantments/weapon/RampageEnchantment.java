@@ -1,14 +1,14 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
-import ba.minecraft.uniquemagic.common.enchantments.base.ApplyTargetEffectWeaponEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.base.ApplyAttackerEffectWeaponEnchantment;
+import ba.minecraft.uniquemagic.common.mobeffects.BeneficialMobEffects;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffects;
 
-public class WitheringEnchantment extends ApplyTargetEffectWeaponEnchantment {
+public class RampageEnchantment extends ApplyAttackerEffectWeaponEnchantment {
 	
-	public WitheringEnchantment() {
-		super(Rarity.RARE);
+	public RampageEnchantment() {
+		super(Rarity.VERY_RARE);
 	}
 	
 	@Override
@@ -26,28 +26,29 @@ public class WitheringEnchantment extends ApplyTargetEffectWeaponEnchantment {
 		return getMinCost(enchantmentLevel) + 50;
 	}
 
+	
 	@Override
-	protected MobEffect getMobEffect() {
-		return MobEffects.WITHER;
+	protected MobEffect getAttackerMobEffect() {
+		return BeneficialMobEffects.RAMPAGING.get();
 	}
 
 	@Override
 	protected int getSecondsDuration(int enchantmentLevel) {
-		return UniqueMagicModConfig.WITHERING_BASE_DURATION * enchantmentLevel;
+		return UniqueMagicModConfig.RAMPAGE_BASE_DURATION * enchantmentLevel;
 	}
 
 	@Override
 	protected int getChance(int enchantmentLevel) {
-		return UniqueMagicModConfig.WITHERING_BASE_CHANCE * enchantmentLevel;
+		return UniqueMagicModConfig.RAMPAGE_BASE_CHANCE * enchantmentLevel;
+	}
+	
+	@Override
+	protected String getBaseName() {
+		return "Rampage";
 	}
 
 	@Override
 	protected boolean isInstant() {
 		return false;
-	}
-	
-	@Override
-	protected String getBaseName() {
-		return "Withering";
 	}
 }

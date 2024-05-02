@@ -1,11 +1,11 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
-import ba.minecraft.uniquemagic.common.enchantments.base.ApplyEffectWeaponEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.base.ApplyTargetEffectWeaponEnchantment;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
-public class PoisonEnchantment extends ApplyEffectWeaponEnchantment {
+public class PoisonEnchantment extends ApplyTargetEffectWeaponEnchantment {
 	
 	public PoisonEnchantment() {
 		super(Rarity.UNCOMMON);

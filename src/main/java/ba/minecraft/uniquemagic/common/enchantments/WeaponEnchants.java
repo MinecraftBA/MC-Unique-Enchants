@@ -7,10 +7,12 @@ import ba.minecraft.uniquemagic.common.enchantments.weapon.CurseOfSlownessEnchan
 import ba.minecraft.uniquemagic.common.enchantments.weapon.DisarmEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.ExecuteEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.HarmEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.IllagersBaneEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LevitateEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LifeStealEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LightningStrikerEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.PoisonEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.RampageEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.SlowEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.StarveEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.StunEnchantment;
@@ -74,5 +76,11 @@ public class WeaponEnchants {
 
 	public static final RegistryObject<Enchantment> DISARM = 
 			REGISTRY.register("disarm",  () -> new DisarmEnchantment());
+	
+	public static final RegistryObject<Enchantment> ILLAGERS_BANE = 
+			REGISTRY.register("illagers_bane",  () -> new IllagersBaneEnchantment());
+	
+	public static final RegistryObject<Enchantment> RAMPAGE = 
+			REGISTRY.register("rampage",  () -> new RampageEnchantment());
 }
 
