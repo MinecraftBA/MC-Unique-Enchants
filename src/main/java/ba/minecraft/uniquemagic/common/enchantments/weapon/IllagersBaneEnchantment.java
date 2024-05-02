@@ -19,12 +19,14 @@ public final class IllagersBaneEnchantment extends ModEnchantment {
 	
 	@Override
 	public int getMinCost(int enchantmentLevel) {
-		return 25;
+		// Formula taken from Bane of Arthropods.
+		return 5 + (enchantmentLevel - 1) * 8;
 	}
 
 	@Override
 	public int getMaxCost(int enchantmentLevel) {
-		return getMinCost(enchantmentLevel) + 50;
+		// Formula taken from Bane of Arthropods.
+		return getMinCost(enchantmentLevel) + 20;
 	}
     
 	@Override

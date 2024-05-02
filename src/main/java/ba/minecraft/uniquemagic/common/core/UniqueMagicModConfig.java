@@ -203,10 +203,11 @@ public final class UniqueMagicModConfig {
     	        .defineInRange("Illager's Bane base multiplier", 3, 1, 10);
     	
     	RAMPAGE_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Rampage enchantment to trigger.")
-    	        .defineInRange("Rampage base chance", 3, 1, 20);
+    	        .defineInRange("Rampage base chance", 5, 1, 20);
 
     	RAMPAGE_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Rampage enchantment in seconds.")
-    	        .defineInRange("Rampage base duration", 1, 1, 60);
+    	        .defineInRange("Rampage base duration", 3, 1, 60);
+
     	BUILDER.pop();
     	
     	SPEC = BUILDER.build();

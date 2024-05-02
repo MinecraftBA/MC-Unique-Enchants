@@ -9,18 +9,39 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.Level;
 
-public abstract class AttackerEffectWeaponEnchantment extends ModEnchantment {
+public abstract class ApplyTargetEffectWeaponEnchantment extends ModEnchantment {
 	
-	protected AttackerEffectWeaponEnchantment(Rarity rarity) {
+	protected ApplyTargetEffectWeaponEnchantment(Rarity rarity) {
 		super(rarity, EnchantmentCategory.WEAPON, new EquipmentSlot[] { EquipmentSlot.MAINHAND });
 	}
 	
-	protected abstract MobEffect getAttackerMobEffect();
+	/**
+	 * Override to define which effect will be applied to target.
+	 * @return Type of effect.
+	 */
+	protected abstract MobEffect getMobEffect();
 	
+	/**
+	 * Override to define duration of the effect in seconds based on the enchantment level.
+	 * @param enchantmentLevel - Level of the enchantment that is applied.
+	 * @return Duration multiplier.
+	 */
+	/**
+	 * @return
+	 */
 	protected abstract int getSecondsDuration(int enchantmentLevel);
 	
+	/**
+	 * Override to define chance that the effect will proc based on the enchantment level.
+	 * @param enchantmentLevel - Level of the enchantment that is applied.
+	 * @return Chance multiplier.
+	 */
 	protected abstract int getChance(int enchantmentLevel);
 	
+	/**
+	 * Override to define whether enchantment should apply effect that is instant (lasts 1 tick).
+	 * @return True if it is instant.
+	 */
 	protected abstract boolean isInstant();
 	
 	@Override
@@ -34,18 +55,19 @@ public abstract class AttackerEffectWeaponEnchantment extends ModEnchantment {
 			return;
 		}
 		
-		// IF: Entity is not living entity.
+		// IF: Target is not living entity.
 		if (!(target instanceof LivingEntity)) {
 			return;
 		}
-		
+
+		// Cast target to living entity.
+		LivingEntity livingTarget = (LivingEntity)target;
 		
 		// Get reference to effect that should be applied.
-		MobEffect attackerMobEffect = this.getAttackerMobEffect();
+		MobEffect mobEffect = this.getMobEffect();
 		
-		
-		//IF: Attacker already has effect
-		if (attacker.hasEffect(attackerMobEffect)){
+		// IF: Target already has effect.
+		if (livingTarget.hasEffect(mobEffect)){
 			return;
 		}
 
@@ -70,9 +92,6 @@ public abstract class AttackerEffectWeaponEnchantment extends ModEnchantment {
 
 			 // A single tick enchant duration will be applied.
 			duration = 1;
-
-			// Override to ensure that amplifier will be set to 1.
-			//enchantmentLevel = 2;
 			
 		} else {
 
@@ -82,9 +101,12 @@ public abstract class AttackerEffectWeaponEnchantment extends ModEnchantment {
 		}
 
 		// Create instance of effect.
-	    MobEffectInstance attackerMobEffectInstance = new MobEffectInstance(attackerMobEffect, duration, enchantmentLevel - 1);
+		MobEffectInstance effect = new MobEffectInstance(mobEffect, duration, enchantmentLevel - 1);
 
 		// Apply effect to mob.
-		attacker.addEffect(attackerMobEffectInstance);
+		livingTarget.addEffect(effect);
 	}
+	
+	
+
 }

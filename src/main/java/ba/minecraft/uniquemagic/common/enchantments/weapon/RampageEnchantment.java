@@ -1,11 +1,11 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
-import ba.minecraft.uniquemagic.common.enchantments.base.AttackerEffectWeaponEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.base.ApplyAttackerEffectWeaponEnchantment;
+import ba.minecraft.uniquemagic.common.mobeffects.BeneficialMobEffects;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffects;
 
-public class RampageEnchantment extends AttackerEffectWeaponEnchantment{
+public class RampageEnchantment extends ApplyAttackerEffectWeaponEnchantment {
 	
 	public RampageEnchantment() {
 		super(Rarity.VERY_RARE);
@@ -26,15 +26,10 @@ public class RampageEnchantment extends AttackerEffectWeaponEnchantment{
 		return getMinCost(enchantmentLevel) + 50;
 	}
 
-	@Override
-	public boolean isCurse() {
-		return false;
-	}
-
 	
 	@Override
 	protected MobEffect getAttackerMobEffect() {
-		return MobEffects.DAMAGE_BOOST;
+		return BeneficialMobEffects.RAMPAGING.get();
 	}
 
 	@Override
@@ -46,14 +41,14 @@ public class RampageEnchantment extends AttackerEffectWeaponEnchantment{
 	protected int getChance(int enchantmentLevel) {
 		return UniqueMagicModConfig.RAMPAGE_BASE_CHANCE * enchantmentLevel;
 	}
-
-	@Override
-	protected boolean isInstant() {
-		return false;
-	}
 	
 	@Override
 	protected String getBaseName() {
 		return "Rampage";
+	}
+
+	@Override
+	protected boolean isInstant() {
+		return false;
 	}
 }
