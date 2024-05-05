@@ -52,7 +52,7 @@ public final class StunEnchantmentEventHandler {
 		LivingEntity attackerMob = (LivingEntity)attacker;
 
 		// Get instance of stun effect.
-		MobEffectInstance stunInstance = attackerMob.getEffect(HarmfulMobEffects.STUNNED.get());
+		MobEffectInstance stunInstance = attackerMob.getEffect(HarmfulMobEffects.STUNNED.getHolder().get());
 		
 		// IF: Effect was not applied.
 		if(stunInstance == null) {
