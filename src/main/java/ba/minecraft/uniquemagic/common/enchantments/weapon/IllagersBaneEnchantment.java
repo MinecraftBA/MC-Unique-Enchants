@@ -22,7 +22,7 @@ public final class IllagersBaneEnchantment extends ModEnchantment {
 
 	@Override
 	public float getDamageBonus(int enchantmentLevel, EntityType<?> mobType, ItemStack enchantedItem) {
-		if (mobType.is(EntityTypeTags.ILLAGER)) {
+		if (mobType != null && mobType.is(EntityTypeTags.ILLAGER)) {
 			return enchantmentLevel * UniqueMagicModConfig.ILLAGERS_BANE_BASE_MULTIPLIER;
 		} else {
 			return 0;
