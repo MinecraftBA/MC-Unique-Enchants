@@ -21,11 +21,11 @@ public final class StunnedMobEffect extends MobEffect {
 
 	// Overridden to implement logic on what happens when mob has this buff.
 	@Override
-	public void applyEffectTick(LivingEntity livingEntity, int amplifier) {
+	public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
 
 		// IF: Code is executing on client side - do nothing.
 		if(livingEntity.level().isClientSide()) {
-			return;
+			return false;
 		}
 		
 		// Teleport entity back to starting position.
@@ -33,9 +33,10 @@ public final class StunnedMobEffect extends MobEffect {
 		
 		// Reduce movement speed to 0.
 		livingEntity.setDeltaMovement(0, 0, 0);
+		
+		return true;
 	}
 
-	
 	@Override
 	public void onEffectStarted(LivingEntity livingEntity, int amplifier) {
 		// Capture coordinates of where mob was when effect started.

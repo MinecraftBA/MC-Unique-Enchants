@@ -10,7 +10,7 @@ public final class RampagingMobEffect extends MobEffect {
 	 public RampagingMobEffect() {
         super(MobEffectCategory.BENEFICIAL, 0xFF0000); // Change the color to what you prefer
         
-		this.addAttributeModifier(Attributes.ATTACK_SPEED, "1B4A6E69-1E81-4854-A36A-8CADE80AAD45", 0.5, Operation.MULTIPLY_TOTAL);
+		this.addAttributeModifier(Attributes.ATTACK_SPEED, "1B4A6E69-1E81-4854-A36A-8CADE80AAD45", 0.5, Operation.ADD_MULTIPLIED_TOTAL);
     }
 
 	 
