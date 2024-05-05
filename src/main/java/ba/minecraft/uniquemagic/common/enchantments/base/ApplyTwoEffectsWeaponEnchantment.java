@@ -1,31 +1,32 @@
 package ba.minecraft.uniquemagic.common.enchantments.base;
 
+import net.minecraft.core.Holder;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.Level;
 
 public abstract class ApplyTwoEffectsWeaponEnchantment extends ModEnchantment {
 	
-	protected ApplyTwoEffectsWeaponEnchantment(Rarity rarity) {
-		super(rarity, EnchantmentCategory.WEAPON, new EquipmentSlot[] { EquipmentSlot.MAINHAND });
+	protected ApplyTwoEffectsWeaponEnchantment(int weight, Cost minCost, Cost maxCost, int anvilCost) {
+		super(ItemTags.WEAPON_ENCHANTABLE, weight, 5, minCost, maxCost, anvilCost, new EquipmentSlot[] { EquipmentSlot.MAINHAND });
 	}
 	
 	/**
 	 * Override to define which effect will be applied to target.
 	 * @return Type of effect.
 	 */
-	protected abstract MobEffect getTargetMobEffect();
+	protected abstract Holder<MobEffect> getTargetMobEffect();
 
 	/**
 	 * Override to define which effect will be applied to attacker.
 	 * @return Type of effect.
 	 */
-	protected abstract MobEffect getAttackerMobEffect();
+	protected abstract Holder<MobEffect> getAttackerMobEffect();
 
 	/**
 	 * Override to define duration of the effect in seconds based on the enchantment level.
@@ -70,10 +71,10 @@ public abstract class ApplyTwoEffectsWeaponEnchantment extends ModEnchantment {
 		LivingEntity livingTarget = (LivingEntity)target;
 		
 		// Get reference to effect that should be applied.
-		MobEffect targetMobEffect = this.getTargetMobEffect();
+		Holder<MobEffect> targetMobEffect = this.getTargetMobEffect();
 		
 		// Get reference to effect that should be applied.
-		MobEffect attackerMobEffect = this.getAttackerMobEffect();
+		Holder<MobEffect> attackerMobEffect = this.getAttackerMobEffect();
 		
 		// IF: Player already has effect.
 		if (livingTarget.hasEffect(targetMobEffect)){

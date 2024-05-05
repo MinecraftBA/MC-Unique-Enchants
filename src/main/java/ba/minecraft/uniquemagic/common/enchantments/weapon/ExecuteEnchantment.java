@@ -4,6 +4,7 @@ import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.ModEnchantment;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -15,21 +16,16 @@ import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
 public class ExecuteEnchantment extends ModEnchantment{
 	
-	public ExecuteEnchantment() {
-		super(Rarity.VERY_RARE, EnchantmentCategory.WEAPON, new EquipmentSlot[] { EquipmentSlot.MAINHAND});
-	}
-	
-	@Override
-	public int getMaxLevel() {
-		return 5;
-	}
+    public ExecuteEnchantment() {
+        super(ItemTags.WEAPON_ENCHANTABLE, 1, 5, Enchantment.constantCost(25), Enchantment.constantCost(50), 8, new EquipmentSlot[]{ EquipmentSlot.MAINHAND });
+    }
 	
 	public void doPostAttack(LivingEntity attacker, Entity target, int enchantmentLevel) {
 

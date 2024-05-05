@@ -1,28 +1,14 @@
 package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
 import ba.minecraft.uniquemagic.common.enchantments.base.ModEnchantment;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.Enchantment;
 
 public class LifeStealEnchantment extends ModEnchantment {
 
 	public LifeStealEnchantment() {
-		super(Rarity.VERY_RARE, EnchantmentCategory.WEAPON, new EquipmentSlot[] { EquipmentSlot.MAINHAND });
-	}
-	
-	@Override
-	public int getMaxLevel() {
-		return 5;
-	}
-
-	@Override
-	public int getMinCost(int enchantmentLevel) {
-		return 10 + 20 * (enchantmentLevel - 1);
-	}
-
-	@Override
-	public int getMaxCost(int enchantmentLevel) {
-		return getMinCost(enchantmentLevel) + 50;
+		super(ItemTags.WEAPON_ENCHANTABLE, 2, 5, Enchantment.constantCost(25), Enchantment.dynamicCost(5, 8), 4, new EquipmentSlot[] { EquipmentSlot.MAINHAND });
 	}
 
 	@Override

@@ -7,7 +7,7 @@ pluginManagement {
         }
         maven {
             name = 'ParchmentMC' 
-            url = 'https://maven.parchmentmc.org/' 
+            url = 'https://maven.parchmentmc.org' 
         }
     }
 }
