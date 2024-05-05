@@ -2,6 +2,7 @@ package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.ApplyTargetEffectWeaponEnchantment;
+import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
@@ -27,7 +28,7 @@ public class PoisonEnchantment extends ApplyTargetEffectWeaponEnchantment {
 	}
 
 	@Override
-	protected MobEffect getMobEffect() {
+	protected Holder<MobEffect> getMobEffect() {
 		return MobEffects.POISON;
 	}
 

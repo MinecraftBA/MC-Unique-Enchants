@@ -3,6 +3,7 @@ package ba.minecraft.uniquemagic.common.enchantments.weapon;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.ApplyTargetEffectWeaponEnchantment;
 import ba.minecraft.uniquemagic.common.mobeffects.HarmfulMobEffects;
+import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 
 public class StunEnchantment extends ApplyTargetEffectWeaponEnchantment {
@@ -27,8 +28,8 @@ public class StunEnchantment extends ApplyTargetEffectWeaponEnchantment {
 	}
 
 	@Override
-	protected MobEffect getMobEffect() {
-		return HarmfulMobEffects.STUNNED.get();
+	protected Holder<MobEffect> getMobEffect() {
+		return HarmfulMobEffects.STUNNED.getHolder().get();
 	}
 
 	@Override

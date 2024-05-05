@@ -1,5 +1,6 @@
 package ba.minecraft.uniquemagic.common.enchantments.base;
 
+import net.minecraft.core.Holder;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -19,13 +20,13 @@ public abstract class ApplyTwoEffectsWeaponEnchantment extends ModEnchantment {
 	 * Override to define which effect will be applied to target.
 	 * @return Type of effect.
 	 */
-	protected abstract MobEffect getTargetMobEffect();
+	protected abstract Holder<MobEffect> getTargetMobEffect();
 
 	/**
 	 * Override to define which effect will be applied to attacker.
 	 * @return Type of effect.
 	 */
-	protected abstract MobEffect getAttackerMobEffect();
+	protected abstract Holder<MobEffect> getAttackerMobEffect();
 
 	/**
 	 * Override to define duration of the effect in seconds based on the enchantment level.
@@ -70,10 +71,10 @@ public abstract class ApplyTwoEffectsWeaponEnchantment extends ModEnchantment {
 		LivingEntity livingTarget = (LivingEntity)target;
 		
 		// Get reference to effect that should be applied.
-		MobEffect targetMobEffect = this.getTargetMobEffect();
+		Holder<MobEffect> targetMobEffect = this.getTargetMobEffect();
 		
 		// Get reference to effect that should be applied.
-		MobEffect attackerMobEffect = this.getAttackerMobEffect();
+		Holder<MobEffect> attackerMobEffect = this.getAttackerMobEffect();
 		
 		// IF: Player already has effect.
 		if (livingTarget.hasEffect(targetMobEffect)){

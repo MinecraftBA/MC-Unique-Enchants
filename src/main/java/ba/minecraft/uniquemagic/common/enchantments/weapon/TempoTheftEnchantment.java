@@ -2,6 +2,7 @@ package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.ApplyTwoEffectsWeaponEnchantment;
+import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 
@@ -27,7 +28,7 @@ public class TempoTheftEnchantment extends ApplyTwoEffectsWeaponEnchantment {
 	}
 
 	@Override
-	protected MobEffect getTargetMobEffect() {
+	protected Holder<MobEffect> getTargetMobEffect() {
 		return MobEffects.MOVEMENT_SLOWDOWN;
 	}
 	

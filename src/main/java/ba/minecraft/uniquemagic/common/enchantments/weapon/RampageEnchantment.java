@@ -3,6 +3,7 @@ package ba.minecraft.uniquemagic.common.enchantments.weapon;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.ApplyAttackerEffectWeaponEnchantment;
 import ba.minecraft.uniquemagic.common.mobeffects.BeneficialMobEffects;
+import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 
 public class RampageEnchantment extends ApplyAttackerEffectWeaponEnchantment {
@@ -28,8 +29,8 @@ public class RampageEnchantment extends ApplyAttackerEffectWeaponEnchantment {
 
 	
 	@Override
-	protected MobEffect getAttackerMobEffect() {
-		return BeneficialMobEffects.RAMPAGING.get();
+	protected Holder<MobEffect> getAttackerMobEffect() {
+		return BeneficialMobEffects.RAMPAGING.getHolder().get();
 	}
 
 	@Override

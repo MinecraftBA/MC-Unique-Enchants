@@ -6,6 +6,7 @@ import com.mojang.datafixers.util.Pair;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.ArmorEnchants;
+import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -91,8 +92,8 @@ public final class OmnivoreEnchantmentEventHandler {
 			MobEffectInstance mobEffectInstance = effectPair.getFirst();
 			
 			// Get reference to mob effect.
-			MobEffect mobEffect = mobEffectInstance.getEffect();
-			if(!(mobEffect.isBeneficial() == true)) {
+			Holder<MobEffect> mobEffect = mobEffectInstance.getEffect();
+			if(!(mobEffect.get().isBeneficial() == true)) {
 				// Remove mob effect from player.
 				player.removeEffect(mobEffect);
 			} 
