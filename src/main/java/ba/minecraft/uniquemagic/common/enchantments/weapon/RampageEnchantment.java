@@ -5,28 +5,13 @@ import ba.minecraft.uniquemagic.common.enchantments.base.ApplyAttackerEffectWeap
 import ba.minecraft.uniquemagic.common.mobeffects.BeneficialMobEffects;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.item.enchantment.Enchantment;
 
 public class RampageEnchantment extends ApplyAttackerEffectWeaponEnchantment {
 	
 	public RampageEnchantment() {
-		super(Rarity.VERY_RARE);
+		super(2, Enchantment.dynamicCost(5, 10), Enchantment.dynamicCost(25, 10), 4);
 	}
-	
-	@Override
-	public int getMaxLevel() {
-		return 5;
-	}
-	
-	@Override
-	public int getMinCost(int enchantmentLevel) {
-		return 25;
-	}
-
-	@Override
-	public int getMaxCost(int enchantmentLevel) {
-		return getMinCost(enchantmentLevel) + 50;
-	}
-
 	
 	@Override
 	protected Holder<MobEffect> getAttackerMobEffect() {

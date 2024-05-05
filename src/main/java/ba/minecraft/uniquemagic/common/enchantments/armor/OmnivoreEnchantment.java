@@ -1,25 +1,16 @@
 package ba.minecraft.uniquemagic.common.enchantments.armor;
 
 import ba.minecraft.uniquemagic.common.enchantments.base.ModEnchantment;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.common.Tags;
 
 public class OmnivoreEnchantment extends ModEnchantment {
 
     public OmnivoreEnchantment() {
-        super(Rarity.RARE, EnchantmentCategory.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD});
-    }
-
-    @Override
-    public int getMinCost(int enchantmentLevel) {
-        return 35;
-    }
-
-    @Override
-    public int getMaxCost(int enchantmentLevel) {
-        return this.getMinCost(enchantmentLevel) + 20;
+        super(ItemTags.HEAD_ARMOR_ENCHANTABLE, 2, 1, Enchantment.constantCost(20), Enchantment.constantCost(50), 4, new EquipmentSlot[]{ EquipmentSlot.HEAD });
     }
     
     @Override

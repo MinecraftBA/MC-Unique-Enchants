@@ -5,28 +5,14 @@ import ba.minecraft.uniquemagic.common.enchantments.base.ApplyTargetEffectWeapon
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.enchantment.Enchantment;
 
 public final class LevitateEnchantment extends ApplyTargetEffectWeaponEnchantment {
 	
 	public LevitateEnchantment() {
-		super(Rarity.UNCOMMON);
+		super(5, Enchantment.dynamicCost(5, 10), Enchantment.dynamicCost(25, 10) , 2);
 	}
 	
-	@Override
-	public int getMaxLevel() {
-		return 2;
-	}
-	
-	@Override
-	public int getMinCost(int enchantmentLevel) {
-		return 25;
-	}
-
-	@Override
-	public int getMaxCost(int enchantmentLevel) {
-		return getMinCost(enchantmentLevel) + 50;
-	}
-
 	@Override
 	protected Holder<MobEffect> getMobEffect() {
 		return MobEffects.LEVITATION;

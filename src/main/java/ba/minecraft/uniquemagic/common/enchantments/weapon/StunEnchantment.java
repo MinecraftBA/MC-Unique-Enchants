@@ -5,26 +5,12 @@ import ba.minecraft.uniquemagic.common.enchantments.base.ApplyTargetEffectWeapon
 import ba.minecraft.uniquemagic.common.mobeffects.HarmfulMobEffects;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.item.enchantment.Enchantment;
 
 public class StunEnchantment extends ApplyTargetEffectWeaponEnchantment {
 
 	public StunEnchantment() {
-		super(Rarity.VERY_RARE);
-	}
-
-	@Override
-	public int getMaxLevel() {
-		return 5;
-	}
-
-	@Override
-	public int getMinCost(int enchantmentLevel) {
-		return 10 + 20 * (enchantmentLevel - 1);
-	}
-
-	@Override
-	public int getMaxCost(int enchantmentLevel) {
-		return getMinCost(enchantmentLevel) + 50;
+		super(2, Enchantment.dynamicCost(5, 10), Enchantment.dynamicCost(25, 10), 4);
 	}
 
 	@Override

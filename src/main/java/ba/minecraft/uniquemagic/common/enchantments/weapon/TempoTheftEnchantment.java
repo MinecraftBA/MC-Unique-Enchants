@@ -5,35 +5,21 @@ import ba.minecraft.uniquemagic.common.enchantments.base.ApplyTwoEffectsWeaponEn
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.enchantment.Enchantment;
 
 public class TempoTheftEnchantment extends ApplyTwoEffectsWeaponEnchantment {
 	
 	public TempoTheftEnchantment() {
-		super(Rarity.VERY_RARE);
+		super(2, Enchantment.dynamicCost(5, 10), Enchantment.dynamicCost(25, 10), 4);
 	}
 	
-	@Override
-	public int getMaxLevel() {
-		return 1;
-	}
-	
-	@Override
-	public int getMinCost(int enchantmentLevel) {
-		return 25;
-	}
-
-	@Override
-	public int getMaxCost(int enchantmentLevel) {
-		return getMinCost(enchantmentLevel) + 50;
-	}
-
 	@Override
 	protected Holder<MobEffect> getTargetMobEffect() {
 		return MobEffects.MOVEMENT_SLOWDOWN;
 	}
 	
 	@Override
-	protected MobEffect getAttackerMobEffect() {
+	protected Holder<MobEffect> getAttackerMobEffect() {
 		return MobEffects.MOVEMENT_SPEED;
 	}
 

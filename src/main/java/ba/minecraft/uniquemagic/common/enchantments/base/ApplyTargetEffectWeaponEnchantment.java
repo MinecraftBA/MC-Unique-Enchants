@@ -1,19 +1,19 @@
 package ba.minecraft.uniquemagic.common.enchantments.base;
 
 import net.minecraft.core.Holder;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.level.Level;
 
 public abstract class ApplyTargetEffectWeaponEnchantment extends ModEnchantment {
 	
-	protected ApplyTargetEffectWeaponEnchantment(Rarity rarity) {
-		super(rarity, EnchantmentCategory.WEAPON, new EquipmentSlot[] { EquipmentSlot.MAINHAND });
+	protected ApplyTargetEffectWeaponEnchantment(int weight, Cost minCost, Cost maxCost, int anvilCost) {
+		super(ItemTags.WEAPON_ENCHANTABLE, weight, 5, minCost, maxCost, anvilCost, new EquipmentSlot[] { EquipmentSlot.MAINHAND });
 	}
 	
 	/**

@@ -4,6 +4,7 @@ import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.ModEnchantment;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -11,19 +12,15 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.Enchantment;
 
 public class LightningStrikerEnchantment extends ModEnchantment {
 
 	public LightningStrikerEnchantment() {
-		super(Rarity.VERY_RARE, EnchantmentCategory.WEAPON, new EquipmentSlot[] { EquipmentSlot.MAINHAND});
+		super(ItemTags.WEAPON_ENCHANTABLE, 2, 5, Enchantment.constantCost(25), Enchantment.dynamicCost(5, 8), 4, new EquipmentSlot[] { EquipmentSlot.MAINHAND });
 	}
 
 	@Override
-	public int getMaxLevel() {
-		return 5;
-	}
-
 	public void doPostAttack(LivingEntity attacker, Entity target, int enchantmentLevel) {
 		
 		// IF: Code is executing on the client.
@@ -63,7 +60,7 @@ public class LightningStrikerEnchantment extends ModEnchantment {
 		// Spawn lightning bolt at mob's location.
 		EntityType.LIGHTNING_BOLT.spawn(serverLevel, null, player, targetPosition, MobSpawnType.TRIGGERED, true, true);
 	}
-	
+
 	@Override
 	protected String getBaseName() {
 		return "Lightning Striker";
