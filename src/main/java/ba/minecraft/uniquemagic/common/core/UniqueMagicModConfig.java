@@ -61,6 +61,8 @@ public final class UniqueMagicModConfig {
     private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_CHANCE_CONFIG;
     private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_DURATION_CONFIG;
     
+    private static final ForgeConfigSpec.IntValue NETHER_SLAYER_BASE_MULTIPLIER_CONFIG;
+    
     public static int EXECUTE_BASE_CHANCE;
     public static int LIFE_STEAL_BASE_RATIO;
     
@@ -109,6 +111,8 @@ public final class UniqueMagicModConfig {
     
     public static int RAMPAGE_BASE_CHANCE;
     public static int RAMPAGE_BASE_DURATION;
+    
+    public static int NETHER_SLAYER_BASE_MULTIPLIER;
     static {
     	BUILDER.push("Configs for Unique Magic Mod");
 
@@ -207,6 +211,9 @@ public final class UniqueMagicModConfig {
 
     	RAMPAGE_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Rampage enchantment in seconds.")
     	        .defineInRange("Rampage base duration", 3, 1, 60);
+    	
+    	NETHER_SLAYER_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Nether Slayer enchantment.")
+    	        .defineInRange("Nether Slayer base multiplier", 3, 1, 10);
 
     	BUILDER.pop();
     	
@@ -265,5 +272,7 @@ public final class UniqueMagicModConfig {
 	
      	RAMPAGE_BASE_CHANCE = RAMPAGE_BASE_CHANCE_CONFIG.get();
     	RAMPAGE_BASE_DURATION = RAMPAGE_BASE_DURATION_CONFIG.get();
+    	
+    	NETHER_SLAYER_BASE_MULTIPLIER = NETHER_SLAYER_BASE_MULTIPLIER_CONFIG.get();
     }
 }
