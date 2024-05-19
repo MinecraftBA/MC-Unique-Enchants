@@ -19,13 +19,13 @@ public class NetherSlayerEnchantment  extends ModEnchantment {
 
 	@Override
 	protected String getBaseName() {
-		return "Illager's Bane";
+		return "Nether Slayer";
 	}
 
 	@Override
 	public float getDamageBonus(int enchantmentLevel, EntityType<?> mobType, ItemStack enchantedItem) {
 		if (mobType != null && mobType.is(ModEntityTypeTags.NETHER_MOBS)) {
-			return enchantmentLevel * UniqueMagicModConfig.ILLAGERS_BANE_BASE_MULTIPLIER;
+			return enchantmentLevel * UniqueMagicModConfig.NETHER_SLAYER_BASE_MULTIPLIER;
 		} else {
 			return 0;
 		}
@@ -37,4 +37,4 @@ public class NetherSlayerEnchantment  extends ModEnchantment {
 
 	 
 	
-}
+
