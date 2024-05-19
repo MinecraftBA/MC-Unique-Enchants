@@ -7,6 +7,7 @@ import ba.minecraft.uniquemagic.common.enchantments.DiggerEnchants;
 import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchants;
 import ba.minecraft.uniquemagic.common.mobeffects.BeneficialMobEffects;
 import ba.minecraft.uniquemagic.common.mobeffects.HarmfulMobEffects;
+import ba.minecraft.uniquemagic.common.tags.ModEntityTypeTags;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -32,6 +33,8 @@ public class UniqueMagicMod
     
     public UniqueMagicMod()
     {
+    	ModEntityTypeTags.init();
+    	
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         
         WeaponEnchants.REGISTRY.register(modEventBus);
