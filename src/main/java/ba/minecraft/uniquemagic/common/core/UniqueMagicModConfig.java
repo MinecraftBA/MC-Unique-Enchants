@@ -64,6 +64,8 @@ public final class UniqueMagicModConfig {
     
     private static final ForgeConfigSpec.IntValue LIGHTNING_PROTECTION_BASE_MULTIPLIER_CONFIG;
     
+    private static final ForgeConfigSpec.IntValue FREEZING_PROTECTION_BASE_MULTIPLIER_CONFIG;
+    
     public static int EXECUTE_BASE_CHANCE;
     public static int LIFE_STEAL_BASE_RATIO;
     
@@ -112,6 +114,8 @@ public final class UniqueMagicModConfig {
     public static int NETHER_SLAYER_BASE_MULTIPLIER;
 
     public static int LIGHTNING_PROTECTION_BASE_MULTIPLIER;
+    
+    public static int FREEZING_PROTECTION_BASE_MULTIPLIER;
 
     public static int RAMPAGE_BASE_CHANCE;
     public static int RAMPAGE_BASE_DURATION;
@@ -220,6 +224,9 @@ public final class UniqueMagicModConfig {
 
     	LIGHTNING_PROTECTION_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Lightning Protection enchantment.")
     	        .defineInRange("Lightning Protection base multiplier", 2, 1, 3);
+    	
+    	FREEZING_PROTECTION_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Freezing Protection enchantment.")
+    	        .defineInRange("Freezing Protection base multiplier", 2, 1, 3);
 
     	BUILDER.pop();
     	
@@ -281,5 +288,6 @@ public final class UniqueMagicModConfig {
     	RAMPAGE_BASE_DURATION = RAMPAGE_BASE_DURATION_CONFIG.get();
 
     	LIGHTNING_PROTECTION_BASE_MULTIPLIER = LIGHTNING_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
+    	FREEZING_PROTECTION_BASE_MULTIPLIER = FREEZING_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
     }
 }
