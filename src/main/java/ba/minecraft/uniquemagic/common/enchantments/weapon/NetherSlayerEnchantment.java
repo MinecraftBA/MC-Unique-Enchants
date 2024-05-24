@@ -30,9 +30,3 @@ public class NetherSlayerEnchantment  extends ModEnchantment {
 	}
 
 }
-
-   
-
-	 
-	
-
