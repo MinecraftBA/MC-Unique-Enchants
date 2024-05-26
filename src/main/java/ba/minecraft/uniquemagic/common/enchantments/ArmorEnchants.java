@@ -1,6 +1,7 @@
 package ba.minecraft.uniquemagic.common.enchantments;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
+import ba.minecraft.uniquemagic.common.enchantments.armor.ExplorationEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.armor.FreezingProtectionEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.armor.LightningProtectionEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.armor.MagicProtectionEnchantment;
@@ -26,4 +27,7 @@ public class ArmorEnchants {
 	
 	public static final RegistryObject<Enchantment> MAGIC_PROTECTION = 
 			REGISTRY.register("magic_protection",  () -> new MagicProtectionEnchantment());
+	
+	public static final RegistryObject<Enchantment> EXPLORATION = 
+			REGISTRY.register("exploration",  () -> new ExplorationEnchantment());
 }

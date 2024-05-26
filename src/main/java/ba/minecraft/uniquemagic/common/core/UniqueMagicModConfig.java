@@ -68,6 +68,8 @@ public final class UniqueMagicModConfig {
     
     private static final ForgeConfigSpec.IntValue MAGIC_PROTECTION_BASE_MULTIPLIER_CONFIG;
     
+    private static final ForgeConfigSpec.IntValue EXPLORATION_BASE_MULTIPLIER_CONFIG;
+    
     public static int EXECUTE_BASE_CHANCE;
     public static int LIFE_STEAL_BASE_RATIO;
     
@@ -123,6 +125,8 @@ public final class UniqueMagicModConfig {
 
     public static int RAMPAGE_BASE_CHANCE;
     public static int RAMPAGE_BASE_DURATION;
+    
+    public static int EXPLORATION_BASE_MULTIPLIER;
     
     static {
     	BUILDER.push("Configs for Unique Magic Mod");
@@ -234,7 +238,10 @@ public final class UniqueMagicModConfig {
     	
     	MAGIC_PROTECTION_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Magic Protection enchantment.")
     	        .defineInRange("Magic Protection base multiplier", 2, 1, 3);
-
+    	
+    	EXPLORATION_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Exploration enchantment.")
+    	        .defineInRange("Magic Protection base multiplier", 2, 1, 3);
+    	
     	BUILDER.pop();
     	
     	SPEC = BUILDER.build();
@@ -297,5 +304,7 @@ public final class UniqueMagicModConfig {
     	LIGHTNING_PROTECTION_BASE_MULTIPLIER = LIGHTNING_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
     	FREEZING_PROTECTION_BASE_MULTIPLIER = FREEZING_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
     	MAGIC_PROTECTION_BASE_MULTIPLIER = MAGIC_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
+    	
+    	EXPLORATION_BASE_MULTIPLIER = EXPLORATION_BASE_MULTIPLIER_CONFIG.get();
     }
 }
