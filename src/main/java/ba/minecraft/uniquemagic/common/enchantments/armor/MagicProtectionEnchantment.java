@@ -2,6 +2,7 @@ package ba.minecraft.uniquemagic.common.enchantments.armor;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.ModEnchantment;
+import ba.minecraft.uniquemagic.common.tags.ModDamageTypeTags;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageSource;
@@ -28,8 +29,8 @@ public class MagicProtectionEnchantment extends ModEnchantment{
             return 0;
         }
         
-		// IF: Damage is coming from lightining.
-		if (damageSource.is(DamageTypeTags.WITCH_RESISTANT_TO)) {
+		// IF: Damage is coming from magic.
+		if (damageSource.is(ModDamageTypeTags.MAGIC)) {
 			return enchantmentLevel * UniqueMagicModConfig.MAGIC_PROTECTION_BASE_MULTIPLIER;
 		}
 		

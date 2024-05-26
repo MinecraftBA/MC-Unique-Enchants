@@ -5,7 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 
-public class ModEntityTypeTags {
+public final class ModEntityTypeTags {
 
     public static void init() {}
 
