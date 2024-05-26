@@ -14,10 +14,10 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
 @EventBusSubscriber(modid = UniqueMagicMod.MODID, bus = Bus.FORGE)
-public class ExplorationEnchantmentEventHandler {
+public final class ExplorationEnchantmentEventHandler {
 	
 	@SubscribeEvent
-	public void onPlayerXpChange(final PlayerXpEvent.XpChange event) {
+	public static void onPlayerXpChange(final PlayerXpEvent.XpChange event) {
 
 		// Get reference to player that has picked up orb.
         Player player = event.getEntity();
