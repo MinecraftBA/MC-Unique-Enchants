@@ -128,6 +128,9 @@ public final class TriggerEnchantmentEventHandler {
         	
         	// Get reference to block.
         	TntBlock tnt = (TntBlock)blockState.getBlock();
+
+        	// Clear TNT block from position where it was hit - otherwise it explodes twice.
+        	level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 11);
         	
         	// Explode it.
         	tnt.explode(level, blockPos);
