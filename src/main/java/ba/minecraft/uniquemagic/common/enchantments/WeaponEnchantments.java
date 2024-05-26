@@ -25,7 +25,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class WeaponEnchants {
+public class WeaponEnchantments {
 
 	public static final DeferredRegister<Enchantment> REGISTRY = 
 			DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, UniqueMagicMod.MODID);

@@ -2,13 +2,14 @@ package ba.minecraft.uniquemagic.common.enchantments.armor;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.ModEnchantment;
+import ba.minecraft.uniquemagic.common.helpers.ModEnchantmentHelper;
 import ba.minecraft.uniquemagic.common.tags.ModDamageTypeTags;
+import ba.minecraft.uniquemagic.common.tags.ModEnchantmentTags;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.ProtectionEnchantment;
 
 public class MagicProtectionEnchantment extends ModEnchantment{
 	
@@ -40,19 +41,12 @@ public class MagicProtectionEnchantment extends ModEnchantment{
 	@Override
 	protected boolean checkCompatibility(Enchantment otherEnchantment) {
 
-		// IF: Protection enchantment is already applied.
-		if (otherEnchantment instanceof ProtectionEnchantment protectionEnchantment) {
-
-			// IF: Protection enchantment is fall.
-			if(protectionEnchantment.type == ProtectionEnchantment.Type.FALL) {
-				
-				// It is possible to enchant.
-				return true;
-			} else {
-				// Otherwise it should not be possible to combine.
-				return false;
-			}
-        }
+		// IF: Other enchantment is also attack damage protection.
+		if(ModEnchantmentHelper.is(otherEnchantment, ModEnchantmentTags.PROTECTION)) {
+			
+			// Do nothing.
+			return false;
+		}
         
         return super.checkCompatibility(otherEnchantment);
 	}

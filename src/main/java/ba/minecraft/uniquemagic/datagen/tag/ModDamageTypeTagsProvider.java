@@ -12,7 +12,7 @@ import net.minecraft.data.tags.DamageTypeTagsProvider;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class ModDamageTypeTagsProvider extends DamageTypeTagsProvider {
+public final class ModDamageTypeTagsProvider extends DamageTypeTagsProvider {
 
 	public ModDamageTypeTagsProvider(PackOutput packOutput, CompletableFuture<Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
 		super(packOutput, lookupProvider, UniqueMagicMod.MODID, existingFileHelper);

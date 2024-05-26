@@ -2,7 +2,7 @@ package ba.minecraft.uniquemagic.common.event.enchantments.armor;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
-import ba.minecraft.uniquemagic.common.enchantments.ArmorEnchants;
+import ba.minecraft.uniquemagic.common.enchantments.ArmorEnchantments;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -43,7 +43,7 @@ public class ExplorationEnchantmentEventHandler {
     	}
     	
     	// Get enchantment level on helmet.
-    	int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(ArmorEnchants.EXPLORATION.get(), helmet);
+    	int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(ArmorEnchantments.EXPLORATION.get(), helmet);
         
     	// IF: There is
     	if (enchantmentLevel > 0) {

@@ -1,7 +1,7 @@
 package ba.minecraft.uniquemagic.common.event.enchantments.tools;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
-import ba.minecraft.uniquemagic.common.enchantments.DiggerEnchants;
+import ba.minecraft.uniquemagic.common.enchantments.DiggerEnchantments;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -40,7 +40,7 @@ public final class TimberEnchantmentEventHandler {
 		ItemStack item = player.getMainHandItem();
 		
 		// Get level of enchantment on item.
-		int enchantmentLevel = item.getEnchantmentLevel(DiggerEnchants.TIMBER.get());
+		int enchantmentLevel = item.getEnchantmentLevel(DiggerEnchantments.TIMBER.get());
 		
 		// IF: Enchantment level is not at least 1;
 		if (enchantmentLevel < 1) {

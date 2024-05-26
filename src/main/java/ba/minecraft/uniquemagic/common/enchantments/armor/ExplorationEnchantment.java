@@ -5,12 +5,13 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.MendingEnchantment;
 import net.minecraftforge.common.Tags;
 
 public class ExplorationEnchantment extends ModEnchantment {
 
     public ExplorationEnchantment() {
-        super(ItemTags.HEAD_ARMOR_ENCHANTABLE, 2, 5, Enchantment.constantCost(20), Enchantment.constantCost(50), 4, new EquipmentSlot[]{ EquipmentSlot.HEAD });
+        super(ItemTags.HEAD_ARMOR_ENCHANTABLE, 1, 5, Enchantment.dynamicCost(1, 8), Enchantment.dynamicCost(21, 8), 8, new EquipmentSlot[]{ EquipmentSlot.HEAD });
     }
     
     @Override
@@ -27,4 +28,18 @@ public class ExplorationEnchantment extends ModEnchantment {
 	protected String getBaseName() {
 		return "Exploration";
 	}
+
+	@Override
+	protected boolean checkCompatibility(Enchantment otherEnchantment) {
+
+		// IF: Other enchantment is Mending.
+		if (otherEnchantment instanceof MendingEnchantment) {
+			
+			// Cannot work together.
+			return false;
+		}
+		
+		return super.checkCompatibility(otherEnchantment);
+	}
+	
 }

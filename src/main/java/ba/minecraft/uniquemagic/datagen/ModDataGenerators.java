@@ -5,6 +5,7 @@ import java.util.concurrent.CompletableFuture;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.datagen.tag.ModEntityTypeTagsProvider;
 import ba.minecraft.uniquemagic.datagen.tag.ModDamageTypeTagsProvider;
+import ba.minecraft.uniquemagic.datagen.tag.ModEnchantmentTagsProvider;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -32,11 +33,10 @@ public final class ModDataGenerators {
 		// Get reference to pack output.
 		PackOutput packOutput = dataGen.getPackOutput();
 		
-		// Registration of entity type tags provider.
+		// Registration of tags providers.
 		dataGen.addProvider(event.includeServer(), new ModEntityTypeTagsProvider(packOutput, lookupProvider, exFileHelper));
-
-		// Registration of damage type tags provider.
 		dataGen.addProvider(event.includeServer(), new ModDamageTypeTagsProvider(packOutput, lookupProvider, exFileHelper));
+		dataGen.addProvider(event.includeServer(), new ModEnchantmentTagsProvider(packOutput, lookupProvider, exFileHelper));
 	}
 	
 }

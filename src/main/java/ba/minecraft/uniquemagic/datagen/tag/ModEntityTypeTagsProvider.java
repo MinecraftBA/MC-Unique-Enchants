@@ -10,7 +10,7 @@ import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class ModEntityTypeTagsProvider extends EntityTypeTagsProvider
+public final class ModEntityTypeTagsProvider extends EntityTypeTagsProvider
 {
     public ModEntityTypeTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper)
     {

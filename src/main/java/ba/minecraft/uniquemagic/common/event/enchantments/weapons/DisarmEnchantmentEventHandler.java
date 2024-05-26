@@ -2,7 +2,7 @@ package ba.minecraft.uniquemagic.common.event.enchantments.weapons;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
-import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchants;
+import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchantments;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
@@ -56,7 +56,7 @@ public final class DisarmEnchantmentEventHandler {
 		}
 		
 		// Get level of disarm enchantment.
-		int enchantmentLevel = attackerItem.getEnchantmentLevel(WeaponEnchants.DISARM.get());
+		int enchantmentLevel = attackerItem.getEnchantmentLevel(WeaponEnchantments.DISARM.get());
 		
 		// IF: Enchantment was not found on weapon.
 		if (enchantmentLevel < 1) {
