@@ -3,6 +3,7 @@ package ba.minecraft.uniquemagic.common.enchantments;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.armor.FreezingProtectionEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.armor.LightningProtectionEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.armor.MagicProtectionEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.armor.OmnivoreEnchantment;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.registries.DeferredRegister;
@@ -22,4 +23,7 @@ public class ArmorEnchants {
 
 	public static final RegistryObject<Enchantment> FREEZING_PROTECTION = 
 			REGISTRY.register("freezing_protection",  () -> new FreezingProtectionEnchantment());
+	
+	public static final RegistryObject<Enchantment> MAGIC_PROTECTION = 
+			REGISTRY.register("magic_protection",  () -> new MagicProtectionEnchantment());
 }
