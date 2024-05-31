@@ -94,15 +94,15 @@ public final class TriggerEnchantmentEventHandler {
     		// Get reference to entity that was hit.
         	Entity target = entityHitResult.getEntity();
         	
-        	// Try to cast entity as creeper.
-        	Creeper creeper = (Creeper) target;
-
-        	// IF: Target was not creeper.
-        	if(creeper == null) {
+        	// IF: Target is not an instance of a creeper.
+        	if(!(target instanceof Creeper)) {
         		
         		// Do nothing.
         		return;
         	}
+        	
+        	// Try to cast entity as creeper.
+        	Creeper creeper = (Creeper) target;
         	
         	// Ignite creeper causing it to blow up.
     		creeper.ignite();
