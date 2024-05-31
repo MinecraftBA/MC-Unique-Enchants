@@ -57,9 +57,18 @@ public final class UniqueMagicModConfig {
     private static final ForgeConfigSpec.IntValue DISARM_BASE_CHANCE_CONFIG;
     
     private static final ForgeConfigSpec.IntValue ILLAGERS_BANE_BASE_MULTIPLIER_CONFIG;
+    private static final ForgeConfigSpec.IntValue NETHER_SLAYER_BASE_MULTIPLIER_CONFIG;
     
     private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_CHANCE_CONFIG;
     private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_DURATION_CONFIG;
+    
+    private static final ForgeConfigSpec.IntValue LIGHTNING_PROTECTION_BASE_MULTIPLIER_CONFIG;
+    
+    private static final ForgeConfigSpec.IntValue FREEZING_PROTECTION_BASE_MULTIPLIER_CONFIG;
+    
+    private static final ForgeConfigSpec.IntValue MAGIC_PROTECTION_BASE_MULTIPLIER_CONFIG;
+    
+    private static final ForgeConfigSpec.IntValue EXPLORATION_BASE_PERCENTAGE_INCREMENT_CONFIG;
     
     public static int EXECUTE_BASE_CHANCE;
     public static int LIFE_STEAL_BASE_RATIO;
@@ -106,9 +115,19 @@ public final class UniqueMagicModConfig {
     public static int DISARM_BASE_CHANCE;
     
     public static int ILLAGERS_BANE_BASE_MULTIPLIER;
+    public static int NETHER_SLAYER_BASE_MULTIPLIER;
+
+    public static int LIGHTNING_PROTECTION_BASE_MULTIPLIER;
     
+    public static int FREEZING_PROTECTION_BASE_MULTIPLIER;
+    
+    public static int MAGIC_PROTECTION_BASE_MULTIPLIER;
+
     public static int RAMPAGE_BASE_CHANCE;
     public static int RAMPAGE_BASE_DURATION;
+    
+    public static int EXPLORATION_BASE_PERCENTAGE_INCREMENT;
+    
     static {
     	BUILDER.push("Configs for Unique Magic Mod");
 
@@ -201,13 +220,28 @@ public final class UniqueMagicModConfig {
     	
     	ILLAGERS_BANE_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Illager's Bane enchantment.")
     	        .defineInRange("Illager's Bane base multiplier", 3, 1, 10);
-    	
+
+    	NETHER_SLAYER_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Nether Slayer enchantment.")
+    	        .defineInRange("Nether Slayer base multiplier", 3, 1, 10);
+
     	RAMPAGE_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Rampage enchantment to trigger.")
     	        .defineInRange("Rampage base chance", 5, 1, 20);
 
     	RAMPAGE_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Rampage enchantment in seconds.")
     	        .defineInRange("Rampage base duration", 3, 1, 60);
 
+    	LIGHTNING_PROTECTION_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Lightning Protection enchantment.")
+    	        .defineInRange("Lightning Protection base multiplier", 2, 1, 3);
+    	
+    	FREEZING_PROTECTION_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Freezing Protection enchantment.")
+    	        .defineInRange("Freezing Protection base multiplier", 2, 1, 3);
+    	
+    	MAGIC_PROTECTION_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Magic Protection enchantment.")
+    	        .defineInRange("Magic Protection base multiplier", 2, 1, 3);
+    	
+    	EXPLORATION_BASE_PERCENTAGE_INCREMENT_CONFIG = BUILDER.comment("Base percentage increment for Exploration enchantment.")
+    	        .defineInRange("Exploration base multiplier", 20, 1, 100);
+    	
     	BUILDER.pop();
     	
     	SPEC = BUILDER.build();
@@ -262,8 +296,15 @@ public final class UniqueMagicModConfig {
     	DISARM_BASE_CHANCE = DISARM_BASE_CHANCE_CONFIG.get();
     	
     	ILLAGERS_BANE_BASE_MULTIPLIER = ILLAGERS_BANE_BASE_MULTIPLIER_CONFIG.get();
+    	NETHER_SLAYER_BASE_MULTIPLIER = NETHER_SLAYER_BASE_MULTIPLIER_CONFIG.get();
 	
      	RAMPAGE_BASE_CHANCE = RAMPAGE_BASE_CHANCE_CONFIG.get();
     	RAMPAGE_BASE_DURATION = RAMPAGE_BASE_DURATION_CONFIG.get();
+
+    	LIGHTNING_PROTECTION_BASE_MULTIPLIER = LIGHTNING_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
+    	FREEZING_PROTECTION_BASE_MULTIPLIER = FREEZING_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
+    	MAGIC_PROTECTION_BASE_MULTIPLIER = MAGIC_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
+    	
+    	EXPLORATION_BASE_PERCENTAGE_INCREMENT = EXPLORATION_BASE_PERCENTAGE_INCREMENT_CONFIG.get();
     }
 }

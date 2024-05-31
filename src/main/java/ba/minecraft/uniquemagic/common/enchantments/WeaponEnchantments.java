@@ -11,6 +11,7 @@ import ba.minecraft.uniquemagic.common.enchantments.weapon.IllagersBaneEnchantme
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LevitateEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LifeStealEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LightningStrikerEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.NetherSlayerEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.PoisonEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.RampageEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.SlowEnchantment;
@@ -24,7 +25,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class WeaponEnchants {
+public class WeaponEnchantments {
 
 	public static final DeferredRegister<Enchantment> REGISTRY = 
 			DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, UniqueMagicMod.MODID);
@@ -82,5 +83,8 @@ public class WeaponEnchants {
 	
 	public static final RegistryObject<Enchantment> RAMPAGE = 
 			REGISTRY.register("rampage",  () -> new RampageEnchantment());
+	
+	public static final RegistryObject<Enchantment> NETHER_SLAYER = 
+			REGISTRY.register("nether_slayer",  () -> new NetherSlayerEnchantment());
 }
 

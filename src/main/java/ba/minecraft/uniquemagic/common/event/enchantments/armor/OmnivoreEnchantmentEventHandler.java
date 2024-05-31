@@ -3,7 +3,7 @@ package ba.minecraft.uniquemagic.common.event.enchantments.armor;
 import java.util.List;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
-import ba.minecraft.uniquemagic.common.enchantments.ArmorEnchants;
+import ba.minecraft.uniquemagic.common.enchantments.ArmorEnchantments;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.effect.MobEffect;
@@ -59,7 +59,7 @@ public final class OmnivoreEnchantmentEventHandler {
 		}
 		
 		// IF: Enchant is not applied on head item.
-		if (helmet.getEnchantmentLevel(ArmorEnchants.OMNIVORE.get()) < 1) {
+		if (helmet.getEnchantmentLevel(ArmorEnchantments.OMNIVORE.get()) < 1) {
 
 			// Do nothing.
 			return;
