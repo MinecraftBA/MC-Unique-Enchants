@@ -3,8 +3,6 @@ package ba.minecraft.uniquemagic.common.enchantments.weapon;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.ModEnchantment;
 import ba.minecraft.uniquemagic.common.tags.ModEntityTypeTags;
-import net.minecraft.core.HolderSet;
-import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -19,7 +17,7 @@ public final class PillagingEnchantment extends ModEnchantment {
 
 	@Override
 	protected String getBaseName() {
-		return "Illager's Bane";
+		return "Pillaging";
 	}
 
 	@Override
