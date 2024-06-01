@@ -2,6 +2,7 @@ package ba.minecraft.uniquemagic.common.enchantments.weapon;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.base.ModEnchantment;
+import ba.minecraft.uniquemagic.common.tags.ModEntityTypeTags;
 import net.minecraft.core.HolderSet;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
@@ -22,9 +23,9 @@ public final class PillagingEnchantment extends ModEnchantment {
 	}
 
 	@Override
-	public float getDamageBonus(int enchantmentLevel, EntityType<?> mobType, ItemStack enchantedItem) {
-		if (mobType != null && mobType.is( EntityType.IRON_GOLEM)|| mobType.is(EntityType.VILLAGER) ) {
-			return enchantmentLevel * UniqueMagicModConfig.ILLAGERS_BANE_BASE_MULTIPLIER;
+	public float getDamageBonus(int enchantmentLevel, EntityType<?> mobType , ItemStack enchantedItem) {
+		if (mobType != null && mobType.is(ModEntityTypeTags.VILLAGE_INHABITANTS)) {
+			return enchantmentLevel * UniqueMagicModConfig.PILLAGING_BASE_MULTIPLIER;
 		} else {
 			return 0;
 		}

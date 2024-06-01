@@ -10,6 +10,8 @@ public final class ModEntityTypeTags {
     public static void init() {}
 
     public static final TagKey<EntityType<?>> NETHER_MOBS = create("nether_mobs");
+    
+    public static final TagKey<EntityType<?>> VILLAGE_INHABITANTS = create("village_inhabitants");
 
     private static TagKey<EntityType<?>> create(String name)
     {
