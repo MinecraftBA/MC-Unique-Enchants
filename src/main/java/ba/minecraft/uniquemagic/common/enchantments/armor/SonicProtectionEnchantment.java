@@ -32,7 +32,7 @@ public class SonicProtectionEnchantment extends ModEnchantment {
         
 		// IF: Damage is coming from lightining.
 		if (damageSource.is(ModDamageTypeTags.SONIC)) {
-			return enchantmentLevel * UniqueMagicModConfig.LIGHTNING_PROTECTION_BASE_MULTIPLIER;
+			return enchantmentLevel * UniqueMagicModConfig.SONIC_PROTECTION_BASE_MULTIPLIER;
 		}
 		
 		return 0;
