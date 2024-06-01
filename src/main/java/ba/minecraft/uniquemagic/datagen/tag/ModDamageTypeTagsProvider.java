@@ -21,9 +21,12 @@ public final class ModDamageTypeTagsProvider extends DamageTypeTagsProvider {
 	@Override
 	protected void addTags(Provider provider) {
         tag(ModDamageTypeTags.MAGIC)
-    	.add(DamageTypes.MAGIC)
-    	.add(DamageTypes.INDIRECT_MAGIC);
-	}
+	    	.add(DamageTypes.MAGIC)
+	    	.add(DamageTypes.INDIRECT_MAGIC);
+
+        tag(ModDamageTypeTags.SONIC)
+	    	.add(DamageTypes.SONIC_BOOM);
+}
 
 	@Override
 	public String getName() {
