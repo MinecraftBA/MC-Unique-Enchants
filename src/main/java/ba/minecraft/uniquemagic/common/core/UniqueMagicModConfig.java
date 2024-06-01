@@ -67,6 +67,8 @@ public final class UniqueMagicModConfig {
     
     private static final ForgeConfigSpec.IntValue FREEZING_PROTECTION_BASE_MULTIPLIER_CONFIG;
     
+    private static final ForgeConfigSpec.IntValue SONIC_PROTECTION_BASE_MULTIPLIER_CONFIG;
+    
     private static final ForgeConfigSpec.IntValue MAGIC_PROTECTION_BASE_MULTIPLIER_CONFIG;
     
     private static final ForgeConfigSpec.IntValue EXPLORATION_BASE_PERCENTAGE_INCREMENT_CONFIG;
@@ -124,6 +126,8 @@ public final class UniqueMagicModConfig {
     public static int FREEZING_PROTECTION_BASE_MULTIPLIER;
     
     public static int MAGIC_PROTECTION_BASE_MULTIPLIER;
+    
+    public static int SONIC_PROTECTION_BASE_MULTIPLIER;
 
     public static int RAMPAGE_BASE_CHANCE;
     public static int RAMPAGE_BASE_DURATION;
@@ -241,6 +245,9 @@ public final class UniqueMagicModConfig {
     	FREEZING_PROTECTION_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Freezing Protection enchantment.")
     	        .defineInRange("Freezing Protection base multiplier", 2, 1, 3);
     	
+    	SONIC_PROTECTION_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Sonic Protection enchantment.")
+    	        .defineInRange("Sonic Protection base multiplier", 2, 1, 3);
+    	
     	MAGIC_PROTECTION_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Magic Protection enchantment.")
     	        .defineInRange("Magic Protection base multiplier", 2, 1, 3);
     	
@@ -310,6 +317,7 @@ public final class UniqueMagicModConfig {
     	LIGHTNING_PROTECTION_BASE_MULTIPLIER = LIGHTNING_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
     	FREEZING_PROTECTION_BASE_MULTIPLIER = FREEZING_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
     	MAGIC_PROTECTION_BASE_MULTIPLIER = MAGIC_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
+    	SONIC_PROTECTION_BASE_MULTIPLIER = SONIC_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
     	
     	EXPLORATION_BASE_PERCENTAGE_INCREMENT = EXPLORATION_BASE_PERCENTAGE_INCREMENT_CONFIG.get();
     }
