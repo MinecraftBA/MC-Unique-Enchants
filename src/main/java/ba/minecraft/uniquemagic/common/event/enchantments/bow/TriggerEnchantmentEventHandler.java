@@ -32,15 +32,15 @@ public final class TriggerEnchantmentEventHandler {
 		// Get reference to projectile.
 		Projectile projectile = event.getProjectile();
 		
-		// Cast projectile to arrow.
-		AbstractArrow arrow = (AbstractArrow)projectile;
-		
 		// IF: Projectile is not arrow.
-		if(arrow == null) {
+		if(!(projectile instanceof AbstractArrow)) {
 			
 			// Do nothing.
 			return;
 		}
+
+		// Cast projectile to arrow.
+		AbstractArrow arrow = (AbstractArrow)projectile;
 
 		// Get reference to owner of arrow.
 		Entity owner = arrow.getOwner();
