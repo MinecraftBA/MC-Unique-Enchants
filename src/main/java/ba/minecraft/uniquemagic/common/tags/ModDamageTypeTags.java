@@ -10,6 +10,8 @@ public final class ModDamageTypeTags {
 	public static void init() {}
 
     public static final TagKey<DamageType> MAGIC = create("magic");
+    public static final TagKey<DamageType> SONIC = create("sonic");
+    public static final TagKey<DamageType> RADIATION = create("radiation");
 
     private static TagKey<DamageType> create(String name)
     {

@@ -6,6 +6,7 @@ import ba.minecraft.uniquemagic.common.enchantments.armor.FreezingProtectionEnch
 import ba.minecraft.uniquemagic.common.enchantments.armor.LightningProtectionEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.armor.MagicProtectionEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.armor.OmnivoreEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.armor.SonicProtectionEnchantment;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -27,6 +28,9 @@ public class ArmorEnchantments {
 	
 	public static final RegistryObject<Enchantment> MAGIC_PROTECTION = 
 			REGISTRY.register("magic_protection",  () -> new MagicProtectionEnchantment());
+	
+	public static final RegistryObject<Enchantment> SONIC_PROTECTION = 
+			REGISTRY.register("sonic_protection",  () -> new SonicProtectionEnchantment());
 	
 	public static final RegistryObject<Enchantment> EXPLORATION = 
 			REGISTRY.register("exploration",  () -> new ExplorationEnchantment());

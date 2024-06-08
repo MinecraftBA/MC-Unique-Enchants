@@ -12,6 +12,7 @@ import ba.minecraft.uniquemagic.common.enchantments.weapon.LevitateEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LifeStealEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.LightningStrikerEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.NetherSlayerEnchantment;
+import ba.minecraft.uniquemagic.common.enchantments.weapon.PillagingEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.PoisonEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.RampageEnchantment;
 import ba.minecraft.uniquemagic.common.enchantments.weapon.SlowEnchantment;
@@ -86,5 +87,8 @@ public class WeaponEnchantments {
 	
 	public static final RegistryObject<Enchantment> NETHER_SLAYER = 
 			REGISTRY.register("nether_slayer",  () -> new NetherSlayerEnchantment());
+	
+	public static final RegistryObject<Enchantment> PILLAGING = 
+			REGISTRY.register("pillaging",  () -> new PillagingEnchantment());
 }
 

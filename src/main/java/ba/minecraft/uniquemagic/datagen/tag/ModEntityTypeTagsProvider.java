@@ -31,6 +31,11 @@ public final class ModEntityTypeTagsProvider extends EntityTypeTagsProvider
            	.add(EntityType.ZOGLIN)
            	.add(EntityType.ZOMBIFIED_PIGLIN)
             .add(EntityType.GHAST);
+        
+	    tag(ModEntityTypeTags.VILLAGE_INHABITANTS)
+			.add(EntityType.VILLAGER)
+			.add(EntityType.IRON_GOLEM);
+			
     }
 
     @Override
