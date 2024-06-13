@@ -7,6 +7,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -40,7 +41,7 @@ public final class TimberEnchantmentEventHandler {
 		ItemStack item = player.getMainHandItem();
 		
 		// Get level of enchantment on item.
-		int enchantmentLevel = item.getEnchantmentLevel(ToolEnchantments.TIMBER.get());
+		int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(ToolEnchantments.TIMBER.getHolder().get(), item);
 		
 		// IF: Enchantment level is not at least 1;
 		if (enchantmentLevel < 1) {

@@ -14,6 +14,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.FoodProperties.PossibleEffect;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent.Finish;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -59,7 +60,7 @@ public final class OmnivoreEnchantmentEventHandler {
 		}
 		
 		// IF: Enchant is not applied on head item.
-		if (helmet.getEnchantmentLevel(ArmorEnchantments.OMNIVORE.get()) < 1) {
+		if (EnchantmentHelper.getItemEnchantmentLevel(ArmorEnchantments.OMNIVORE.getHolder().get(), helmet) < 1) {
 
 			// Do nothing.
 			return;

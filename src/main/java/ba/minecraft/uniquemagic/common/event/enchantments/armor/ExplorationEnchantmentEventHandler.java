@@ -43,7 +43,7 @@ public final class ExplorationEnchantmentEventHandler {
     	}
     	
     	// Get enchantment level on helmet.
-    	int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(ArmorEnchantments.EXPLORATION.get(), helmet);
+    	int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(ArmorEnchantments.EXPLORATION.getHolder().get(), helmet);
         
     	// IF: There is
     	if (enchantmentLevel > 0) {

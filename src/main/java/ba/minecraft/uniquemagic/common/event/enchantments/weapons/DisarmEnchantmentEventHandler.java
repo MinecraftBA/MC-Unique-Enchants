@@ -9,6 +9,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -56,7 +57,7 @@ public final class DisarmEnchantmentEventHandler {
 		}
 		
 		// Get level of disarm enchantment.
-		int enchantmentLevel = attackerItem.getEnchantmentLevel(WeaponEnchantments.DISARM.get());
+		int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(WeaponEnchantments.DISARM.getHolder().get(), attackerItem);
 		
 		// IF: Enchantment was not found on weapon.
 		if (enchantmentLevel < 1) {

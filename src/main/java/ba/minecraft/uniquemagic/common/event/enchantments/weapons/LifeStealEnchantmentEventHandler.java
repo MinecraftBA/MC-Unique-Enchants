@@ -50,7 +50,7 @@ public final class LifeStealEnchantmentEventHandler {
 		float damageDealt = event.getAmount();
 
 		// Get level of enchantment player has on equipped items.
-		int enchantmentLevel = EnchantmentHelper.getEnchantmentLevel(WeaponEnchantments.LIFE_STEAL.get(), player);
+		int enchantmentLevel = EnchantmentHelper.getEnchantmentLevel(WeaponEnchantments.LIFE_STEAL.getHolder().get(), player);
 				
 		// IF: Enchantment level is not at least 1;
 		if (enchantmentLevel < 1) {

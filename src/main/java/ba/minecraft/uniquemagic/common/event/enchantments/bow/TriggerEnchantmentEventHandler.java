@@ -76,7 +76,7 @@ public final class TriggerEnchantmentEventHandler {
     	}
 
     	// Get enchantment level on helmet.
-    	int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(BowEnchantments.TRIGGER.get(), weapon);
+    	int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(BowEnchantments.TRIGGER.getHolder().get(), weapon);
 
     	// IF: There is no enchantment.
     	if(enchantmentLevel == 0) {
