@@ -2,10 +2,6 @@ package ba.minecraft.uniquemagic.common.core;
 
 import com.mojang.logging.LogUtils;
 
-import ba.minecraft.uniquemagic.common.enchantments.ArmorEnchantments;
-import ba.minecraft.uniquemagic.common.enchantments.BowEnchantments;
-import ba.minecraft.uniquemagic.common.enchantments.ToolEnchantments;
-import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchantments;
 import ba.minecraft.uniquemagic.common.mobeffects.BeneficialMobEffects;
 import ba.minecraft.uniquemagic.common.mobeffects.HarmfulMobEffects;
 import ba.minecraft.uniquemagic.common.tags.ModEntityTypeTags;
@@ -37,11 +33,6 @@ public class UniqueMagicMod
     	ModEntityTypeTags.init();
     	
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        
-        ArmorEnchantments.REGISTRY.register(modEventBus);
-        BowEnchantments.REGISTRY.register(modEventBus);
-        ToolEnchantments.REGISTRY.register(modEventBus);
-        WeaponEnchantments.REGISTRY.register(modEventBus);
         
         HarmfulMobEffects.REGISTRY.register(modEventBus);
         BeneficialMobEffects.REGISTRY.register(modEventBus);

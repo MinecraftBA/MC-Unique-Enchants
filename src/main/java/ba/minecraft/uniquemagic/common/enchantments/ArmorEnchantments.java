@@ -1,6 +1,7 @@
 package ba.minecraft.uniquemagic.common.enchantments;
 
 import ba.minecraft.uniquemagic.common.helpers.ModEnchantmentHelper;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.enchantment.Enchantment;
 
@@ -13,4 +14,6 @@ public final class ArmorEnchantments {
     public static final ResourceKey<Enchantment> OMNIVORE = ModEnchantmentHelper.createResourceKey("omnivore");
     public static final ResourceKey<Enchantment> SONIC_PROTECTION = ModEnchantmentHelper.createResourceKey("sonic_protection");
     
+    public static void bootstrap(BootstrapContext<Enchantment> context) {
+    }
 }

@@ -1,6 +1,7 @@
 package ba.minecraft.uniquemagic.common.enchantments;
 
 import ba.minecraft.uniquemagic.common.helpers.ModEnchantmentHelper;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.enchantment.Enchantment;
 
@@ -27,5 +28,7 @@ public final class WeaponEnchantments {
     public static final ResourceKey<Enchantment> WEAKEN = ModEnchantmentHelper.createResourceKey("weaken");
     public static final ResourceKey<Enchantment> WITHERING = ModEnchantmentHelper.createResourceKey("withering");
 
+    public static void bootstrap(BootstrapContext<Enchantment> context) {
+    }
 }
 
