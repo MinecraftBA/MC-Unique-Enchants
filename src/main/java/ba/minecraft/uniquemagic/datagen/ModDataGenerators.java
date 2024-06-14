@@ -36,7 +36,7 @@ public final class ModDataGenerators {
 		// Registration of tags providers.
 		dataGen.addProvider(event.includeServer(), new ModEntityTypeTagsProvider(packOutput, lookupProvider, exFileHelper));
 		dataGen.addProvider(event.includeServer(), new ModDamageTypeTagsProvider(packOutput, lookupProvider, exFileHelper));
-		dataGen.addProvider(event.includeServer(), new ModEnchantmentTagsProvider(packOutput, lookupProvider, exFileHelper));
+		dataGen.addProvider(event.includeServer(), new ModEnchantmentTagsProvider(packOutput, lookupProvider));
 	}
 	
 }
