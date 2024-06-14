@@ -17,8 +17,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 public final class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
 
-	public ModEnchantmentTagsProvider(PackOutput packOutput, CompletableFuture<Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
-		super(packOutput, lookupProvider, FeatureFlagSet.of(FeatureFlags.VANILLA), UniqueMagicMod.MODID, existingFileHelper);
+	public ModEnchantmentTagsProvider(PackOutput packOutput, CompletableFuture<Provider> lookupProvider) {
+		super(packOutput, lookupProvider);
 	}
 
 	@Override
