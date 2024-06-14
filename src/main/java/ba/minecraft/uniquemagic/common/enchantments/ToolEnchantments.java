@@ -18,12 +18,11 @@ public final class ToolEnchantments {
     public static void bootstrap(BootstrapContext<Enchantment> context) {
     	
     	HolderGetter<Item> itemsRegistry = context.lookup(Registries.ITEM);
-    	HolderGetter<Enchantment> enchantmentsRegistry = context.lookup(Registries.ENCHANTMENT);
     	
-    	registerTimber(context, enchantmentsRegistry, itemsRegistry);
+    	registerTimber(context, itemsRegistry);
     }
     
-    private static void registerTimber(BootstrapContext<Enchantment> context, HolderGetter<Enchantment> enchantmentsRegistry, HolderGetter<Item> itemsRegistry) {
+    private static void registerTimber(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
         		itemsRegistry.getOrThrow(ItemTags.AXES), 
