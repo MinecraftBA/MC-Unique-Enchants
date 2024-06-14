@@ -3,9 +3,12 @@ package ba.minecraft.uniquemagic.common.event.enchantments.armor;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.ArmorEnchantments;
+import ba.minecraft.uniquemagic.common.helpers.ModEnchantmentHelper;
+import net.minecraft.core.Holder;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.player.PlayerXpEvent;
@@ -42,8 +45,11 @@ public final class ExplorationEnchantmentEventHandler {
     		return;
     	}
     	
+    	// Get reference to enchantment.
+    	Holder<Enchantment> enchantment = ModEnchantmentHelper.getHolder(level, ArmorEnchantments.EXPLORATION);
+    	
     	// Get enchantment level on helmet.
-    	int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(ArmorEnchantments.EXPLORATION.getHolder().get(), helmet);
+    	int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(enchantment, helmet);
         
     	// IF: There is
     	if (enchantmentLevel > 0) {
