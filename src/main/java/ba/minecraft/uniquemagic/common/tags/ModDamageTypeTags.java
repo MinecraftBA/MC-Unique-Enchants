@@ -15,6 +15,6 @@ public final class ModDamageTypeTags {
 
     private static TagKey<DamageType> create(String name)
     {
-        return TagKey.create(Registries.DAMAGE_TYPE, new ModResourceLocation(name));
+        return TagKey.create(Registries.DAMAGE_TYPE, ModResourceLocation.create(name));
     }
 }

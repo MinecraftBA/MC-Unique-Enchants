@@ -13,6 +13,6 @@ public final class ModEnchantmentTags {
 
     private static TagKey<Enchantment> create(String name)
     {
-        return TagKey.create(Registries.ENCHANTMENT, new ModResourceLocation(name));
+        return TagKey.create(Registries.ENCHANTMENT, ModResourceLocation.create(name));
     }
 }
