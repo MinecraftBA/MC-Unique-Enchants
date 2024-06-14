@@ -1,6 +1,10 @@
 package ba.minecraft.uniquemagic.common.helpers;
 
+import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import net.minecraft.core.Holder.Reference;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.enchantment.Enchantment;
 
@@ -13,4 +17,8 @@ public final class ModEnchantmentHelper {
 		// Check if enchantment is tagged.
 		return holder.is(tag);
 	}
+	
+    public static ResourceKey<Enchantment> createResourceKey(String path) {
+        return ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(UniqueMagicMod.MODID, path));
+    }
 }

@@ -1,94 +1,31 @@
 package ba.minecraft.uniquemagic.common.enchantments;
 
-import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.BlindEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.ConfuseEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.CurseOfSlownessEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.DisarmEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.ExecuteEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.HarmEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.IllagersBaneEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.LevitateEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.LifeStealEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.LightningStrikerEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.NetherSlayerEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.PillagingEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.PoisonEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.RampageEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.SlowEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.StarveEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.StunEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.TempoTheftEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.WeakenEnchantment;
-import ba.minecraft.uniquemagic.common.enchantments.weapon.WitheringEnchantment;
+import ba.minecraft.uniquemagic.common.helpers.ModEnchantmentHelper;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
-public class WeaponEnchantments {
+public final class WeaponEnchantments {
 
-	public static final DeferredRegister<Enchantment> REGISTRY = 
-			DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, UniqueMagicMod.MODID);
-		
-	public static final RegistryObject<Enchantment> LEVITATE = 
-			REGISTRY.register("levitate",  () -> new LevitateEnchantment());
-	
-	public static final RegistryObject<Enchantment> POISON = 
-			REGISTRY.register("poison",  () -> new PoisonEnchantment());
-	
-	public static final RegistryObject<Enchantment> STARVE = 
-			REGISTRY.register("starve",  () -> new StarveEnchantment());
-	
-	public static final RegistryObject<Enchantment> WEAKEN = 
-			REGISTRY.register("weaken",  () -> new WeakenEnchantment());
-	
-	public static final RegistryObject<Enchantment> LIFE_STEAL = 
-			REGISTRY.register("life_steal",  () -> new LifeStealEnchantment());
-	
-	public static final RegistryObject<Enchantment> HARM = 
-			REGISTRY.register("harm",  () -> new HarmEnchantment());
-	
-	public static final RegistryObject<Enchantment> BLIND = 
-			REGISTRY.register("blind",  () -> new BlindEnchantment());
-	
-	public static final RegistryObject<Enchantment> SLOW = 
-			REGISTRY.register("slow",  () -> new SlowEnchantment());
-	
-	public static final RegistryObject<Enchantment> CONFUSE = 
-			REGISTRY.register("confuse",  () -> new ConfuseEnchantment());
-	
-	public static final RegistryObject<Enchantment> WITHERING = 
-			REGISTRY.register("withering",  () -> new WitheringEnchantment());
-	
-	public static final RegistryObject<Enchantment> LIGHTNING_STRIKER = 
-			REGISTRY.register("lightning_striker",  () -> new LightningStrikerEnchantment());
-	
-	public static final RegistryObject<Enchantment> EXECUTE = 
-			REGISTRY.register("execute",  () -> new ExecuteEnchantment());
-	
-	public static final RegistryObject<Enchantment> TEMPO_THEFT = 
-			REGISTRY.register("tempo_theft",  () -> new TempoTheftEnchantment());
-	
-	public static final RegistryObject<Enchantment> CURSE_OF_SLOWNESS = 
-			REGISTRY.register("curse_of_slowness",  () -> new CurseOfSlownessEnchantment());
-	
-	public static final RegistryObject<Enchantment> STUN = 
-			REGISTRY.register("stun",  () -> new StunEnchantment());
+    public static final ResourceKey<Enchantment> BLIND = ModEnchantmentHelper.createResourceKey("blind");
+    public static final ResourceKey<Enchantment> CONFUSE = ModEnchantmentHelper.createResourceKey("confuse");
+    public static final ResourceKey<Enchantment> CURSE_OF_SLOWNESS = ModEnchantmentHelper.createResourceKey("curse_of_slowness");
+    public static final ResourceKey<Enchantment> DISARM = ModEnchantmentHelper.createResourceKey("disarm");
+    public static final ResourceKey<Enchantment> EXECUTE = ModEnchantmentHelper.createResourceKey("execute");
+    public static final ResourceKey<Enchantment> HARM = ModEnchantmentHelper.createResourceKey("harm");
+    public static final ResourceKey<Enchantment> ILLAGERS_BANE = ModEnchantmentHelper.createResourceKey("illagers_bane");
+    public static final ResourceKey<Enchantment> LEVITATE = ModEnchantmentHelper.createResourceKey("levitate");
+    public static final ResourceKey<Enchantment> LIFE_STEAL = ModEnchantmentHelper.createResourceKey("life_steal");
+    public static final ResourceKey<Enchantment> LIGHTNING_STRIKER = ModEnchantmentHelper.createResourceKey("lightning_striker");
+    public static final ResourceKey<Enchantment> NETHER_SLAYER = ModEnchantmentHelper.createResourceKey("nether_slayer");
+    public static final ResourceKey<Enchantment> PILLAGING = ModEnchantmentHelper.createResourceKey("pillaging");
+    public static final ResourceKey<Enchantment> POISON = ModEnchantmentHelper.createResourceKey("poison");
+    public static final ResourceKey<Enchantment> RAMPAGE = ModEnchantmentHelper.createResourceKey("rampage");
+    public static final ResourceKey<Enchantment> SLOW = ModEnchantmentHelper.createResourceKey("slow");
+    public static final ResourceKey<Enchantment> STARVE = ModEnchantmentHelper.createResourceKey("starve");
+    public static final ResourceKey<Enchantment> STUN = ModEnchantmentHelper.createResourceKey("stun");
+    public static final ResourceKey<Enchantment> TEMPO_THEFT = ModEnchantmentHelper.createResourceKey("tempo_theft");
+    public static final ResourceKey<Enchantment> WEAKEN = ModEnchantmentHelper.createResourceKey("weaken");
+    public static final ResourceKey<Enchantment> WITHERING = ModEnchantmentHelper.createResourceKey("withering");
 
-	public static final RegistryObject<Enchantment> DISARM = 
-			REGISTRY.register("disarm",  () -> new DisarmEnchantment());
-	
-	public static final RegistryObject<Enchantment> ILLAGERS_BANE = 
-			REGISTRY.register("illagers_bane",  () -> new IllagersBaneEnchantment());
-	
-	public static final RegistryObject<Enchantment> RAMPAGE = 
-			REGISTRY.register("rampage",  () -> new RampageEnchantment());
-	
-	public static final RegistryObject<Enchantment> NETHER_SLAYER = 
-			REGISTRY.register("nether_slayer",  () -> new NetherSlayerEnchantment());
-	
-	public static final RegistryObject<Enchantment> PILLAGING = 
-			REGISTRY.register("pillaging",  () -> new PillagingEnchantment());
 }
 
