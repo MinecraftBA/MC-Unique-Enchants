@@ -3,6 +3,7 @@ package ba.minecraft.uniquemagic.datagen;
 import java.util.concurrent.CompletableFuture;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
+import ba.minecraft.uniquemagic.datagen.lang.EnUsLanguageProvider;
 import ba.minecraft.uniquemagic.datagen.tag.ModEntityTypeTagsProvider;
 import ba.minecraft.uniquemagic.datagen.tag.ModDamageTypeTagsProvider;
 import ba.minecraft.uniquemagic.datagen.tag.ModEnchantmentTagsProvider;
@@ -39,6 +40,9 @@ public final class ModDataGenerators {
 		dataGen.addProvider(event.includeServer(), new ModEnchantmentTagsProvider(packOutput, lookupProvider));
 
 		dataGen.addProvider(event.includeServer(), new ModDatapackBuiltinEntriesProvider(packOutput, lookupProvider));
-}
+		
+		// Language providers
+		dataGen.addProvider(event.includeClient(), new EnUsLanguageProvider(packOutput));
+	}
 	
 }
