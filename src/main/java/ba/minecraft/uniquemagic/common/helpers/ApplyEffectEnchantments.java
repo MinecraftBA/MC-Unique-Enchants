@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchantments;
+import ba.minecraft.uniquemagic.common.mobeffects.HarmfulMobEffects;
 import net.minecraft.world.effect.MobEffects;
 
 public class ApplyEffectEnchantments {
@@ -69,7 +70,15 @@ public class ApplyEffectEnchantments {
 			() -> { return UniqueMagicModConfig.STARVE_BASE_CHANCE; },
 			() -> { return UniqueMagicModConfig.STARVE_BASE_DURATION; }
 		));
-		
+
+		TARGET_CONFIGURATIONS.add(new ApplyEffectEnchantmentConfiguration(
+			WeaponEnchantments.STUN,
+			HarmfulMobEffects.STUNNED.getHolder().get(),
+			false,
+			() -> { return UniqueMagicModConfig.STUN_BASE_CHANCE; },
+			() -> { return UniqueMagicModConfig.STUN_BASE_DURATION; }
+		));
+
 		TARGET_CONFIGURATIONS.add(new ApplyEffectEnchantmentConfiguration(
 			WeaponEnchantments.WEAKEN,
 			MobEffects.WEAKNESS,

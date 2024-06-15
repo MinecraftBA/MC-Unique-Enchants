@@ -121,9 +121,6 @@ public final class ApplyTargetEffectEnchantmentEventHandler {
 
 			// Apply effect to mob.
 			livingTarget.addEffect(effect);
-			
-			// Do not process next enchantment.
-			return;
 		}
 
 	}

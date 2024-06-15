@@ -54,6 +54,7 @@ public final class WeaponEnchantments {
 
     	registerDisarm(context, itemsRegistry);
     	registerLifeSteal(context, itemsRegistry);
+    	registerStun(context, itemsRegistry);
 
     	registerIllagersBane(context, itemsRegistry, enchantmentsRegistry);
     	registerNetherSlayer(context, itemsRegistry, enchantmentsRegistry);
@@ -68,7 +69,7 @@ public final class WeaponEnchantments {
     	registerStarve(context, itemsRegistry, enchantmentsRegistry);
     	registerWeaken(context, itemsRegistry, enchantmentsRegistry);
     	registerWithering(context, itemsRegistry, enchantmentsRegistry);
-    
+
     }
     
     private static void registerDisarm(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
@@ -385,6 +386,23 @@ public final class WeaponEnchantments {
     	builder.exclusiveWith(enchantmentsRegistry.getOrThrow(ModEnchantmentTags.MOB_EFFECT_EXCLUSIVE));
     	
         ModEnchantmentHelper.register(context, WEAKEN, builder);
+    }
+    
+    private static void registerStun(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
+    	
+    	EnchantmentDefinition definition = Enchantment.definition(
+        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		2,
+        		5, 
+        		Enchantment.dynamicCost(5, 10), 
+        		Enchantment.dynamicCost(25, 10), 
+        		4, 
+        		EquipmentSlotGroup.MAINHAND
+        );
+    	
+    	Enchantment.Builder builder = Enchantment.enchantment(definition);
+    	
+        ModEnchantmentHelper.register(context, STUN, builder);
     }
 }
 
