@@ -26,7 +26,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 public final class DisarmEnchantmentEventHandler {
 
 	@SubscribeEvent
-	public static void onAttackEntity(final LivingAttackEvent event) {
+	public static void onLivingAttack(final LivingAttackEvent event) {
 		
 		// Get source of the damage.
 		DamageSource damageSource = event.getSource();

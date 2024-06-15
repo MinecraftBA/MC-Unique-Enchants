@@ -53,6 +53,7 @@ public final class WeaponEnchantments {
     	HolderGetter<Enchantment> enchantmentsRegistry = context.lookup(Registries.ENCHANTMENT);
 
     	registerDisarm(context, itemsRegistry);
+    	registerExecute(context, itemsRegistry);
     	registerLifeSteal(context, itemsRegistry);
     	registerStun(context, itemsRegistry);
 
@@ -403,6 +404,23 @@ public final class WeaponEnchantments {
     	Enchantment.Builder builder = Enchantment.enchantment(definition);
     	
         ModEnchantmentHelper.register(context, STUN, builder);
+    }
+    
+    private static void registerExecute(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
+    	
+    	EnchantmentDefinition definition = Enchantment.definition(
+        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		1,
+        		5, 
+        		Enchantment.constantCost(25), 
+        		Enchantment.constantCost(50), 
+        		8, 
+        		EquipmentSlotGroup.MAINHAND
+        );
+    	
+    	Enchantment.Builder builder = Enchantment.enchantment(definition);
+    	
+        ModEnchantmentHelper.register(context, EXECUTE, builder);
     }
 }
 
