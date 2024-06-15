@@ -5,16 +5,19 @@ import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchantments;
 import ba.minecraft.uniquemagic.common.helpers.ModEnchantmentHelper;
 import net.minecraft.core.Holder;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.event.entity.player.AttackEntityEvent;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
@@ -23,35 +26,45 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 public final class DisarmEnchantmentEventHandler {
 
 	@SubscribeEvent
-	public static void onAttackEntity(final AttackEntityEvent event) {
+	public static void onAttackEntity(final LivingAttackEvent event) {
 		
-		// Get reference to entity that was attacked.
-		Entity entity = event.getTarget();
+		// Get source of the damage.
+		DamageSource damageSource = event.getSource();
 		
-		// IF: Entity is not a player.
-		if(!(entity instanceof Player)) {
-			// Do nothing.
+		// Get reference to entity that caused the damage.
+		Entity attacker = damageSource.getEntity();
+
+		// IF: Attack was not done by entity.
+		if (attacker == null) {
+			return;
+		}
+
+		// Get reference to level where event has occurred.
+		Level level = attacker.level();
+		
+		// IF: Code is executing on the client side.
+		if (level.isClientSide()) {
+			return;
+		}
+
+		// IF: Attacker was not a living entity.
+		if(!(attacker instanceof LivingEntity)) {
 			return;
 		}
 		
-		// Cast entity to player.
-		Player target = (Player)entity;
+		// Cast attacker to living entity.
+		LivingEntity livingAttacker = (LivingEntity)attacker;
 
-		// Get reference to a player that did the damage.
-		Player attacker = event.getEntity();
+		// Get reference to entity that was attacked.
+		Entity target = event.getEntity();
 
-		// Get reference to a level where attack was done.
-		Level level = attacker.level();
-		
-		// IF: Code is executing on client side.
-		if(level.isClientSide())
-		{
-			// Do nothing.
+		// IF: Target is not a player or mob.
+		if(!(target instanceof ServerPlayer) && !(target instanceof Mob)) {
 			return;
 		}
 		
 		// Get attacker item in main hand.
-		ItemStack attackerItem = attacker.getItemInHand(InteractionHand.MAIN_HAND);
+		ItemStack attackerItem = livingAttacker.getItemInHand(InteractionHand.MAIN_HAND);
 		
 		// IF: There is no weapon in main hand of attacker.
 		if(attackerItem == null) {
@@ -86,23 +99,55 @@ public final class DisarmEnchantmentEventHandler {
 			// Do nothing.
 			return;
 		}
-
-		// Get item that target is holding in hand.
-		ItemStack targetItem = target.getItemInHand(InteractionHand.MAIN_HAND);
 		
-		// IF: Target does not have item equipped in main hand.
-		if(targetItem == null) {
-			// Do nothing.
-			return;
+		// IF: Target is player.
+		if(target instanceof ServerPlayer) {
+			
+			// Cast target to player.
+			ServerPlayer targetPlayer = (ServerPlayer)target;
+			
+			// Get item that target is holding in hand.
+			ItemStack targetItem = targetPlayer.getItemInHand(InteractionHand.MAIN_HAND);
+			
+			// IF: Target does not have item equipped in main hand.
+			if(targetItem == null) {
+				// Do nothing.
+				return;
+			}
+			
+			// Have target player drop item.
+			targetPlayer.drop(targetItem, true, true);
+			
+			// Get reference to inventory of target player.
+			Inventory targetInventory = targetPlayer.getInventory();
+			
+			// Remove item from target player's inventory.
+			targetInventory.removeItem(targetItem);
+			
+		} else {
+			
+			// IF: Target is a mob.
+			if(target instanceof Mob) {
+				
+				// Cast target to mob.
+				Mob targetMob = (Mob)target;
+				
+				// Get item in hand.
+				ItemStack targetItem = targetMob.getItemInHand(InteractionHand.MAIN_HAND);
+
+				// IF: Target does not have item equipped in main hand.
+				if(targetItem == null) {
+					// Do nothing.
+					return;
+				}
+
+				// Force item to spawn at zombie location.
+				targetMob.spawnAtLocation(targetItem.copy());
+
+				// Remove item from hand.
+				targetMob.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
+			}
 		}
 
-		// Have target player drop item.
-		target.drop(targetItem, true, true);
-		
-		// Get reference to inventory of target player.
-		Inventory targetInventory = target.getInventory();
-		
-		// Remove item from target player's inventory.
-		targetInventory.removeItem(targetItem);
 	}
 }
