@@ -1,9 +1,15 @@
 package ba.minecraft.uniquemagic.common.enchantments;
 
 import ba.minecraft.uniquemagic.common.helpers.ModEnchantmentHelper;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantment.EnchantmentDefinition;
 
 public final class WeaponEnchantments {
 
@@ -29,6 +35,46 @@ public final class WeaponEnchantments {
     public static final ResourceKey<Enchantment> WITHERING = ModEnchantmentHelper.createResourceKey("withering");
 
     public static void bootstrap(BootstrapContext<Enchantment> context) {
+    	
+    	HolderGetter<Item> itemsRegistry = context.lookup(Registries.ITEM);
+    	
+    	registerDisarm(context, itemsRegistry);
+    	registerLifeSteal(context, itemsRegistry);
+
+    }
+    
+    private static void registerDisarm(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
+    	
+    	EnchantmentDefinition definition = Enchantment.definition(
+        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		1,
+        		5, 
+        		Enchantment.constantCost(25), 
+        		Enchantment.constantCost(50), 
+        		8, 
+        		EquipmentSlotGroup.MAINHAND
+        );
+    	
+    	Enchantment.Builder builder = Enchantment.enchantment(definition);
+    	
+        ModEnchantmentHelper.register(context, DISARM, builder);
+    }
+    
+    private static void registerLifeSteal(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
+    	
+    	EnchantmentDefinition definition = Enchantment.definition(
+        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		2,
+        		5, 
+        		Enchantment.constantCost(25), 
+        		Enchantment.constantCost(50), 
+        		4, 
+        		EquipmentSlotGroup.MAINHAND
+        );
+    	
+    	Enchantment.Builder builder = Enchantment.enchantment(definition);
+    	
+        ModEnchantmentHelper.register(context, LIFE_STEAL, builder);
     }
 }
 
