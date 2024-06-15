@@ -1,6 +1,6 @@
 package ba.minecraft.uniquemagic.common.enchantments;
 
-import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
+//import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.helpers.ModEnchantmentHelper;
 import ba.minecraft.uniquemagic.common.tags.ModDamageTypeTags;
 import ba.minecraft.uniquemagic.common.tags.ModEnchantmentTags;
@@ -111,7 +111,7 @@ public final class ArmorEnchantments {
     	// Add effect to enchantment.
     	builder.withEffect(
 			EnchantmentEffectComponents.DAMAGE_PROTECTION, 
-			new AddValue(LevelBasedValue.perLevel(UniqueMagicModConfig.FREEZING_PROTECTION_BASE_MULTIPLIER)),
+			new AddValue(LevelBasedValue.perLevel(2.0F)),
 			effectCondition
         );
     	
@@ -146,7 +146,7 @@ public final class ArmorEnchantments {
     	// Add effect to enchantment.
     	builder.withEffect(
 			EnchantmentEffectComponents.DAMAGE_PROTECTION, 
-			new AddValue(LevelBasedValue.perLevel(UniqueMagicModConfig.LIGHTNING_PROTECTION_BASE_MULTIPLIER)),
+			new AddValue(LevelBasedValue.perLevel(2.0F)),
 			effectCondition
         );
     	
@@ -181,7 +181,7 @@ public final class ArmorEnchantments {
     	// Add effect to enchantment.
     	builder.withEffect(
 			EnchantmentEffectComponents.DAMAGE_PROTECTION, 
-			new AddValue(LevelBasedValue.perLevel(UniqueMagicModConfig.MAGIC_PROTECTION_BASE_MULTIPLIER)),
+			new AddValue(LevelBasedValue.perLevel(2.0F)),
 			effectCondition
         );
     	
@@ -216,7 +216,7 @@ public final class ArmorEnchantments {
 	    	// Add effect to enchantment.
 	    	builder.withEffect(
 				EnchantmentEffectComponents.DAMAGE_PROTECTION, 
-				new AddValue(LevelBasedValue.perLevel(UniqueMagicModConfig.SONIC_PROTECTION_BASE_MULTIPLIER)),
+				new AddValue(LevelBasedValue.perLevel(2.0F)),
 				effectCondition
 	        );
 	    	

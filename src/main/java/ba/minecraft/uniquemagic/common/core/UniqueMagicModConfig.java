@@ -63,14 +63,6 @@ public final class UniqueMagicModConfig {
     private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_CHANCE_CONFIG;
     private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_DURATION_CONFIG;
     
-    private static final ForgeConfigSpec.IntValue LIGHTNING_PROTECTION_BASE_MULTIPLIER_CONFIG;
-    
-    private static final ForgeConfigSpec.IntValue FREEZING_PROTECTION_BASE_MULTIPLIER_CONFIG;
-    
-    private static final ForgeConfigSpec.IntValue SONIC_PROTECTION_BASE_MULTIPLIER_CONFIG;
-    
-    private static final ForgeConfigSpec.IntValue MAGIC_PROTECTION_BASE_MULTIPLIER_CONFIG;
-    
     private static final ForgeConfigSpec.IntValue EXPLORATION_BASE_PERCENTAGE_INCREMENT_CONFIG;
     
     public static int EXECUTE_BASE_CHANCE;
@@ -120,14 +112,6 @@ public final class UniqueMagicModConfig {
     public static int ILLAGERS_BANE_BASE_MULTIPLIER;
     public static int NETHER_SLAYER_BASE_MULTIPLIER;
     public static int PILLAGING_BASE_MULTIPLIER;
-
-    public static int LIGHTNING_PROTECTION_BASE_MULTIPLIER;
-    
-    public static int FREEZING_PROTECTION_BASE_MULTIPLIER;
-    
-    public static int MAGIC_PROTECTION_BASE_MULTIPLIER;
-    
-    public static int SONIC_PROTECTION_BASE_MULTIPLIER;
 
     public static int RAMPAGE_BASE_CHANCE;
     public static int RAMPAGE_BASE_DURATION;
@@ -239,18 +223,6 @@ public final class UniqueMagicModConfig {
     	RAMPAGE_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Rampage enchantment in seconds.")
     	        .defineInRange("Rampage base duration", 3, 1, 60);
 
-    	LIGHTNING_PROTECTION_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Lightning Protection enchantment.")
-    	        .defineInRange("Lightning Protection base multiplier", 2, 1, 3);
-    	
-    	FREEZING_PROTECTION_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Freezing Protection enchantment.")
-    	        .defineInRange("Freezing Protection base multiplier", 2, 1, 3);
-    	
-    	SONIC_PROTECTION_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Sonic Protection enchantment.")
-    	        .defineInRange("Sonic Protection base multiplier", 2, 1, 3);
-    	
-    	MAGIC_PROTECTION_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Magic Protection enchantment.")
-    	        .defineInRange("Magic Protection base multiplier", 2, 1, 3);
-    	
     	EXPLORATION_BASE_PERCENTAGE_INCREMENT_CONFIG = BUILDER.comment("Base percentage increment for Exploration enchantment.")
     	        .defineInRange("Exploration base multiplier", 20, 1, 100);
     	
@@ -313,11 +285,6 @@ public final class UniqueMagicModConfig {
 	
      	RAMPAGE_BASE_CHANCE = RAMPAGE_BASE_CHANCE_CONFIG.get();
     	RAMPAGE_BASE_DURATION = RAMPAGE_BASE_DURATION_CONFIG.get();
-
-    	LIGHTNING_PROTECTION_BASE_MULTIPLIER = LIGHTNING_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
-    	FREEZING_PROTECTION_BASE_MULTIPLIER = FREEZING_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
-    	MAGIC_PROTECTION_BASE_MULTIPLIER = MAGIC_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
-    	SONIC_PROTECTION_BASE_MULTIPLIER = SONIC_PROTECTION_BASE_MULTIPLIER_CONFIG.get();
     	
     	EXPLORATION_BASE_PERCENTAGE_INCREMENT = EXPLORATION_BASE_PERCENTAGE_INCREMENT_CONFIG.get();
     }

@@ -20,6 +20,7 @@ public final class ToolEnchantments {
     	HolderGetter<Item> itemsRegistry = context.lookup(Registries.ITEM);
     	
     	registerTimber(context, itemsRegistry);
+    	
     }
     
     private static void registerTimber(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {

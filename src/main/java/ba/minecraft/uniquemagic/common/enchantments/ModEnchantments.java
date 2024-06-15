@@ -6,9 +6,11 @@ import net.minecraft.world.item.enchantment.Enchantment;
 public final class ModEnchantments {
 
 	public static void bootstrap(BootstrapContext<Enchantment> context) {
+
 		ArmorEnchantments.bootstrap(context);
 		BowEnchantments.bootstrap(context);
 		ToolEnchantments.bootstrap(context);
 		WeaponEnchantments.bootstrap(context);
+		
     }
 }
