@@ -9,62 +9,149 @@ import net.minecraftforge.fml.event.config.ModConfigEvent;
 public final class UniqueMagicModConfig {
 
 	private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
-    public static final ForgeConfigSpec SPEC;
 
-    private static final ForgeConfigSpec.IntValue BLIND_BASE_CHANCE_CONFIG;
-    private static final ForgeConfigSpec.IntValue BLIND_BASE_DURATION_CONFIG;
-
-    private static final ForgeConfigSpec.IntValue CONFUSE_BASE_CHANCE_CONFIG;
-    private static final ForgeConfigSpec.IntValue CONFUSE_BASE_DURATION_CONFIG;
-
-    private static final ForgeConfigSpec.IntValue CURSE_OF_SLOWNESS_BASE_CHANCE_CONFIG;
-    private static final ForgeConfigSpec.IntValue CURSE_OF_SLOWNESS_BASE_DURATION_CONFIG;
-
-    private static final ForgeConfigSpec.IntValue EXECUTE_BASE_CHANCE_CONFIG;
-
-    private static final ForgeConfigSpec.IntValue HARM_BASE_CHANCE_CONFIG;
-    private static final ForgeConfigSpec.IntValue HARM_BASE_DURATION_CONFIG;
-
-    private static final ForgeConfigSpec.IntValue LEVITATE_BASE_CHANCE_CONFIG;
-    private static final ForgeConfigSpec.IntValue LEVITATE_BASE_DURATION_CONFIG;
-
-    private static final ForgeConfigSpec.IntValue LIFE_STEAL_BASE_RATIO_CONFIG;
-
-    private static final ForgeConfigSpec.IntValue LIGHTNING_STRIKER_BASE_CHANCE_CONFIG;
-    private static final ForgeConfigSpec.IntValue LIGHTNING_STRIKER_BASE_DURATION_CONFIG;
-
-    private static final ForgeConfigSpec.IntValue POISON_BASE_CHANCE_CONFIG;
-    private static final ForgeConfigSpec.IntValue POISON_BASE_DURATION_CONFIG;
-
-    private static final ForgeConfigSpec.IntValue SLOW_BASE_CHANCE_CONFIG;
-    private static final ForgeConfigSpec.IntValue SLOW_BASE_DURATION_CONFIG;
+    private static final ForgeConfigSpec.IntValue BLIND_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Blind enchantment to trigger.")
+        .defineInRange("Blind base chance", 5, 1, 20);
     
-    private static final ForgeConfigSpec.IntValue STARVE_BASE_CHANCE_CONFIG;
-    private static final ForgeConfigSpec.IntValue STARVE_BASE_DURATION_CONFIG;
-    
-    private static final ForgeConfigSpec.IntValue TEMPO_THEFT_BASE_CHANCE_CONFIG;
-    private static final ForgeConfigSpec.IntValue TEMPO_THEFT_BASE_DURATION_CONFIG;
-    
-    private static final ForgeConfigSpec.IntValue WEAKEN_BASE_CHANCE_CONFIG;
-    private static final ForgeConfigSpec.IntValue WEAKEN_BASE_DURATION_CONFIG;
+    private static final ForgeConfigSpec.IntValue BLIND_BASE_DURATION_CONFIG = BUILDER
+		.comment("Base duration for Blind enchantment in seconds.")
+        .defineInRange("Blind base duration", 3, 1, 60);
 
-    private static final ForgeConfigSpec.IntValue WITHERING_BASE_CHANCE_CONFIG;
-    private static final ForgeConfigSpec.IntValue WITHERING_BASE_DURATION_CONFIG;
+    private static final ForgeConfigSpec.IntValue CONFUSE_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Confuse enchantment to trigger.")
+        .defineInRange("Confuse base chance", 5, 1, 20);
     
-    private static final ForgeConfigSpec.IntValue STUN_BASE_CHANCE_CONFIG;
-    private static final ForgeConfigSpec.IntValue STUN_BASE_DURATION_CONFIG;
+    private static final ForgeConfigSpec.IntValue CONFUSE_BASE_DURATION_CONFIG = BUILDER
+		.comment("Base duration for Confuse enchantment in seconds.")
+        .defineInRange("Confuse base duration", 3, 1, 60);
+
+    private static final ForgeConfigSpec.IntValue CURSE_OF_SLOWNESS_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Curse Of Slowness enchantment to trigger.")
+        .defineInRange("Curse Of Slowness base chance", 5, 1, 20);
     
-    private static final ForgeConfigSpec.IntValue DISARM_BASE_CHANCE_CONFIG;
+    private static final ForgeConfigSpec.IntValue CURSE_OF_SLOWNESS_BASE_DURATION_CONFIG = BUILDER
+		.comment("Base duration for Curse Of Slowness enchantment in seconds.")
+        .defineInRange("Curse Of Slowness base duration", 3, 1, 60);
+
+    private static final ForgeConfigSpec.IntValue EXECUTE_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Execute enchantment to trigger.")
+        .defineInRange("Execute base chance", 1, 1, 20);
+
+    private static final ForgeConfigSpec.IntValue HARM_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Harm enchantment to trigger.")
+        .defineInRange("Harm base chance", 5, 1, 20);
     
-    private static final ForgeConfigSpec.IntValue ILLAGERS_BANE_BASE_MULTIPLIER_CONFIG;
-    private static final ForgeConfigSpec.IntValue NETHER_SLAYER_BASE_MULTIPLIER_CONFIG;
-    private static final ForgeConfigSpec.IntValue PILLAGING_BASE_MULTIPLIER_CONFIG;
+    private static final ForgeConfigSpec.IntValue HARM_BASE_DURATION_CONFIG = BUILDER
+		.comment("Base duration for Harm enchantment in seconds.")
+        .defineInRange("Harm base duration", 3, 1, 60);
+
+    private static final ForgeConfigSpec.IntValue LEVITATE_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Levitate enchantment to trigger.")
+        .defineInRange("Levitate base chance", 5, 1, 20);
     
-    private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_CHANCE_CONFIG;
-    private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_DURATION_CONFIG;
+    private static final ForgeConfigSpec.IntValue LEVITATE_BASE_DURATION_CONFIG = BUILDER
+		.comment("Base duration for Levitate enchantment in seconds.")
+        .defineInRange("Levitate base duration", 3, 1, 60);
+
+    private static final ForgeConfigSpec.IntValue LIFE_STEAL_BASE_RATIO_CONFIG = BUILDER
+		.comment("Base damage-to-heal conversion ratio for Life Steal enchantment.")
+        .defineInRange("Life Steal base ratio", 5, 1, 20);
+
+    private static final ForgeConfigSpec.IntValue LIGHTNING_STRIKER_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Lightning Striker enchantment to trigger.")
+        .defineInRange("Lightning Striker base chance", 5, 1, 20);
     
-    private static final ForgeConfigSpec.IntValue EXPLORATION_BASE_PERCENTAGE_INCREMENT_CONFIG;
+    private static final ForgeConfigSpec.IntValue LIGHTNING_STRIKER_BASE_DURATION_CONFIG = BUILDER
+		.comment("Base duration for Lightning Striker enchantment in seconds.")
+        .defineInRange("Lightning Striker base duration", 3, 1, 60);;
+
+    private static final ForgeConfigSpec.IntValue POISON_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Poison enchantment to trigger.")
+        .defineInRange("Poison base chance", 5, 1, 20);
     
+    private static final ForgeConfigSpec.IntValue POISON_BASE_DURATION_CONFIG = BUILDER
+		.comment("Base duration for Poison enchantment in seconds.")
+        .defineInRange("Poison base duration", 3, 1, 60);
+
+    private static final ForgeConfigSpec.IntValue SLOW_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Slow enchantment to trigger.")
+        .defineInRange("Slow base chance", 5, 1, 20);
+    
+    private static final ForgeConfigSpec.IntValue SLOW_BASE_DURATION_CONFIG = BUILDER
+		.comment("Base duration for Slow enchantment in seconds.")
+        .defineInRange("Slow base duration", 3, 1, 60);;
+    
+    private static final ForgeConfigSpec.IntValue STARVE_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Starve enchantment to trigger.")
+        .defineInRange("Starve base chance", 5, 1, 20);
+
+    private static final ForgeConfigSpec.IntValue STARVE_BASE_DURATION_CONFIG = BUILDER
+		.comment("Base duration for Starve enchantment in seconds.")
+        .defineInRange("Starve base duration", 3, 1, 60);;
+    
+    private static final ForgeConfigSpec.IntValue TEMPO_THEFT_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Tempo Theft enchantment to trigger.")
+        .defineInRange("Tempo Theft base chance", 5, 1, 20);
+    
+    private static final ForgeConfigSpec.IntValue TEMPO_THEFT_BASE_DURATION_CONFIG = BUILDER
+		.comment("Base duration for Tempo Theft enchantment in seconds.")
+        .defineInRange("Tempo Theft base duration", 3, 1, 60);;
+    
+    private static final ForgeConfigSpec.IntValue WEAKEN_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Weaken enchantment to trigger.")
+        .defineInRange("Weaken base chance", 5, 1, 20);
+    
+    private static final ForgeConfigSpec.IntValue WEAKEN_BASE_DURATION_CONFIG = BUILDER
+		.comment("Base duration for Weaken enchantment in seconds.")
+        .defineInRange("Weaken base duration", 3, 1, 60);;
+
+    private static final ForgeConfigSpec.IntValue WITHERING_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Withering enchantment to trigger.")
+        .defineInRange("Withering base chance", 5, 1, 20);
+    
+    private static final ForgeConfigSpec.IntValue WITHERING_BASE_DURATION_CONFIG = BUILDER
+		.comment("Base duration for Withering enchantment in seconds.")
+        .defineInRange("Withering base duration", 3, 1, 60);
+    
+    private static final ForgeConfigSpec.IntValue STUN_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Stun enchantment to trigger.")
+        .defineInRange("Stun base chance", 5, 1, 20);;
+        
+    private static final ForgeConfigSpec.IntValue STUN_BASE_DURATION_CONFIG = BUILDER
+		.comment("Base duration for Stun enchantment in seconds.")
+        .defineInRange("Stun base duration", 3, 1, 60);;
+    
+    private static final ForgeConfigSpec.IntValue DISARM_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Disarm enchantment to trigger.")
+        .defineInRange("Disarm base chance", 5, 1, 20);
+    
+    private static final ForgeConfigSpec.IntValue ILLAGERS_BANE_BASE_MULTIPLIER_CONFIG = BUILDER
+		.comment("Base multiplier for Illager's Bane enchantment.")
+        .defineInRange("Illager's Bane base multiplier", 3, 1, 10);
+    
+    private static final ForgeConfigSpec.IntValue NETHER_SLAYER_BASE_MULTIPLIER_CONFIG = BUILDER
+		.comment("Base multiplier for Nether Slayer enchantment.")
+        .defineInRange("Nether Slayer base multiplier", 3, 1, 10);
+    
+    private static final ForgeConfigSpec.IntValue PILLAGING_BASE_MULTIPLIER_CONFIG = BUILDER
+		.comment("Base multiplier for Pillaging enchantment.")
+        .defineInRange("Pillaging base multiplier", 3, 1, 10);;
+    
+    private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Rampage enchantment to trigger.")
+        .defineInRange("Rampage base chance", 5, 1, 20);
+    
+    private static final ForgeConfigSpec.IntValue RAMPAGE_BASE_DURATION_CONFIG = BUILDER
+		.comment("Base duration for Rampage enchantment in seconds.")
+        .defineInRange("Rampage base duration", 3, 1, 60);;
+    
+    private static final ForgeConfigSpec.IntValue EXPLORATION_BASE_PERCENTAGE_INCREMENT_CONFIG = BUILDER
+		.comment("Base percentage increment for Exploration enchantment.")
+        .defineInRange("Exploration base multiplier", 20, 1, 100);
+    
+    public static final ForgeConfigSpec SPEC = BUILDER.build();
+
     public static int EXECUTE_BASE_CHANCE;
     public static int LIFE_STEAL_BASE_RATIO;
     
@@ -117,119 +204,6 @@ public final class UniqueMagicModConfig {
     public static int RAMPAGE_BASE_DURATION;
     
     public static int EXPLORATION_BASE_PERCENTAGE_INCREMENT;
-    
-    static {
-    	BUILDER.push("Configs for Unique Magic Mod");
-
-    	EXECUTE_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Execute enchantment to trigger.")
-	            .defineInRange("Execute base chance", 1, 1, 20);
-
-    	LIFE_STEAL_BASE_RATIO_CONFIG = BUILDER.comment("Base damage-to-heal conversion ratio for Life Steal enchantment.")
-    	        .defineInRange("Life Steal base ratio", 5, 1, 20);
-
-    	WITHERING_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Withering enchantment to trigger.")
-    	        .defineInRange("Withering base chance", 5, 1, 20);
-
-    	WITHERING_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Withering enchantment in seconds.")
-    	        .defineInRange("Withering base duration", 3, 1, 60);
-    	
-    	POISON_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Poison enchantment to trigger.")
-    	        .defineInRange("Poison base chance", 5, 1, 20);
-
-    	POISON_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Poison enchantment in seconds.")
-    	        .defineInRange("Poison base duration", 3, 1, 60);
-    	
-    	BLIND_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Blind enchantment to trigger.")
-    	        .defineInRange("Blind base chance", 5, 1, 20);
-
-    	BLIND_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Blind enchantment in seconds.")
-    	        .defineInRange("Blind base duration", 3, 1, 60);
-    	
-    	CONFUSE_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Confuse enchantment to trigger.")
-    	        .defineInRange("Confuse base chance", 5, 1, 20);
-
-    	CONFUSE_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Confuse enchantment in seconds.")
-    	        .defineInRange("Confuse base duration", 3, 1, 60);
-    	
-    	CURSE_OF_SLOWNESS_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Curse Of Slowness enchantment to trigger.")
-    	        .defineInRange("Curse Of Slowness base chance", 5, 1, 20);
-
-    	CURSE_OF_SLOWNESS_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Curse Of Slowness enchantment in seconds.")
-    	        .defineInRange("Curse Of Slowness base duration", 3, 1, 60);
-    	
-    	HARM_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Harm enchantment to trigger.")
-    	        .defineInRange("Harm base chance", 5, 1, 20);
-
-    	HARM_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Harm enchantment in seconds.")
-    	        .defineInRange("Harm base duration", 3, 1, 60);
-    	
-    	LEVITATE_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Levitate enchantment to trigger.")
-    	        .defineInRange("Levitate base chance", 5, 1, 20);
-
-    	LEVITATE_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Levitate enchantment in seconds.")
-    	        .defineInRange("Levitate base duration", 3, 1, 60);
-    	
-    	LIGHTNING_STRIKER_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Lightning Striker enchantment to trigger.")
-    	        .defineInRange("Lightning Striker base chance", 5, 1, 20);
-
-    	LIGHTNING_STRIKER_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Lightning Striker enchantment in seconds.")
-    	        .defineInRange("Lightning Striker base duration", 3, 1, 60);
-    	
-    	SLOW_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Slow enchantment to trigger.")
-    	        .defineInRange("Slow base chance", 5, 1, 20);
-
-    	SLOW_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Slow enchantment in seconds.")
-    	        .defineInRange("Slow base duration", 3, 1, 60);
-    	
-    	STARVE_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Starve enchantment to trigger.")
-    	        .defineInRange("Starve base chance", 5, 1, 20);
-
-    	STARVE_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Starve enchantment in seconds.")
-    	        .defineInRange("Starve base duration", 3, 1, 60);
-    	
-    	TEMPO_THEFT_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Tempo Theft enchantment to trigger.")
-    	        .defineInRange("Tempo Theft base chance", 5, 1, 20);
-
-    	TEMPO_THEFT_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Tempo Theft enchantment in seconds.")
-    	        .defineInRange("Tempo Theft base duration", 3, 1, 60);
-    	
-    	WEAKEN_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Weaken enchantment to trigger.")
-    	        .defineInRange("Weaken base chance", 5, 1, 20);
-
-    	WEAKEN_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Weaken enchantment in seconds.")
-    	        .defineInRange("Weaken base duration", 3, 1, 60);
-    	
-    	STUN_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Stun enchantment to trigger.")
-    	        .defineInRange("Stun base chance", 5, 1, 20);
-
-    	STUN_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Stun enchantment in seconds.")
-    	        .defineInRange("Stun base duration", 3, 1, 60);
-    	
-    	DISARM_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Disarm enchantment to trigger.")
-    	        .defineInRange("Disarm base chance", 5, 1, 20);
-    	
-    	ILLAGERS_BANE_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Illager's Bane enchantment.")
-    	        .defineInRange("Illager's Bane base multiplier", 3, 1, 10);
-
-    	NETHER_SLAYER_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Nether Slayer enchantment.")
-    	        .defineInRange("Nether Slayer base multiplier", 3, 1, 10);
-    	
-    	PILLAGING_BASE_MULTIPLIER_CONFIG = BUILDER.comment("Base multiplier for Pillaging enchantment.")
-    	        .defineInRange("Pillaging base multiplier", 3, 1, 10);
-
-    	RAMPAGE_BASE_CHANCE_CONFIG = BUILDER.comment("Base chance for Rampage enchantment to trigger.")
-    	        .defineInRange("Rampage base chance", 5, 1, 20);
-
-    	RAMPAGE_BASE_DURATION_CONFIG = BUILDER.comment("Base duration for Rampage enchantment in seconds.")
-    	        .defineInRange("Rampage base duration", 3, 1, 60);
-
-    	EXPLORATION_BASE_PERCENTAGE_INCREMENT_CONFIG = BUILDER.comment("Base percentage increment for Exploration enchantment.")
-    	        .defineInRange("Exploration base multiplier", 20, 1, 100);
-    	
-    	BUILDER.pop();
-    	
-    	SPEC = BUILDER.build();
-    }
     
     @SubscribeEvent
     public static void onLoad(final ModConfigEvent event)

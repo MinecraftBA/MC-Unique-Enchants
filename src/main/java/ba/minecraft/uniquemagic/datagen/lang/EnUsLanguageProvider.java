@@ -71,7 +71,14 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 		add(WeaponEnchantments.PILLAGING, "Pillaging");
 
 		add(WeaponEnchantments.BLIND, "Blind");
+		add(WeaponEnchantments.CONFUSE, "Confuse");
+		add(WeaponEnchantments.HARM, "Harm");
+		add(WeaponEnchantments.LEVITATE, "Levitate");
 		add(WeaponEnchantments.POISON, "Poison");
+		add(WeaponEnchantments.SLOW, "Slow");
+		add(WeaponEnchantments.STARVE, "Starve");
+		add(WeaponEnchantments.WEAKEN, "Weaken");
+		add(WeaponEnchantments.WITHERING, "Withering");
 
 	}
 }
