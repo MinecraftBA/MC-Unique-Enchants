@@ -2,26 +2,33 @@ package ba.minecraft.uniquemagic.common.enchantments;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.helpers.ModEnchantmentHelper;
+import ba.minecraft.uniquemagic.common.tags.ModEnchantmentTags;
 import ba.minecraft.uniquemagic.common.tags.ModEntityTypeTags;
 import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.advancements.critereon.EntityTypePredicate;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
+import net.minecraft.world.item.enchantment.EnchantmentTarget;
 import net.minecraft.world.item.enchantment.LevelBasedValue;
 import net.minecraft.world.item.enchantment.Enchantment.EnchantmentDefinition;
 import net.minecraft.world.item.enchantment.effects.AddValue;
+import net.minecraft.world.item.enchantment.effects.ApplyMobEffect;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
+import net.minecraft.world.level.storage.loot.providers.number.EnchantmentLevelProvider;
 
 public final class WeaponEnchantments {
 
@@ -57,6 +64,10 @@ public final class WeaponEnchantments {
     	registerIllagersBane(context, itemsRegistry, enchantmentsRegistry);
     	registerNetherSlayer(context, itemsRegistry, enchantmentsRegistry);
     	registerPillaging(context, itemsRegistry, enchantmentsRegistry);
+    	
+    	registerBlind(context, itemsRegistry, enchantmentsRegistry);
+    	registerPoison(context, itemsRegistry, enchantmentsRegistry);
+    
     }
     
     private static void registerDisarm(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
@@ -193,6 +204,88 @@ public final class WeaponEnchantments {
         );
     	
         ModEnchantmentHelper.register(context, PILLAGING, builder);
+    }
+    
+    private static void registerBlind(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry, HolderGetter<Enchantment> enchantmentsRegistry) {
+    	
+    	EnchantmentDefinition definition = Enchantment.definition(
+        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		5,
+        		5, 
+        		Enchantment.dynamicCost(5, 10), 
+        		Enchantment.dynamicCost(25, 10), 
+        		2, 
+        		EquipmentSlotGroup.MAINHAND
+        );
+    	
+    	Enchantment.Builder builder = Enchantment.enchantment(definition);
+    	
+    	// Cannot be used with other enchantments that place buff on mob.
+    	builder.exclusiveWith(enchantmentsRegistry.getOrThrow(ModEnchantmentTags.MOB_EFFECT_EXCLUSIVE));
+
+    	// Create condition for effect to happen.
+    	LootItemCondition.Builder effectCondition = LootItemRandomChanceCondition.randomChance(
+			EnchantmentLevelProvider.forEnchantmentLevel(
+				LevelBasedValue.perLevel(UniqueMagicModConfig.BLIND_BASE_CHANCE/(float)100)
+			)
+		);
+    	
+        builder.withEffect(
+            EnchantmentEffectComponents.POST_ATTACK,
+            EnchantmentTarget.ATTACKER,
+            EnchantmentTarget.VICTIM,
+            new ApplyMobEffect(
+                HolderSet.direct(MobEffects.BLINDNESS),
+                LevelBasedValue.constant(UniqueMagicModConfig.BLIND_BASE_DURATION),
+                LevelBasedValue.perLevel(UniqueMagicModConfig.BLIND_BASE_DURATION),
+                LevelBasedValue.constant(0),
+                LevelBasedValue.perLevel(0, 1)
+            ),
+            effectCondition
+        );
+    	
+        ModEnchantmentHelper.register(context, BLIND, builder);
+    }
+    
+    private static void registerPoison(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry, HolderGetter<Enchantment> enchantmentsRegistry) {
+    	
+    	EnchantmentDefinition definition = Enchantment.definition(
+        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		5,
+        		5, 
+        		Enchantment.dynamicCost(5, 10), 
+        		Enchantment.dynamicCost(25, 10), 
+        		2, 
+        		EquipmentSlotGroup.MAINHAND
+        );
+    	
+    	Enchantment.Builder builder = Enchantment.enchantment(definition);
+    	
+    	// Cannot be used with other enchantments that place buff on mob.
+    	builder.exclusiveWith(enchantmentsRegistry.getOrThrow(ModEnchantmentTags.MOB_EFFECT_EXCLUSIVE));
+
+    	// Create condition for effect to happen.
+    	LootItemCondition.Builder effectCondition = LootItemRandomChanceCondition.randomChance(
+			EnchantmentLevelProvider.forEnchantmentLevel(
+				LevelBasedValue.perLevel(UniqueMagicModConfig.POISON_BASE_CHANCE/(float)100)
+			)
+		);
+    	
+        builder.withEffect(
+            EnchantmentEffectComponents.POST_ATTACK,
+            EnchantmentTarget.ATTACKER,
+            EnchantmentTarget.VICTIM,
+            new ApplyMobEffect(
+                HolderSet.direct(MobEffects.POISON),
+                LevelBasedValue.constant(UniqueMagicModConfig.POISON_BASE_DURATION),
+                LevelBasedValue.perLevel(UniqueMagicModConfig.POISON_BASE_DURATION),
+                LevelBasedValue.constant(0),
+                LevelBasedValue.perLevel(0, 1)
+            ),
+            effectCondition
+        );
+    	
+        ModEnchantmentHelper.register(context, POISON, builder);
     }
 }
 

@@ -25,15 +25,29 @@ public final class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
         	.add(ArmorEnchantments.LIGHTNING_PROTECTION)
         	.add(ArmorEnchantments.MAGIC_PROTECTION)
         	.add(ArmorEnchantments.SONIC_PROTECTION);
-		
+
+        tag(EnchantmentTags.DAMAGE_EXCLUSIVE)
+	    	.add(WeaponEnchantments.ILLAGERS_BANE)
+	    	.add(WeaponEnchantments.NETHER_SLAYER)
+	    	.add(WeaponEnchantments.PILLAGING);
+
 		tag(ModEnchantmentTags.XP_GAIN_EXCLUSIVE)
 			.add(Enchantments.MENDING)
 			.add(ArmorEnchantments.EXPLORATION);
 		
-        tag(EnchantmentTags.DAMAGE_EXCLUSIVE)
-        	.add(WeaponEnchantments.ILLAGERS_BANE)
-        	.add(WeaponEnchantments.NETHER_SLAYER)
-        	.add(WeaponEnchantments.PILLAGING);
+
+        tag(ModEnchantmentTags.MOB_EFFECT_EXCLUSIVE)
+	    	.add(WeaponEnchantments.BLIND)
+	    	.add(WeaponEnchantments.CONFUSE)
+	    	.add(WeaponEnchantments.HARM)
+	    	.add(WeaponEnchantments.LEVITATE)
+	    	.add(WeaponEnchantments.POISON)
+	    	.add(WeaponEnchantments.SLOW)
+	    	.add(WeaponEnchantments.STARVE)
+	    	.add(WeaponEnchantments.TEMPO_THEFT)
+	    	.add(WeaponEnchantments.WEAKEN)
+	    	.add(WeaponEnchantments.WITHERING);
+        
 	}
 	
     @Override

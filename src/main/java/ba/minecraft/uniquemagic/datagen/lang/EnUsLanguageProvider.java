@@ -70,5 +70,8 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 		add(WeaponEnchantments.NETHER_SLAYER, "Nether Slayer");
 		add(WeaponEnchantments.PILLAGING, "Pillaging");
 
+		add(WeaponEnchantments.BLIND, "Blind");
+		add(WeaponEnchantments.POISON, "Poison");
+
 	}
 }
