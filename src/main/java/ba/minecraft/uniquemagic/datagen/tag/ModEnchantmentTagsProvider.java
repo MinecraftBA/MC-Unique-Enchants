@@ -3,6 +3,7 @@ package ba.minecraft.uniquemagic.datagen.tag;
 import java.util.concurrent.CompletableFuture;
 
 import ba.minecraft.uniquemagic.common.enchantments.ArmorEnchantments;
+import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchantments;
 import ba.minecraft.uniquemagic.common.tags.ModEnchantmentTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
@@ -28,6 +29,11 @@ public final class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
 		tag(ModEnchantmentTags.XP_GAIN_EXCLUSIVE)
 			.add(Enchantments.MENDING)
 			.add(ArmorEnchantments.EXPLORATION);
+		
+        tag(EnchantmentTags.DAMAGE_EXCLUSIVE)
+        	.add(WeaponEnchantments.ILLAGERS_BANE)
+        	.add(WeaponEnchantments.NETHER_SLAYER)
+        	.add(WeaponEnchantments.PILLAGING);
 	}
 	
     @Override

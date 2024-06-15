@@ -66,5 +66,9 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 		add(WeaponEnchantments.DISARM, "Disarm");
 		add(WeaponEnchantments.LIFE_STEAL, "Life Steal");
 
+		add(WeaponEnchantments.ILLAGERS_BANE, "Illager's Bane");
+		add(WeaponEnchantments.NETHER_SLAYER, "Nether Slayer");
+		add(WeaponEnchantments.PILLAGING, "Pillaging");
+
 	}
 }
