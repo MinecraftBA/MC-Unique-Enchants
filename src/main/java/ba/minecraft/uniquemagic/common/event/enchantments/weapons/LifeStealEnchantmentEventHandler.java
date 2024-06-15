@@ -53,7 +53,7 @@ public final class LifeStealEnchantmentEventHandler {
 		float damageDealt = event.getAmount();
 
     	// Get reference to enchantment.
-    	Holder<Enchantment> enchantment = ModEnchantmentHelper.getHolder(level, WeaponEnchantments.DISARM);
+    	Holder<Enchantment> enchantment = ModEnchantmentHelper.getHolder(level, WeaponEnchantments.LIFE_STEAL);
 
 		// Get level of enchantment player has on equipped items.
 		int enchantmentLevel = EnchantmentHelper.getEnchantmentLevel(enchantment, player);

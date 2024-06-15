@@ -4,6 +4,7 @@ import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.ArmorEnchantments;
 import ba.minecraft.uniquemagic.common.enchantments.BowEnchantments;
 import ba.minecraft.uniquemagic.common.enchantments.ToolEnchantments;
+import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchantments;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -22,6 +23,7 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 		addArmorEnchantments();
 		addBowEnchantments();
 		addToolEnchantments();
+		addWeaponEnchantments();
 		
 	}
 
@@ -56,6 +58,13 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 	private void addToolEnchantments() {
 
 		add(ToolEnchantments.TIMBER, "Timber");
+
+	}
+
+	private void addWeaponEnchantments() {
+
+		add(WeaponEnchantments.DISARM, "Disarm");
+		add(WeaponEnchantments.LIFE_STEAL, "Life Steal");
 
 	}
 }

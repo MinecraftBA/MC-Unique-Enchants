@@ -33,15 +33,16 @@ public final class ModDataGenerators {
 		
 		// Get reference to pack output.
 		PackOutput packOutput = dataGen.getPackOutput();
-		
+
+		// Registration of mod features.
+		dataGen.addProvider(event.includeServer(), new ModDatapackBuiltinEntriesProvider(packOutput, lookupProvider));
+
 		// Registration of tags providers.
 		dataGen.addProvider(event.includeServer(), new ModEntityTypeTagsProvider(packOutput, lookupProvider, exFileHelper));
 		dataGen.addProvider(event.includeServer(), new ModDamageTypeTagsProvider(packOutput, lookupProvider, exFileHelper));
-		dataGen.addProvider(event.includeServer(), new ModEnchantmentTagsProvider(packOutput, lookupProvider));
-
-		dataGen.addProvider(event.includeServer(), new ModDatapackBuiltinEntriesProvider(packOutput, lookupProvider));
+		//dataGen.addProvider(event.includeServer(), new ModEnchantmentTagsProvider(packOutput, lookupProvider));
 		
-		// Language providers
+		// Registration of language provider.
 		dataGen.addProvider(event.includeClient(), new EnUsLanguageProvider(packOutput));
 	}
 	
