@@ -1,6 +1,8 @@
 package ba.minecraft.uniquemagic.datagen.lang;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
+import ba.minecraft.uniquemagic.common.enchantments.ArmorEnchantments;
+import ba.minecraft.uniquemagic.common.enchantments.BowEnchantments;
 import ba.minecraft.uniquemagic.common.enchantments.ToolEnchantments;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
@@ -17,10 +19,13 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 	@Override
 	protected void addTranslations() {
 
+		addArmorEnchantments();
+		addBowEnchantments();
 		addToolEnchantments();
 		
 	}
-	
+
+
 	private void add(ResourceKey<Enchantment> enchantment, String name) {
 
 		ResourceLocation resourceLocation = enchantment.location();
@@ -28,6 +33,24 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 		String key = "enchantment." + resourceLocation.getNamespace() + "." + resourceLocation.getPath();
 		
 		add(key, name);
+	}
+	
+	private void addArmorEnchantments() {
+
+		add(ArmorEnchantments.EXPLORATION, "Exploration");
+		add(ArmorEnchantments.OMNIVORE, "Omnivore");
+
+		add(ArmorEnchantments.FREEZING_PROTECTION, "Freezing Protection");
+		add(ArmorEnchantments.LIGHTNING_PROTECTION, "Lightning Protection");
+		add(ArmorEnchantments.MAGIC_PROTECTION, "Magic Protection");
+		add(ArmorEnchantments.SONIC_PROTECTION, "Sonic Protection");
+
+	}
+	
+	private void addBowEnchantments() {
+
+		add(BowEnchantments.TRIGGER, "Trigger");
+
 	}
 
 	private void addToolEnchantments() {

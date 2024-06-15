@@ -9,7 +9,7 @@ public final class ModEnchantmentTags {
 
 	public static void init() {}
 
-    public static final TagKey<Enchantment> PROTECTION = create("protection");
+    public static final TagKey<Enchantment> XP_GAIN_EXCLUSIVE = create("xp_gain_exclusive");
 
     private static TagKey<Enchantment> create(String name)
     {

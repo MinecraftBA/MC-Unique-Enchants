@@ -7,6 +7,7 @@ import ba.minecraft.uniquemagic.common.tags.ModEnchantmentTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EnchantmentTagsProvider;
+import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.item.enchantment.Enchantments;
 
 public final class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
@@ -17,14 +18,16 @@ public final class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
 
 	@Override
 	protected void addTags(Provider provider) {
-        tag(ModEnchantmentTags.PROTECTION)
-    	.add(Enchantments.PROJECTILE_PROTECTION)
-    	.add(Enchantments.BLAST_PROTECTION)
-    	.add(Enchantments.PROTECTION)
-    	.add(Enchantments.FIRE_PROTECTION)
-    	.add(ArmorEnchantments.FREEZING_PROTECTION)
-    	.add(ArmorEnchantments.LIGHTNING_PROTECTION)
-    	.add(ArmorEnchantments.MAGIC_PROTECTION);
+
+		tag(EnchantmentTags.ARMOR_EXCLUSIVE)
+        	.add(ArmorEnchantments.FREEZING_PROTECTION)
+        	.add(ArmorEnchantments.LIGHTNING_PROTECTION)
+        	.add(ArmorEnchantments.MAGIC_PROTECTION)
+        	.add(ArmorEnchantments.SONIC_PROTECTION);
+		
+		tag(ModEnchantmentTags.XP_GAIN_EXCLUSIVE)
+			.add(Enchantments.MENDING)
+			.add(ArmorEnchantments.EXPLORATION);
 	}
 	
     @Override

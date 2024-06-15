@@ -20,6 +20,7 @@ public final class BowEnchantments {
     	HolderGetter<Item> itemsRegistry = context.lookup(Registries.ITEM);
     	
     	registerTrigger(context, itemsRegistry);
+    	
     }
     
     private static void registerTrigger(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
