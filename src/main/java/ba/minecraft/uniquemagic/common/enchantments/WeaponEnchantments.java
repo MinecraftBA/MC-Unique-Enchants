@@ -35,7 +35,6 @@ public final class WeaponEnchantments {
     public static final ResourceKey<Enchantment> ILLAGERS_BANE = ModEnchantmentHelper.createResourceKey("illagers_bane");
     public static final ResourceKey<Enchantment> LEVITATE = ModEnchantmentHelper.createResourceKey("levitate");
     public static final ResourceKey<Enchantment> LIFE_STEAL = ModEnchantmentHelper.createResourceKey("life_steal");
-    public static final ResourceKey<Enchantment> LIGHTNING_STRIKER = ModEnchantmentHelper.createResourceKey("lightning_striker");
     public static final ResourceKey<Enchantment> NETHER_SLAYER = ModEnchantmentHelper.createResourceKey("nether_slayer");
     public static final ResourceKey<Enchantment> PILLAGING = ModEnchantmentHelper.createResourceKey("pillaging");
     public static final ResourceKey<Enchantment> POISON = ModEnchantmentHelper.createResourceKey("poison");
@@ -44,6 +43,7 @@ public final class WeaponEnchantments {
     public static final ResourceKey<Enchantment> STARVE = ModEnchantmentHelper.createResourceKey("starve");
     public static final ResourceKey<Enchantment> STUN = ModEnchantmentHelper.createResourceKey("stun");
     public static final ResourceKey<Enchantment> TEMPO_THEFT = ModEnchantmentHelper.createResourceKey("tempo_theft");
+    public static final ResourceKey<Enchantment> THUNDERING = ModEnchantmentHelper.createResourceKey("thundering");
     public static final ResourceKey<Enchantment> WEAKEN = ModEnchantmentHelper.createResourceKey("weaken");
     public static final ResourceKey<Enchantment> WITHERING = ModEnchantmentHelper.createResourceKey("withering");
 
@@ -56,6 +56,7 @@ public final class WeaponEnchantments {
     	registerExecute(context, itemsRegistry);
     	registerLifeSteal(context, itemsRegistry);
     	registerStun(context, itemsRegistry);
+    	registerThundering(context, itemsRegistry);
 
     	registerIllagersBane(context, itemsRegistry, enchantmentsRegistry);
     	registerNetherSlayer(context, itemsRegistry, enchantmentsRegistry);
@@ -421,6 +422,23 @@ public final class WeaponEnchantments {
     	Enchantment.Builder builder = Enchantment.enchantment(definition);
     	
         ModEnchantmentHelper.register(context, EXECUTE, builder);
+    }
+    
+    private static void registerThundering(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
+    	
+    	EnchantmentDefinition definition = Enchantment.definition(
+        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		2,
+        		5, 
+        		Enchantment.constantCost(25), 
+        		Enchantment.constantCost(50), 
+        		4, 
+        		EquipmentSlotGroup.MAINHAND
+        );
+    	
+    	Enchantment.Builder builder = Enchantment.enchantment(definition);
+    	
+        ModEnchantmentHelper.register(context, THUNDERING, builder);
     }
 }
 

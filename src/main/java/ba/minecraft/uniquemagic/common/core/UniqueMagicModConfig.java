@@ -58,14 +58,10 @@ public final class UniqueMagicModConfig {
 		.comment("Base damage-to-heal conversion ratio for Life Steal enchantment.")
         .defineInRange("Life Steal base ratio", 5, 1, 20);
 
-    private static final ForgeConfigSpec.IntValue LIGHTNING_STRIKER_BASE_CHANCE_CONFIG = BUILDER
-		.comment("Base chance for Lightning Striker enchantment to trigger.")
-        .defineInRange("Lightning Striker base chance", 5, 1, 20);
+    private static final ForgeConfigSpec.IntValue THUNDERING_BASE_CHANCE_CONFIG = BUILDER
+		.comment("Base chance for Thundering enchantment to trigger.")
+        .defineInRange("Thundering base chance", 5, 1, 20);
     
-    private static final ForgeConfigSpec.IntValue LIGHTNING_STRIKER_BASE_DURATION_CONFIG = BUILDER
-		.comment("Base duration for Lightning Striker enchantment in seconds.")
-        .defineInRange("Lightning Striker base duration", 3, 1, 60);;
-
     private static final ForgeConfigSpec.IntValue POISON_BASE_CHANCE_CONFIG = BUILDER
 		.comment("Base chance for Poison enchantment to trigger.")
         .defineInRange("Poison base chance", 5, 1, 20);
@@ -176,8 +172,7 @@ public final class UniqueMagicModConfig {
     public static int LEVITATE_BASE_CHANCE;
     public static int LEVITATE_BASE_DURATION;
     
-    public static int LIGHTNING_STRIKER_BASE_CHANCE;
-    public static int LIGHTNING_STRIKER_BASE_DURATION;
+    public static int THUNDERING_BASE_CHANCE;
     
     public static int SLOW_BASE_CHANCE;
     public static int SLOW_BASE_DURATION;
@@ -227,8 +222,7 @@ public final class UniqueMagicModConfig {
 
     	LIFE_STEAL_BASE_RATIO = LIFE_STEAL_BASE_RATIO_CONFIG.get();
     	
-    	LIGHTNING_STRIKER_BASE_CHANCE = LIGHTNING_STRIKER_BASE_CHANCE_CONFIG.get();
-    	LIGHTNING_STRIKER_BASE_DURATION = LIGHTNING_STRIKER_BASE_DURATION_CONFIG.get();
+    	THUNDERING_BASE_CHANCE = THUNDERING_BASE_CHANCE_CONFIG.get();
     	
     	POISON_BASE_CHANCE = POISON_BASE_CHANCE_CONFIG.get();
     	POISON_BASE_DURATION = POISON_BASE_DURATION_CONFIG.get();
