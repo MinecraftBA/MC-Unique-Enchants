@@ -2,6 +2,7 @@ package ba.minecraft.uniquemagic.common.enchantments;
 
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 
 public final class ModEnchantments {
 
@@ -12,5 +13,8 @@ public final class ModEnchantments {
 		ToolEnchantments.bootstrap(context);
 		WeaponEnchantments.bootstrap(context);
 		
+		Enchantments.bootstrap(context);
     }
+	
+
 }
