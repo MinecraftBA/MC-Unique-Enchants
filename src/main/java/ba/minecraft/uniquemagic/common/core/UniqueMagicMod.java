@@ -4,6 +4,8 @@ import com.mojang.logging.LogUtils;
 
 import ba.minecraft.uniquemagic.common.mobeffects.BeneficialMobEffects;
 import ba.minecraft.uniquemagic.common.mobeffects.HarmfulMobEffects;
+import ba.minecraft.uniquemagic.common.tags.ModDamageTypeTags;
+import ba.minecraft.uniquemagic.common.tags.ModEnchantmentTags;
 import ba.minecraft.uniquemagic.common.tags.ModEntityTypeTags;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -31,6 +33,8 @@ public class UniqueMagicMod
     public UniqueMagicMod()
     {
     	ModEntityTypeTags.init();
+    	ModDamageTypeTags.init();
+    	ModEnchantmentTags.init();
     	
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         

@@ -89,7 +89,7 @@ public final class ApplyTargetEffectEnchantmentEventHandler {
 			}
 
 			// IF: Target already has effect.
-			if (livingTarget.hasEffect(configuration.getMobEffectHolder())){
+			if (livingTarget.hasEffect(configuration.getTargetMobEffectHolder())){
 				
 				// Proceed with next configuration.
 				continue;
@@ -117,7 +117,7 @@ public final class ApplyTargetEffectEnchantmentEventHandler {
 				configuration.getBaseDuration() * enchantmentLevel * 20; // Calculate duration of non-instant effect.
 
 			// Create instance of effect.
-			MobEffectInstance effect = new MobEffectInstance(configuration.getMobEffectHolder(), duration, enchantmentLevel - 1);
+			MobEffectInstance effect = new MobEffectInstance(configuration.getTargetMobEffectHolder(), duration, enchantmentLevel - 1);
 
 			// Apply effect to mob.
 			livingTarget.addEffect(effect);

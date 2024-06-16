@@ -72,7 +72,12 @@ public final class WeaponEnchantments {
     	registerWeaken(context, itemsRegistry, enchantmentsRegistry);
     	registerWithering(context, itemsRegistry, enchantmentsRegistry);
 
-    }
+    	registerRampage(context, itemsRegistry);
+
+    	registerCurseOfSlowness(context, itemsRegistry, enchantmentsRegistry);
+
+    	registerTempoTheft(context, itemsRegistry, enchantmentsRegistry);
+}
     
     private static void registerDisarm(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
     	
@@ -440,5 +445,64 @@ public final class WeaponEnchantments {
     	
         ModEnchantmentHelper.register(context, THUNDERING, builder);
     }
+
+    private static void registerRampage(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
+    	
+    	EnchantmentDefinition definition = Enchantment.definition(
+        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		2,
+        		5, 
+        		Enchantment.dynamicCost(5, 10), 
+        		Enchantment.dynamicCost(25, 10), 
+        		4, 
+        		EquipmentSlotGroup.MAINHAND
+        );
+    	
+    	Enchantment.Builder builder = Enchantment.enchantment(definition);
+    	
+        ModEnchantmentHelper.register(context, RAMPAGE, builder);
+    }
+    
+    private static void registerCurseOfSlowness(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry, HolderGetter<Enchantment> enchantmentsRegistry) {
+    	
+    	EnchantmentDefinition definition = Enchantment.definition(
+        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		2,
+        		5, 
+        		Enchantment.dynamicCost(5, 10), 
+        		Enchantment.dynamicCost(25, 10), 
+        		4, 
+        		EquipmentSlotGroup.MAINHAND
+        );
+    	
+    	Enchantment.Builder builder = Enchantment.enchantment(definition);
+    	
+    	// Cannot be used with other enchantments that place buff on mob.
+    	builder.exclusiveWith(enchantmentsRegistry.getOrThrow(ModEnchantmentTags.MOB_EFFECT_EXCLUSIVE));
+
+        ModEnchantmentHelper.register(context, CURSE_OF_SLOWNESS, builder);
+    }
+
+
+    private static void registerTempoTheft(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry, HolderGetter<Enchantment> enchantmentsRegistry) {
+    	
+    	EnchantmentDefinition definition = Enchantment.definition(
+        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		2,
+        		5, 
+        		Enchantment.dynamicCost(5, 10), 
+        		Enchantment.dynamicCost(25, 10), 
+        		4, 
+        		EquipmentSlotGroup.MAINHAND
+        );
+    	
+    	Enchantment.Builder builder = Enchantment.enchantment(definition);
+    	
+    	// Cannot be used with other enchantments that place buff on mob.
+    	builder.exclusiveWith(enchantmentsRegistry.getOrThrow(ModEnchantmentTags.MOB_EFFECT_EXCLUSIVE));
+
+        ModEnchantmentHelper.register(context, TEMPO_THEFT, builder);
+    }
+    
 }
 

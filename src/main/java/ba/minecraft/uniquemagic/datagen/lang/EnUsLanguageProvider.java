@@ -83,5 +83,11 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 		add(WeaponEnchantments.WEAKEN, "Weaken");
 		add(WeaponEnchantments.WITHERING, "Withering");
 
+		add(WeaponEnchantments.RAMPAGE, "Rampage");
+
+		add(WeaponEnchantments.CURSE_OF_SLOWNESS, "Curse of Slowness");
+
+		add(WeaponEnchantments.TEMPO_THEFT, "Tempo Theft");
+
 	}
 }
