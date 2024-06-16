@@ -34,11 +34,11 @@ public final class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
 		tag(ModEnchantmentTags.XP_GAIN_EXCLUSIVE)
 			.add(Enchantments.MENDING)
 			.add(ArmorEnchantments.EXPLORATION);
-		
 
         tag(ModEnchantmentTags.MOB_EFFECT_EXCLUSIVE)
 	    	.add(WeaponEnchantments.BLIND)
 	    	.add(WeaponEnchantments.CONFUSE)
+	    	.add(WeaponEnchantments.CURSE_OF_SLOWNESS)
 	    	.add(WeaponEnchantments.HARM)
 	    	.add(WeaponEnchantments.LEVITATE)
 	    	.add(WeaponEnchantments.POISON)
