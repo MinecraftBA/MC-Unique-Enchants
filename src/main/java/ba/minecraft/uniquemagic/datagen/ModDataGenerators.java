@@ -27,24 +27,21 @@ public final class ModDataGenerators {
 		// Get reference to existing file helper.
 		ExistingFileHelper exFileHelper = event.getExistingFileHelper();
 
-		// Get reference to Vanilla lookup provider.
-		CompletableFuture<Provider> lookupProvider = event.getLookupProvider();
-
-		// Get reference to Mod lookup provider.
-        CompletableFuture<Provider> modLookupProvider = CompletableFuture.supplyAsync(ModRegistries::createLookup, Util.backgroundExecutor());
-
 		// Get reference to running instance of data generator.
 		DataGenerator dataGen = event.getGenerator();
 		
 		// Get reference to pack output.
 		PackOutput packOutput = dataGen.getPackOutput();
 
+		// Get reference to Mod lookup provider.
+        CompletableFuture<Provider> modLookupProvider = CompletableFuture.supplyAsync(ModRegistries::createLookup, Util.backgroundExecutor());
+
 		// Registration of mod features.
-		dataGen.addProvider(event.includeServer(), new ModDatapackBuiltinEntriesProvider(packOutput, lookupProvider));
+		dataGen.addProvider(event.includeServer(), new ModDatapackBuiltinEntriesProvider(packOutput, modLookupProvider));
 
 		// Registration of tags providers.
-		dataGen.addProvider(event.includeServer(), new ModEntityTypeTagsProvider(packOutput, lookupProvider, exFileHelper));
-		dataGen.addProvider(event.includeServer(), new ModDamageTypeTagsProvider(packOutput, lookupProvider, exFileHelper));
+		dataGen.addProvider(event.includeServer(), new ModEntityTypeTagsProvider(packOutput, modLookupProvider, exFileHelper));
+		dataGen.addProvider(event.includeServer(), new ModDamageTypeTagsProvider(packOutput, modLookupProvider, exFileHelper));
 		dataGen.addProvider(event.includeServer(), new ModEnchantmentTagsProvider(packOutput, modLookupProvider));
 		
 		// Registration of language provider.
