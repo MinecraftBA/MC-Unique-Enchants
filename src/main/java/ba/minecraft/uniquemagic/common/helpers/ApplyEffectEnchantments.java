@@ -12,7 +12,7 @@ public class ApplyEffectEnchantments {
 
 	public static final ArrayList<ApplyEffectEnchantmentConfiguration> TARGET_CONFIGURATIONS;
 	public static final ArrayList<ApplyEffectEnchantmentConfiguration> ATTACKER_CONFIGURATIONS;
-	public static final ArrayList<ApplyEffectEnchantmentConfiguration> DUAL_CONFIGURATIONS;
+	public static final ArrayList<ApplyEffectEnchantmentConfiguration> BOUND_CONFIGURATIONS;
 	
 	static {
 		
@@ -119,9 +119,9 @@ public class ApplyEffectEnchantments {
 			() -> { return UniqueMagicModConfig.RAMPAGE_BASE_DURATION; }
 		));
 
-		DUAL_CONFIGURATIONS = new ArrayList<ApplyEffectEnchantmentConfiguration>();
+		BOUND_CONFIGURATIONS = new ArrayList<ApplyEffectEnchantmentConfiguration>();
 
-		DUAL_CONFIGURATIONS.add(new ApplyEffectEnchantmentConfiguration(
+		BOUND_CONFIGURATIONS.add(new ApplyEffectEnchantmentConfiguration(
 			WeaponEnchantments.CURSE_OF_SLOWNESS,
 			MobEffects.MOVEMENT_SLOWDOWN,
 			MobEffects.MOVEMENT_SPEED,
@@ -130,7 +130,7 @@ public class ApplyEffectEnchantments {
 			() -> { return UniqueMagicModConfig.CURSE_OF_SLOWNESS_BASE_DURATION; }
 		));
 
-		DUAL_CONFIGURATIONS.add(new ApplyEffectEnchantmentConfiguration(
+		BOUND_CONFIGURATIONS.add(new ApplyEffectEnchantmentConfiguration(
 			WeaponEnchantments.TEMPO_THEFT,
 			MobEffects.MOVEMENT_SPEED,
 			MobEffects.MOVEMENT_SLOWDOWN,

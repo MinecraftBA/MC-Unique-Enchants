@@ -11,16 +11,17 @@ import ba.minecraft.uniquemagic.common.tags.ModEnchantmentTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.EnchantmentTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public final class ModEnchantmentTagsProvider extends TagsProvider<Enchantment> {
+public final class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
 
-	public ModEnchantmentTagsProvider(PackOutput packOutput, CompletableFuture<Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
-		super(packOutput, Registries.ENCHANTMENT, lookupProvider, UniqueMagicMod.MODID, existingFileHelper);
+	public ModEnchantmentTagsProvider(PackOutput packOutput, CompletableFuture<Provider> lookupProvider) {
+		super(packOutput, lookupProvider);
 	}
 
 	@Override
@@ -32,28 +33,6 @@ public final class ModEnchantmentTagsProvider extends TagsProvider<Enchantment> 
         	.add(ArmorEnchantments.MAGIC_PROTECTION)
         	.add(ArmorEnchantments.SONIC_PROTECTION);
 
-        tag(EnchantmentTags.DAMAGE_EXCLUSIVE)
-	    	.add(WeaponEnchantments.ILLAGERS_BANE)
-	    	.add(WeaponEnchantments.NETHER_SLAYER)
-	    	.add(WeaponEnchantments.PILLAGING);
-
-		tag(ModEnchantmentTags.XP_GAIN_EXCLUSIVE)
-			.add(Enchantments.MENDING)
-			.add(ArmorEnchantments.EXPLORATION);
-
-        tag(ModEnchantmentTags.MOB_EFFECT_EXCLUSIVE)
-	    	.add(WeaponEnchantments.BLIND)
-	    	.add(WeaponEnchantments.CONFUSE)
-	    	.add(WeaponEnchantments.CURSE_OF_SLOWNESS)
-	    	.add(WeaponEnchantments.HARM)
-	    	.add(WeaponEnchantments.LEVITATE)
-	    	.add(WeaponEnchantments.POISON)
-	    	.add(WeaponEnchantments.SLOW)
-	    	.add(WeaponEnchantments.STARVE)
-	    	.add(WeaponEnchantments.TEMPO_THEFT)
-	    	.add(WeaponEnchantments.WEAKEN)
-	    	.add(WeaponEnchantments.WITHERING);
-        
 	}
 	
     @Override
