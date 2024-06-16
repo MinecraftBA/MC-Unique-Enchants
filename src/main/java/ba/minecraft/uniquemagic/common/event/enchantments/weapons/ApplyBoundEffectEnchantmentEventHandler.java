@@ -73,7 +73,7 @@ public final class ApplyBoundEffectEnchantmentEventHandler {
 			return;
 		}
 
-		for(ApplyEffectEnchantmentConfiguration configuration : ApplyEffectEnchantments.TARGET_CONFIGURATIONS) {
+		for(ApplyEffectEnchantmentConfiguration configuration : ApplyEffectEnchantments.BOUND_CONFIGURATIONS) {
 
 	    	// Get reference to enchantment.
 	    	Holder<Enchantment> enchantment = ModEnchantmentHelper.getHolder(level, configuration.getEnchantmentKey());
