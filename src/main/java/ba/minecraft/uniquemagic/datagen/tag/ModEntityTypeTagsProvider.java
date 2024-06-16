@@ -12,8 +12,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 public final class ModEntityTypeTagsProvider extends EntityTypeTagsProvider
 {
-    public ModEntityTypeTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper)
-    {
+    public ModEntityTypeTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, UniqueMagicMod.MODID, existingFileHelper);
     }
 

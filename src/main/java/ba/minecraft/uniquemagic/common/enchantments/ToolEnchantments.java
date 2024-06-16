@@ -1,17 +1,42 @@
 package ba.minecraft.uniquemagic.common.enchantments;
 
-import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
-import ba.minecraft.uniquemagic.common.enchantments.tool.TimberEnchantment;
+import ba.minecraft.uniquemagic.common.helpers.ModEnchantmentHelper;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.world.item.enchantment.Enchantment.EnchantmentDefinition;
 
-public class ToolEnchantments {
+public final class ToolEnchantments {
 	
-	public static final DeferredRegister<Enchantment> REGISTRY = 
-			DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, UniqueMagicMod.MODID);
+    public static final ResourceKey<Enchantment> TIMBER = ModEnchantmentHelper.createResourceKey("timber");
 	
-	public static final RegistryObject<Enchantment> TIMBER = 
-			REGISTRY.register("timber",  () -> new TimberEnchantment());
+    public static void bootstrap(BootstrapContext<Enchantment> context) {
+    	
+    	HolderGetter<Item> itemsRegistry = context.lookup(Registries.ITEM);
+    	
+    	registerTimber(context, itemsRegistry);
+    	
+    }
+    
+    private static void registerTimber(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
+    	
+    	EnchantmentDefinition definition = Enchantment.definition(
+        		itemsRegistry.getOrThrow(ItemTags.AXES), 
+        		2,
+        		1, 
+        		Enchantment.constantCost(20), 
+        		Enchantment.constantCost(50), 
+        		4, 
+        		EquipmentSlotGroup.MAINHAND
+        );
+    	
+    	Enchantment.Builder builder = Enchantment.enchantment(definition);
+    	
+        ModEnchantmentHelper.register(context, TIMBER, builder);
+    }
 }

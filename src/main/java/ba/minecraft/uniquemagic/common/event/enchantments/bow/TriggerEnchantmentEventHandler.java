@@ -2,7 +2,9 @@ package ba.minecraft.uniquemagic.common.event.enchantments.bow;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.BowEnchantments;
+import ba.minecraft.uniquemagic.common.helpers.ModEnchantmentHelper;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -10,6 +12,7 @@ import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -75,8 +78,11 @@ public final class TriggerEnchantmentEventHandler {
     		return;
     	}
 
+    	// Get reference to enchantment.
+    	Holder<Enchantment> enchantment = ModEnchantmentHelper.getHolder(level, BowEnchantments.TRIGGER);
+
     	// Get enchantment level on helmet.
-    	int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(BowEnchantments.TRIGGER.get(), weapon);
+    	int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(enchantment, weapon);
 
     	// IF: There is no enchantment.
     	if(enchantmentLevel == 0) {

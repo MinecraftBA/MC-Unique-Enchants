@@ -2,10 +2,13 @@ package ba.minecraft.uniquemagic.datagen;
 
 import java.util.concurrent.CompletableFuture;
 
+import ba.minecraft.uniquemagic.common.core.ModRegistries;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
+import ba.minecraft.uniquemagic.datagen.lang.EnUsLanguageProvider;
 import ba.minecraft.uniquemagic.datagen.tag.ModEntityTypeTagsProvider;
 import ba.minecraft.uniquemagic.datagen.tag.ModDamageTypeTagsProvider;
 import ba.minecraft.uniquemagic.datagen.tag.ModEnchantmentTagsProvider;
+import net.minecraft.Util;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -24,19 +27,25 @@ public final class ModDataGenerators {
 		// Get reference to existing file helper.
 		ExistingFileHelper exFileHelper = event.getExistingFileHelper();
 
-		// Get reference to lookup provider.
-		CompletableFuture<Provider> lookupProvider = event.getLookupProvider();
-
 		// Get reference to running instance of data generator.
 		DataGenerator dataGen = event.getGenerator();
 		
 		// Get reference to pack output.
 		PackOutput packOutput = dataGen.getPackOutput();
-		
+
+		// Get reference to Mod lookup provider.
+        CompletableFuture<Provider> modLookupProvider = CompletableFuture.supplyAsync(ModRegistries::createLookup, Util.backgroundExecutor());
+
+		// Registration of mod features.
+		dataGen.addProvider(event.includeServer(), new ModDatapackBuiltinEntriesProvider(packOutput, modLookupProvider));
+
 		// Registration of tags providers.
-		dataGen.addProvider(event.includeServer(), new ModEntityTypeTagsProvider(packOutput, lookupProvider, exFileHelper));
-		dataGen.addProvider(event.includeServer(), new ModDamageTypeTagsProvider(packOutput, lookupProvider, exFileHelper));
-		dataGen.addProvider(event.includeServer(), new ModEnchantmentTagsProvider(packOutput, lookupProvider, exFileHelper));
+		dataGen.addProvider(event.includeServer(), new ModEntityTypeTagsProvider(packOutput, modLookupProvider, exFileHelper));
+		dataGen.addProvider(event.includeServer(), new ModDamageTypeTagsProvider(packOutput, modLookupProvider, exFileHelper));
+		dataGen.addProvider(event.includeServer(), new ModEnchantmentTagsProvider(packOutput, modLookupProvider));
+		
+		// Registration of language provider.
+		dataGen.addProvider(event.includeClient(), new EnUsLanguageProvider(packOutput));
 	}
 	
 }

@@ -9,10 +9,11 @@ public final class ModEnchantmentTags {
 
 	public static void init() {}
 
-    public static final TagKey<Enchantment> PROTECTION = create("protection");
+    public static final TagKey<Enchantment> XP_GAIN_EXCLUSIVE = create("xp_gain_exclusive");
+    public static final TagKey<Enchantment> MOB_EFFECT_EXCLUSIVE = create("mob_effect_exclusive");
 
     private static TagKey<Enchantment> create(String name)
     {
-        return TagKey.create(Registries.ENCHANTMENT, new ModResourceLocation(name));
+        return TagKey.create(Registries.ENCHANTMENT, ModResourceLocation.create(name));
     }
 }

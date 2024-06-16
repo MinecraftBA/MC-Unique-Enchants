@@ -14,6 +14,6 @@ public final class ModEntityTypeTags {
 
     private static TagKey<EntityType<?>> create(String name)
     {
-        return TagKey.create(Registries.ENTITY_TYPE, new ModResourceLocation(name));
+        return TagKey.create(Registries.ENTITY_TYPE, ModResourceLocation.create(name));
     }
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.ArmorEnchantments;
+import ba.minecraft.uniquemagic.common.helpers.ModEnchantmentHelper;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.effect.MobEffect;
@@ -14,6 +15,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.FoodProperties.PossibleEffect;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent.Finish;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -58,8 +61,11 @@ public final class OmnivoreEnchantmentEventHandler {
 			return;
 		}
 		
+    	// Get reference to enchantment.
+    	Holder<Enchantment> enchantment = ModEnchantmentHelper.getHolder(level, ArmorEnchantments.OMNIVORE);
+		
 		// IF: Enchant is not applied on head item.
-		if (helmet.getEnchantmentLevel(ArmorEnchantments.OMNIVORE.get()) < 1) {
+		if (EnchantmentHelper.getItemEnchantmentLevel(enchantment, helmet) < 1) {
 
 			// Do nothing.
 			return;

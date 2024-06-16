@@ -3,9 +3,12 @@ package ba.minecraft.uniquemagic.common.event.enchantments.weapons;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchantments;
+import ba.minecraft.uniquemagic.common.helpers.ModEnchantmentHelper;
+import net.minecraft.core.Holder;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
@@ -49,8 +52,11 @@ public final class LifeStealEnchantmentEventHandler {
 		// Get the amount of damage that was inflicted.
 		float damageDealt = event.getAmount();
 
+    	// Get reference to enchantment.
+    	Holder<Enchantment> enchantment = ModEnchantmentHelper.getHolder(level, WeaponEnchantments.LIFE_STEAL);
+
 		// Get level of enchantment player has on equipped items.
-		int enchantmentLevel = EnchantmentHelper.getEnchantmentLevel(WeaponEnchantments.LIFE_STEAL.get(), player);
+		int enchantmentLevel = EnchantmentHelper.getEnchantmentLevel(enchantment, player);
 				
 		// IF: Enchantment level is not at least 1;
 		if (enchantmentLevel < 1) {
