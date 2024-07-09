@@ -33,6 +33,7 @@ public final class WeaponEnchantments {
     public static final ResourceKey<Enchantment> EXECUTE = ModEnchantmentHelper.createResourceKey("execute");
     public static final ResourceKey<Enchantment> HARM = ModEnchantmentHelper.createResourceKey("harm");
     public static final ResourceKey<Enchantment> ILLAGERS_BANE = ModEnchantmentHelper.createResourceKey("illagers_bane");
+    public static final ResourceKey<Enchantment> KENSEI = ModEnchantmentHelper.createResourceKey("kensei");
     public static final ResourceKey<Enchantment> LEVITATE = ModEnchantmentHelper.createResourceKey("levitate");
     public static final ResourceKey<Enchantment> LIFE_STEAL = ModEnchantmentHelper.createResourceKey("life_steal");
     public static final ResourceKey<Enchantment> NETHER_SLAYER = ModEnchantmentHelper.createResourceKey("nether_slayer");
@@ -54,6 +55,7 @@ public final class WeaponEnchantments {
 
     	registerDisarm(context, itemsRegistry);
     	registerExecute(context, itemsRegistry);
+    	registerKensei(context, itemsRegistry);
     	registerLifeSteal(context, itemsRegistry);
     	registerStun(context, itemsRegistry);
     	registerThundering(context, itemsRegistry);
@@ -428,6 +430,23 @@ public final class WeaponEnchantments {
     	
         ModEnchantmentHelper.register(context, EXECUTE, builder);
     }
+    
+	private static void registerKensei(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
+	    	
+	    	EnchantmentDefinition definition = Enchantment.definition(
+	        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+	        		1,
+	        		5, 
+	        		Enchantment.dynamicCost(5, 10), 
+	        		Enchantment.dynamicCost(25, 10),
+	        		8, 
+	        		EquipmentSlotGroup.MAINHAND
+	        );
+	    	
+	    	Enchantment.Builder builder = Enchantment.enchantment(definition);
+	    	
+	        ModEnchantmentHelper.register(context, KENSEI, builder);
+	 }
     
     private static void registerThundering(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
     	

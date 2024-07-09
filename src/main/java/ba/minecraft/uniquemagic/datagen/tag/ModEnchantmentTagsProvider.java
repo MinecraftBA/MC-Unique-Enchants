@@ -39,6 +39,7 @@ public final class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
 	        .add(WeaponEnchantments.EXECUTE)
 	        .add(WeaponEnchantments.HARM)
 	        .add(WeaponEnchantments.ILLAGERS_BANE)
+	        .add(WeaponEnchantments.KENSEI)
 	        .add(WeaponEnchantments.LEVITATE)
 	        .add(WeaponEnchantments.LIFE_STEAL)
 	        .add(WeaponEnchantments.NETHER_SLAYER)

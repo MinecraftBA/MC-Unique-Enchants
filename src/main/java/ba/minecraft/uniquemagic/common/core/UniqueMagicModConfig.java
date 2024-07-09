@@ -37,6 +37,10 @@ public final class UniqueMagicModConfig {
     private static final ForgeConfigSpec.IntValue EXECUTE_BASE_CHANCE_CONFIG = BUILDER
 		.comment("Base chance for Execute enchantment to trigger.")
         .defineInRange("Execute base chance", 1, 1, 20);
+    
+    private static final ForgeConfigSpec.IntValue KENSEI_BASE_RATIO_CONFIG = BUILDER
+    		.comment("Base point to percentage ratio for Kensei enchantment (lower is stronger).")
+            .defineInRange("Kensei base ratio", 10, 3, 30);
 
     private static final ForgeConfigSpec.IntValue HARM_BASE_CHANCE_CONFIG = BUILDER
 		.comment("Base chance for Harm enchantment to trigger.")
@@ -149,6 +153,7 @@ public final class UniqueMagicModConfig {
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static int EXECUTE_BASE_CHANCE;
+    public static int KENSEI_BASE_RATIO;
     public static int LIFE_STEAL_BASE_RATIO;
     
     public static int WITHERING_BASE_CHANCE;
@@ -213,6 +218,7 @@ public final class UniqueMagicModConfig {
     	CURSE_OF_SLOWNESS_BASE_DURATION = CURSE_OF_SLOWNESS_BASE_DURATION_CONFIG.get();
 
     	EXECUTE_BASE_CHANCE = EXECUTE_BASE_CHANCE_CONFIG.get();
+    	KENSEI_BASE_RATIO = KENSEI_BASE_RATIO_CONFIG.get();
 
     	HARM_BASE_CHANCE = HARM_BASE_CHANCE_CONFIG.get();
     	HARM_BASE_DURATION = HARM_BASE_DURATION_CONFIG.get();

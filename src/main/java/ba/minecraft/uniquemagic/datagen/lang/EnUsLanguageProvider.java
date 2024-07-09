@@ -65,6 +65,7 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 
 		add(WeaponEnchantments.DISARM, "Disarm");
 		add(WeaponEnchantments.EXECUTE, "Execute");
+		add(WeaponEnchantments.KENSEI, "Kensei");
 		add(WeaponEnchantments.LIFE_STEAL, "Life Steal");
 		add(WeaponEnchantments.STUN, "Stun");
 		add(WeaponEnchantments.THUNDERING, "Thundering");
