@@ -84,7 +84,7 @@ public final class WeaponEnchantments {
     private static void registerDisarm(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		1,
         		5, 
         		Enchantment.constantCost(25), 
@@ -101,7 +101,7 @@ public final class WeaponEnchantments {
     private static void registerLifeSteal(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		2,
         		5, 
         		Enchantment.constantCost(25), 
@@ -119,7 +119,7 @@ public final class WeaponEnchantments {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
         		itemsRegistry.getOrThrow(ItemTags.WEAPON_ENCHANTABLE), 
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		5,
         		5, 
         		Enchantment.dynamicCost(5, 8), 
@@ -153,7 +153,7 @@ public final class WeaponEnchantments {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
         		itemsRegistry.getOrThrow(ItemTags.WEAPON_ENCHANTABLE), 
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		5,
         		5, 
         		Enchantment.dynamicCost(5, 8), 
@@ -187,7 +187,7 @@ public final class WeaponEnchantments {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
         		itemsRegistry.getOrThrow(ItemTags.WEAPON_ENCHANTABLE), 
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		5,
         		5, 
         		Enchantment.dynamicCost(5, 8), 
@@ -220,7 +220,7 @@ public final class WeaponEnchantments {
     private static void registerBlind(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry, HolderGetter<Enchantment> enchantmentsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		5,
         		5, 
         		Enchantment.dynamicCost(5, 10), 
@@ -240,7 +240,7 @@ public final class WeaponEnchantments {
     private static void registerPoison(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry, HolderGetter<Enchantment> enchantmentsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		5,
         		5, 
         		Enchantment.dynamicCost(5, 10), 
@@ -260,7 +260,7 @@ public final class WeaponEnchantments {
     private static void registerWithering(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry, HolderGetter<Enchantment> enchantmentsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		5,
         		5, 
         		Enchantment.dynamicCost(5, 10), 
@@ -280,7 +280,7 @@ public final class WeaponEnchantments {
     private static void registerConfuse(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry, HolderGetter<Enchantment> enchantmentsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		5,
         		5, 
         		Enchantment.dynamicCost(5, 10), 
@@ -300,7 +300,7 @@ public final class WeaponEnchantments {
     private static void registerHarm(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry, HolderGetter<Enchantment> enchantmentsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		5,
         		5, 
         		Enchantment.dynamicCost(5, 10), 
@@ -320,7 +320,7 @@ public final class WeaponEnchantments {
     private static void registerLevitate(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry, HolderGetter<Enchantment> enchantmentsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		5,
         		5, 
         		Enchantment.dynamicCost(5, 10), 
@@ -340,7 +340,7 @@ public final class WeaponEnchantments {
     private static void registerSlow(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry, HolderGetter<Enchantment> enchantmentsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		5,
         		5, 
         		Enchantment.dynamicCost(5, 10), 
@@ -360,7 +360,7 @@ public final class WeaponEnchantments {
     private static void registerStarve(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry, HolderGetter<Enchantment> enchantmentsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		5,
         		5, 
         		Enchantment.dynamicCost(5, 10), 
@@ -380,7 +380,7 @@ public final class WeaponEnchantments {
     private static void registerWeaken(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry, HolderGetter<Enchantment> enchantmentsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		5,
         		5, 
         		Enchantment.dynamicCost(5, 10), 
@@ -400,7 +400,7 @@ public final class WeaponEnchantments {
     private static void registerStun(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		2,
         		5, 
         		Enchantment.dynamicCost(5, 10), 
@@ -417,7 +417,7 @@ public final class WeaponEnchantments {
     private static void registerExecute(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		1,
         		5, 
         		Enchantment.constantCost(25), 
@@ -434,7 +434,7 @@ public final class WeaponEnchantments {
 	private static void registerKensei(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
 	    	
 	    	EnchantmentDefinition definition = Enchantment.definition(
-	        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+	        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
 	        		1,
 	        		5, 
 	        		Enchantment.dynamicCost(5, 10), 
@@ -451,7 +451,7 @@ public final class WeaponEnchantments {
     private static void registerThundering(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		2,
         		5, 
         		Enchantment.constantCost(25), 
@@ -468,7 +468,7 @@ public final class WeaponEnchantments {
     private static void registerRampage(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		2,
         		5, 
         		Enchantment.dynamicCost(5, 10), 
@@ -485,7 +485,7 @@ public final class WeaponEnchantments {
     private static void registerCurseOfSlowness(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry, HolderGetter<Enchantment> enchantmentsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		2,
         		5, 
         		Enchantment.dynamicCost(5, 10), 
@@ -506,7 +506,7 @@ public final class WeaponEnchantments {
     private static void registerTempoTheft(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry, HolderGetter<Enchantment> enchantmentsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SWORD_ENCHANTABLE), 
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
         		2,
         		5, 
         		Enchantment.dynamicCost(5, 10), 
