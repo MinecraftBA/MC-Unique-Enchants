@@ -96,7 +96,11 @@ public final class UniqueMagicModConfig {
     
     private static final ForgeConfigSpec.IntValue TEMPO_THEFT_BASE_DURATION_CONFIG = BUILDER
 		.comment("Base duration for Tempo Theft enchantment in seconds.")
-        .defineInRange("Tempo Theft base duration", 3, 1, 60);;
+        .defineInRange("Tempo Theft base duration", 3, 1, 60);
+    
+    private static final ForgeConfigSpec.IntValue TIMBER_MAX_DEPTH_CONFIG = BUILDER
+    		.comment("Maximum depth for Timber enchantment.")
+            .defineInRange("Timber depth", 256, 64, 2048);
     
     private static final ForgeConfigSpec.IntValue WEAKEN_BASE_CHANCE_CONFIG = BUILDER
 		.comment("Base chance for Weaken enchantment to trigger.")
@@ -188,6 +192,8 @@ public final class UniqueMagicModConfig {
     public static int TEMPO_THEFT_BASE_CHANCE;
     public static int TEMPO_THEFT_BASE_DURATION;
     
+    public static int TIMBER_MAX_DEPTH;
+    
     public static int WEAKEN_BASE_CHANCE;
     public static int WEAKEN_BASE_DURATION;
     
@@ -241,6 +247,8 @@ public final class UniqueMagicModConfig {
     	
     	TEMPO_THEFT_BASE_CHANCE = TEMPO_THEFT_BASE_CHANCE_CONFIG.get();
     	TEMPO_THEFT_BASE_DURATION = TEMPO_THEFT_BASE_DURATION_CONFIG.get();
+    	
+    	TIMBER_MAX_DEPTH = TIMBER_MAX_DEPTH_CONFIG.get();
     	
     	WEAKEN_BASE_CHANCE = WEAKEN_BASE_CHANCE_CONFIG.get();
     	WEAKEN_BASE_DURATION = WEAKEN_BASE_DURATION_CONFIG.get();
