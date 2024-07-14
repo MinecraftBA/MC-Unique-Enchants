@@ -39,8 +39,8 @@ public final class UniqueMagicModConfig {
         .defineInRange("Execute base chance", 1, 1, 20);
     
     private static final ForgeConfigSpec.IntValue KENSEI_BASE_RATIO_CONFIG = BUILDER
-    		.comment("Base XP to percentage of damage increase ratio. Default is 2% for every 100 XP.")
-            .defineInRange("Kensei base ratio", 2, 1, 5);
+    		.comment("Base XP to percentage of damage increase ratio. Default is 1% per level.")
+            .defineInRange("Kensei base ratio", 1, 1, 5);
 
     private static final ForgeConfigSpec.IntValue HARM_BASE_CHANCE_CONFIG = BUILDER
 		.comment("Base chance for Harm enchantment to trigger.")

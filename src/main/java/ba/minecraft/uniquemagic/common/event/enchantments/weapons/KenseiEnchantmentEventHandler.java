@@ -73,13 +73,13 @@ public final class KenseiEnchantmentEventHandler {
 		}
 
 		// Get reference to xp that player has.
-		int xp =  player.totalExperience;
+		int xp =  player.experienceLevel;
 		
 		// Get the amount of damage that was inflicted.
 		float damageDealt = event.getAmount();
 		
 		// Calculate damage bonus from enchantment.
-		float bonus = damageDealt * ((xp / (float)100) * (UniqueMagicModConfig.KENSEI_BASE_RATIO / (float)100) * enchantmentLevel);
+		float bonus = damageDealt * (xp * (UniqueMagicModConfig.KENSEI_BASE_RATIO / (float)100) * enchantmentLevel);
 		
 		// Increase damage dealt for bonus.
 		damageDealt += bonus;
