@@ -1,6 +1,6 @@
 package ba.minecraft.uniquemagic.common.events.enchantments.weapons;
 
-import ba.minecraft.uniquemagic.common.capabilities.enchantments.stun.StunCapabilityProvider;
+import ba.minecraft.uniquemagic.common.capabilities.enchantments.stunned.StunnedCapabilityProvider;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.helpers.ModResourceLocation;
 import ba.minecraft.uniquemagic.common.mobeffects.enchantments.HarmfulMobEffects;
@@ -75,7 +75,7 @@ public final class StunEnchantmentEventHandler {
     	if (event.getObject() instanceof LivingEntity) {
     		
     		// Attach stun capability.
-            event.addCapability(ModResourceLocation.create("stun_capability"), new StunCapabilityProvider());
+            event.addCapability(ModResourceLocation.create("stunned_capability"), new StunnedCapabilityProvider());
         }
     	
     }

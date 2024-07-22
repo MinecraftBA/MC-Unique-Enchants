@@ -1,6 +1,6 @@
-package ba.minecraft.uniquemagic.common.capabilities.enchantments.stun;
+package ba.minecraft.uniquemagic.common.capabilities.enchantments.stunned;
 
-public class StunCapability implements IStunCapability {
+public class StunnedCapability implements IStunnedCapability {
     private double[] stunnedPosition = new double[3];
 
     @Override

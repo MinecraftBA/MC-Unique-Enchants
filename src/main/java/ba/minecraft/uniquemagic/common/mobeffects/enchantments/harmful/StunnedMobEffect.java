@@ -26,7 +26,7 @@ public final class StunnedMobEffect extends MobEffect {
 			return false;
 		}
 		
-		livingEntity.getCapability(ModEnchantmentCapabilities.STUN_CAPABILITY).ifPresent(stunCapability -> {
+		livingEntity.getCapability(ModEnchantmentCapabilities.STUNNED_CAPABILITY).ifPresent(stunCapability -> {
 
 			// Get current stunned position.
 			double[] pos = stunCapability.getStunnedPosition();
