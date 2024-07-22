@@ -1,17 +1,18 @@
 package ba.minecraft.uniquemagic.common.capabilities.enchantments.stunned;
 
+import net.minecraft.world.phys.Vec3;
+
 public class StunnedCapability implements IStunnedCapability {
-    private double[] stunnedPosition = new double[3];
+
+	private Vec3 stunnedPosition = new Vec3(0,0,0);
 
     @Override
-    public void setStunnedPosition(double x, double y, double z) {
-        stunnedPosition[0] = x;
-        stunnedPosition[1] = y;
-        stunnedPosition[2] = z;
+    public void setStunnedPosition(Vec3 position) {
+    	stunnedPosition = position;
     }
 
     @Override
-    public double[] getStunnedPosition() {
+    public Vec3 getStunnedPosition() {
         return stunnedPosition;
     }
 }

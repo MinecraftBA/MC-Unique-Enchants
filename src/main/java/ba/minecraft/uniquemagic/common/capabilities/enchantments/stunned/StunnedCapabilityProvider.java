@@ -4,6 +4,7 @@ import ba.minecraft.uniquemagic.common.capabilities.enchantments.ModEnchantmentC
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.common.util.LazyOptional;
@@ -21,15 +22,19 @@ public class StunnedCapabilityProvider implements ICapabilitySerializable<Compou
 	@Override
 	public CompoundTag serializeNBT(Provider registryAccess) {
         CompoundTag tag = new CompoundTag();
-        double[] pos = capability.getStunnedPosition();
-        tag.putDouble("stunnedX", pos[0]);
-        tag.putDouble("stunnedY", pos[1]);
-        tag.putDouble("stunnedZ", pos[2]);
+        Vec3 pos = capability.getStunnedPosition();
+        tag.putDouble("stunnedX", pos.x());
+        tag.putDouble("stunnedY", pos.y());
+        tag.putDouble("stunnedZ", pos.z());
         return tag;
 	}
 
 	@Override
 	public void deserializeNBT(Provider registryAccess, CompoundTag nbt) {
-        capability.setStunnedPosition(nbt.getDouble("stunnedX"), nbt.getDouble("stunnedY"), nbt.getDouble("stunnedZ"));
+		double x = nbt.getDouble("stunnedX");
+		double y = nbt.getDouble("stunnedY");
+		double z = nbt.getDouble("stunnedZ");
+		Vec3 position = new Vec3(x, y, z);
+        capability.setStunnedPosition(position);
 	}
 }
