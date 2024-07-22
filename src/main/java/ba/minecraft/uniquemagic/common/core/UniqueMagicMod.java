@@ -2,6 +2,7 @@ package ba.minecraft.uniquemagic.common.core;
 
 import com.mojang.logging.LogUtils;
 
+import ba.minecraft.uniquemagic.common.capabilities.enchantments.ModEnchantmentCapabilities;
 import ba.minecraft.uniquemagic.common.mobeffects.enchantments.BeneficialMobEffects;
 import ba.minecraft.uniquemagic.common.mobeffects.enchantments.HarmfulMobEffects;
 import ba.minecraft.uniquemagic.common.tags.ModDamageTypeTags;
@@ -53,6 +54,7 @@ public class UniqueMagicMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+    	ModEnchantmentCapabilities.register();
     }
 
     @SubscribeEvent
