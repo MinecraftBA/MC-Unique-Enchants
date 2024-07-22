@@ -1,4 +1,4 @@
-package ba.minecraft.uniquemagic.common.event.enchantments.armor;
+package ba.minecraft.uniquemagic.common.events.enchantments.armor;
 
 import java.util.List;
 

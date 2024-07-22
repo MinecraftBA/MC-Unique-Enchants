@@ -1,4 +1,4 @@
-package ba.minecraft.uniquemagic.common.event.enchantments.bow;
+package ba.minecraft.uniquemagic.common.events.enchantments.bow;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.BowEnchantments;

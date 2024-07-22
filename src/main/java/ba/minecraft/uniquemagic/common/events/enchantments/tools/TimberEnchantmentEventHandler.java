@@ -1,4 +1,4 @@
-package ba.minecraft.uniquemagic.common.event.enchantments.tools;
+package ba.minecraft.uniquemagic.common.events.enchantments.tools;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
