@@ -1,7 +1,7 @@
 package ba.minecraft.uniquemagic.common.events.enchantments.weapons;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
-import ba.minecraft.uniquemagic.common.mobeffects.HarmfulMobEffects;
+import ba.minecraft.uniquemagic.common.mobeffects.enchantments.HarmfulMobEffects;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;

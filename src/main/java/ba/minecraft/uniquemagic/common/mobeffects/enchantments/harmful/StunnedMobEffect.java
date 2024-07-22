@@ -1,4 +1,4 @@
-package ba.minecraft.uniquemagic.common.mobeffects.harmful;
+package ba.minecraft.uniquemagic.common.mobeffects.enchantments.harmful;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;

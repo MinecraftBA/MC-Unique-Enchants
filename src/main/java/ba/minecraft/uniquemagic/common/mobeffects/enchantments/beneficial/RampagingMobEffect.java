@@ -1,4 +1,4 @@
-package ba.minecraft.uniquemagic.common.mobeffects.beneficial;
+package ba.minecraft.uniquemagic.common.mobeffects.enchantments.beneficial;
 
 import ba.minecraft.uniquemagic.common.helpers.ModResourceLocation;
 import net.minecraft.world.effect.MobEffect;

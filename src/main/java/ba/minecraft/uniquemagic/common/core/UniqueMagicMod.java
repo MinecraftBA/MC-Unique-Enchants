@@ -2,8 +2,8 @@ package ba.minecraft.uniquemagic.common.core;
 
 import com.mojang.logging.LogUtils;
 
-import ba.minecraft.uniquemagic.common.mobeffects.BeneficialMobEffects;
-import ba.minecraft.uniquemagic.common.mobeffects.HarmfulMobEffects;
+import ba.minecraft.uniquemagic.common.mobeffects.enchantments.BeneficialMobEffects;
+import ba.minecraft.uniquemagic.common.mobeffects.enchantments.HarmfulMobEffects;
 import ba.minecraft.uniquemagic.common.tags.ModDamageTypeTags;
 import ba.minecraft.uniquemagic.common.tags.ModEnchantmentTags;
 import ba.minecraft.uniquemagic.common.tags.ModEntityTypeTags;
