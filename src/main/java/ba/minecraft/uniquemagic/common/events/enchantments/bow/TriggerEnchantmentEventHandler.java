@@ -139,7 +139,7 @@ public final class TriggerEnchantmentEventHandler {
         	level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 11);
         	
         	// Explode it.
-        	tnt.explode(level, blockPos);
+        	tnt.onCaughtFire(blockState, level, blockPos, null, shooter);
         	
     		return;
     	}
