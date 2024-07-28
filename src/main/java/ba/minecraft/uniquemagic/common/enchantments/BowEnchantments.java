@@ -31,8 +31,8 @@ public final class BowEnchantments {
         		itemsRegistry.getOrThrow(ItemTags.BOW_ENCHANTABLE), 
         		1,
         		1, 
-        		Enchantment.constantCost(20), 
-        		Enchantment.constantCost(50), 
+        		Enchantment.constantCost(20), // Taken from Infinity
+        		Enchantment.constantCost(50),  // Taken from Infinity
         		8, 
         		EquipmentSlotGroup.MAINHAND
         );
@@ -48,8 +48,8 @@ public final class BowEnchantments {
         		itemsRegistry.getOrThrow(ItemTags.BOW_ENCHANTABLE), 
         		1,
         		5, 
-        		Enchantment.constantCost(25), 
-        		Enchantment.constantCost(50), 
+        		Enchantment.dynamicCost(10, 20), // Taken from Thorns
+        		Enchantment.dynamicCost(60, 20), // Taken from Thorns
         		8, 
         		EquipmentSlotGroup.MAINHAND
         );
