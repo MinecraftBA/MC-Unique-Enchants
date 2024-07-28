@@ -20,7 +20,7 @@ public final class UniqueMagicModConfig {
     
     private static final ForgeConfigSpec.IntValue BONE_BREAKER_BASE_CHANCE_CONFIG = BUILDER
     		.comment("Base chance for Bone Breaker enchantment to trigger.")
-            .defineInRange("Bone Breaker base chance", 1, 1, 20);
+            .defineInRange("Bone Breaker base chance", 5, 1, 20);
 
     private static final ForgeConfigSpec.IntValue CONFUSE_BASE_CHANCE_CONFIG = BUILDER
 		.comment("Base chance for Confuse enchantment to trigger.")
