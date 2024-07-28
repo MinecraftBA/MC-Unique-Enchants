@@ -41,7 +41,8 @@ public final class BowEnchantments {
     	
         ModEnchantmentHelper.register(context, TRIGGER, builder);
     }
-private static void registerBoneBreaker(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
+    
+    private static void registerBoneBreaker(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
         		itemsRegistry.getOrThrow(ItemTags.BOW_ENCHANTABLE), 
