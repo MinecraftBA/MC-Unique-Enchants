@@ -31,7 +31,6 @@ public final class WeaponEnchantments {
     public static final ResourceKey<Enchantment> CURSE_OF_SLOWNESS = ModEnchantmentHelper.createResourceKey("curse_of_slowness");
     public static final ResourceKey<Enchantment> DISARM = ModEnchantmentHelper.createResourceKey("disarm");
     public static final ResourceKey<Enchantment> EXECUTE = ModEnchantmentHelper.createResourceKey("execute");
-    public static final ResourceKey<Enchantment> BONE_BREAKER = ModEnchantmentHelper.createResourceKey("bone_breaker");
     public static final ResourceKey<Enchantment> HARM = ModEnchantmentHelper.createResourceKey("harm");
     public static final ResourceKey<Enchantment> ILLAGERS_BANE = ModEnchantmentHelper.createResourceKey("illagers_bane");
     public static final ResourceKey<Enchantment> KENSEI = ModEnchantmentHelper.createResourceKey("kensei");

@@ -50,9 +50,10 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 	}
 	
 	private void addBowEnchantments() {
-
+		
+		add(BowEnchantments.BONE_BREAKER, "Bone Breaker");
 		add(BowEnchantments.TRIGGER, "Trigger");
-
+		
 	}
 
 	private void addToolEnchantments() {
@@ -62,10 +63,8 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 	}
 
 	private void addWeaponEnchantments() {
-		
-		add(WeaponEnchantments.BONE_BREAKER, "Bone Breaker");
+	
 		add(WeaponEnchantments.DISARM, "Disarm");
-		add(WeaponEnchantments.EXECUTE, "Execute");
 		add(WeaponEnchantments.EXECUTE, "Execute");
 		add(WeaponEnchantments.KENSEI, "Kensei");
 		add(WeaponEnchantments.LIFE_STEAL, "Life Steal");
