@@ -37,6 +37,7 @@ public final class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
 	        .add(WeaponEnchantments.CURSE_OF_SLOWNESS)
 	        .add(WeaponEnchantments.DISARM)
 	        .add(WeaponEnchantments.EXECUTE)
+	        .add(WeaponEnchantments.BONE_BREAKER)
 	        .add(WeaponEnchantments.HARM)
 	        .add(WeaponEnchantments.ILLAGERS_BANE)
 	        .add(WeaponEnchantments.KENSEI)

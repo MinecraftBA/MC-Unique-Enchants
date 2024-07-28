@@ -17,6 +17,10 @@ public final class UniqueMagicModConfig {
     private static final ForgeConfigSpec.IntValue BLIND_BASE_DURATION_CONFIG = BUILDER
 		.comment("Base duration for Blind enchantment in seconds.")
         .defineInRange("Blind base duration", 3, 1, 60);
+    
+    private static final ForgeConfigSpec.IntValue BONE_BREAKER_BASE_CHANCE_CONFIG = BUILDER
+    		.comment("Base chance for Bone Breaker enchantment to trigger.")
+            .defineInRange("Bone Breaker base chance", 1, 1, 20);
 
     private static final ForgeConfigSpec.IntValue CONFUSE_BASE_CHANCE_CONFIG = BUILDER
 		.comment("Base chance for Confuse enchantment to trigger.")
@@ -157,6 +161,7 @@ public final class UniqueMagicModConfig {
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static int EXECUTE_BASE_CHANCE;
+    public static int BONE_BREAKER_BASE_CHANCE;
     public static int KENSEI_BASE_RATIO;
     public static int LIFE_STEAL_BASE_RATIO;
     
@@ -224,6 +229,7 @@ public final class UniqueMagicModConfig {
     	CURSE_OF_SLOWNESS_BASE_DURATION = CURSE_OF_SLOWNESS_BASE_DURATION_CONFIG.get();
 
     	EXECUTE_BASE_CHANCE = EXECUTE_BASE_CHANCE_CONFIG.get();
+    	BONE_BREAKER_BASE_CHANCE = BONE_BREAKER_BASE_CHANCE_CONFIG.get();
     	KENSEI_BASE_RATIO = KENSEI_BASE_RATIO_CONFIG.get();
 
     	HARM_BASE_CHANCE = HARM_BASE_CHANCE_CONFIG.get();

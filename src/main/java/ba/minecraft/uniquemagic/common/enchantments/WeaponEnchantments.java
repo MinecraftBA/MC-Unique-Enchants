@@ -31,6 +31,7 @@ public final class WeaponEnchantments {
     public static final ResourceKey<Enchantment> CURSE_OF_SLOWNESS = ModEnchantmentHelper.createResourceKey("curse_of_slowness");
     public static final ResourceKey<Enchantment> DISARM = ModEnchantmentHelper.createResourceKey("disarm");
     public static final ResourceKey<Enchantment> EXECUTE = ModEnchantmentHelper.createResourceKey("execute");
+    public static final ResourceKey<Enchantment> BONE_BREAKER = ModEnchantmentHelper.createResourceKey("bone_breaker");
     public static final ResourceKey<Enchantment> HARM = ModEnchantmentHelper.createResourceKey("harm");
     public static final ResourceKey<Enchantment> ILLAGERS_BANE = ModEnchantmentHelper.createResourceKey("illagers_bane");
     public static final ResourceKey<Enchantment> KENSEI = ModEnchantmentHelper.createResourceKey("kensei");
@@ -55,6 +56,7 @@ public final class WeaponEnchantments {
 
     	registerDisarm(context, itemsRegistry);
     	registerExecute(context, itemsRegistry);
+    	registerBoneBreaker(context, itemsRegistry);
     	registerKensei(context, itemsRegistry);
     	registerLifeSteal(context, itemsRegistry);
     	registerStun(context, itemsRegistry);
@@ -80,7 +82,23 @@ public final class WeaponEnchantments {
 
     	registerTempoTheft(context, itemsRegistry, enchantmentsRegistry);
 }
-    
+private static void registerBoneBreaker(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
+    	
+    	EnchantmentDefinition definition = Enchantment.definition(
+        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
+        		1,
+        		5, 
+        		Enchantment.constantCost(25), 
+        		Enchantment.constantCost(50), 
+        		8, 
+        		EquipmentSlotGroup.MAINHAND
+        );
+    	
+    	Enchantment.Builder builder = Enchantment.enchantment(definition);
+    	
+        ModEnchantmentHelper.register(context, BONE_BREAKER, builder);
+    }
+
     private static void registerDisarm(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
     	
     	EnchantmentDefinition definition = Enchantment.definition(
