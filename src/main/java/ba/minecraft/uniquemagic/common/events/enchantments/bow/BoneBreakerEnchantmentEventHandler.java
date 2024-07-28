@@ -1,4 +1,4 @@
-package ba.minecraft.uniquemagic.common.events.enchantments.weapons;
+package ba.minecraft.uniquemagic.common.events.enchantments.bow;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
@@ -13,12 +13,8 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.WitherSkeleton;
-import net.minecraft.world.entity.monster.Zombie;
-import net.minecraft.world.entity.monster.piglin.Piglin;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -92,23 +88,16 @@ public final class BoneBreakerEnchantmentEventHandler {
 
 		// Variable to hold head type.
 		Item headType = null;
-		
-		// Variable to hold bone
-		Item boneType = null;
-
 
 		//IF:Target is wither skeleton
-		if(headType == null && target.getClass() == WitherSkeleton.class) {
+		if(target.getClass() == WitherSkeleton.class) {
 			headType = Items.WITHER_SKELETON_SKULL;
-			boneType = Items.BONE;
 		}
 		
 		// IF: Target was Skeleton.
 		if(headType == null && target.getClass() == Skeleton.class) {
 			headType = Items.SKELETON_SKULL;
-			boneType = Items.BONE;
 		}
-		
 
 		// IF: Head type was not determined.
 		if (headType == null) {
@@ -140,19 +129,20 @@ public final class BoneBreakerEnchantmentEventHandler {
 		// Create item entity for head.
 		ItemEntity headEntity = new ItemEntity(serverLevel, targetPosition.getX(), targetPosition.getY(), targetPosition.getZ(), head);
 		
-		// Crate head item stack.
-		ItemStack bone = new ItemStack(boneType);
+		// Add it to the world.
+	    serverLevel.addFreshEntity(headEntity);
 
-		// Create item entity for head.
-		ItemEntity boneEntity = new ItemEntity(serverLevel, targetPosition.getX(), targetPosition.getY(), targetPosition.getZ(), bone);
-		
-		for(int i = 0;i<4;i++) {
+		for(int i = 0; i<4; i++) {
+
+			// Crate bone item stack.
+			ItemStack bone = new ItemStack(Items.BONE);
+
+			// Create item entity for bone.
+			ItemEntity boneEntity = new ItemEntity(serverLevel, targetPosition.getX(), targetPosition.getY(), targetPosition.getZ(), bone);
+
 			// Add it to the world 4x.
 			serverLevel.addFreshEntity(boneEntity);
 		}
-		
-		// Add it to the world.
-	    serverLevel.addFreshEntity(headEntity);
 		
 		// Kill the target
 		target.kill();
