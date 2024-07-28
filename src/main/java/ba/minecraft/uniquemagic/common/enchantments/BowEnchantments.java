@@ -14,12 +14,14 @@ import net.minecraft.world.item.enchantment.Enchantment.EnchantmentDefinition;
 public final class BowEnchantments {
 
     public static final ResourceKey<Enchantment> TRIGGER = ModEnchantmentHelper.createResourceKey("trigger");
-	
+    public static final ResourceKey<Enchantment> BONE_BREAKER = ModEnchantmentHelper.createResourceKey("bone_breaker");
+    
     public static void bootstrap(BootstrapContext<Enchantment> context) {
     	
     	HolderGetter<Item> itemsRegistry = context.lookup(Registries.ITEM);
     	
     	registerTrigger(context, itemsRegistry);
+    	registerBoneBreaker(context, itemsRegistry);
     	
     }
     
@@ -38,6 +40,22 @@ public final class BowEnchantments {
     	Enchantment.Builder builder = Enchantment.enchantment(definition);
     	
         ModEnchantmentHelper.register(context, TRIGGER, builder);
+    }
+private static void registerBoneBreaker(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
+    	
+    	EnchantmentDefinition definition = Enchantment.definition(
+        		itemsRegistry.getOrThrow(ItemTags.BOW_ENCHANTABLE), 
+        		1,
+        		5, 
+        		Enchantment.constantCost(25), 
+        		Enchantment.constantCost(50), 
+        		8, 
+        		EquipmentSlotGroup.MAINHAND
+        );
+    	
+    	Enchantment.Builder builder = Enchantment.enchantment(definition);
+    	
+        ModEnchantmentHelper.register(context, BONE_BREAKER, builder);
     }
 }
 

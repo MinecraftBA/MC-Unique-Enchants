@@ -56,7 +56,6 @@ public final class WeaponEnchantments {
 
     	registerDisarm(context, itemsRegistry);
     	registerExecute(context, itemsRegistry);
-    	registerBoneBreaker(context, itemsRegistry);
     	registerKensei(context, itemsRegistry);
     	registerLifeSteal(context, itemsRegistry);
     	registerStun(context, itemsRegistry);
@@ -82,22 +81,7 @@ public final class WeaponEnchantments {
 
     	registerTempoTheft(context, itemsRegistry, enchantmentsRegistry);
 }
-private static void registerBoneBreaker(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
-    	
-    	EnchantmentDefinition definition = Enchantment.definition(
-        		itemsRegistry.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE), 
-        		1,
-        		5, 
-        		Enchantment.constantCost(25), 
-        		Enchantment.constantCost(50), 
-        		8, 
-        		EquipmentSlotGroup.MAINHAND
-        );
-    	
-    	Enchantment.Builder builder = Enchantment.enchantment(definition);
-    	
-        ModEnchantmentHelper.register(context, BONE_BREAKER, builder);
-    }
+
 
     private static void registerDisarm(BootstrapContext<Enchantment> context, HolderGetter<Item> itemsRegistry) {
     	
