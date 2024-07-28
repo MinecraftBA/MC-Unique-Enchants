@@ -98,7 +98,7 @@ public final class BoneBreakerEnchantmentEventHandler {
     	}
 
     	// Get reference to enchantment.
-    	Holder<Enchantment> enchantment = ModEnchantmentHelper.getHolder(level, BowEnchantments.TRIGGER);
+    	Holder<Enchantment> enchantment = ModEnchantmentHelper.getHolder(level, BowEnchantments.BONE_BREAKER);
 
     	// Get enchantment level on helmet.
     	int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(enchantment, weapon);
