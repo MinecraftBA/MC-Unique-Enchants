@@ -1,4 +1,4 @@
-package ba.minecraft.uniquemagic.common.event.enchantments.weapons;
+package ba.minecraft.uniquemagic.common.events.enchantments.weapons;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.helpers.ApplyEffectEnchantmentConfiguration;
@@ -21,7 +21,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
 @EventBusSubscriber(modid = UniqueMagicMod.MODID, bus = Bus.FORGE)
-public final class ApplyTargetEffectEnchantmentEventHandler {
+public final class ApplyBoundEffectEnchantmentEventHandler {
 
 	@SubscribeEvent
 	public static void onLivingAttack(final LivingAttackEvent event) {
@@ -73,7 +73,7 @@ public final class ApplyTargetEffectEnchantmentEventHandler {
 			return;
 		}
 
-		for(ApplyEffectEnchantmentConfiguration configuration : ApplyEffectEnchantments.TARGET_CONFIGURATIONS) {
+		for(ApplyEffectEnchantmentConfiguration configuration : ApplyEffectEnchantments.BOUND_CONFIGURATIONS) {
 
 	    	// Get reference to enchantment.
 	    	Holder<Enchantment> enchantment = ModEnchantmentHelper.getHolder(level, configuration.getEnchantmentKey());
@@ -90,6 +90,13 @@ public final class ApplyTargetEffectEnchantmentEventHandler {
 
 			// IF: Target already has effect.
 			if (livingTarget.hasEffect(configuration.getTargetMobEffectHolder())){
+				
+				// Proceed with next configuration.
+				continue;
+			}
+			
+			// IF: Target already has effect.
+			if (livingAttacker.hasEffect(configuration.getAttackerMobEffectHolder())){
 				
 				// Proceed with next configuration.
 				continue;
@@ -117,10 +124,16 @@ public final class ApplyTargetEffectEnchantmentEventHandler {
 				configuration.getBaseDuration() * enchantmentLevel * 20; // Calculate duration of non-instant effect.
 
 			// Create instance of effect.
-			MobEffectInstance effect = new MobEffectInstance(configuration.getTargetMobEffectHolder(), duration, enchantmentLevel - 1);
+			MobEffectInstance attackerEffect = new MobEffectInstance(configuration.getAttackerMobEffectHolder(), duration, enchantmentLevel - 1);
 
 			// Apply effect to mob.
-			livingTarget.addEffect(effect);
+			livingAttacker.addEffect(attackerEffect);
+
+			// Create instance of effect.
+			MobEffectInstance targetEffect = new MobEffectInstance(configuration.getTargetMobEffectHolder(), duration, enchantmentLevel - 1);
+
+			// Apply effect to mob.
+			livingTarget.addEffect(targetEffect);
 		}
 
 	}

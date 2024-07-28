@@ -1,4 +1,4 @@
-package ba.minecraft.uniquemagic.common.event.enchantments.bow;
+package ba.minecraft.uniquemagic.common.events.enchantments.bow;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
 import ba.minecraft.uniquemagic.common.enchantments.BowEnchantments;
@@ -48,15 +48,15 @@ public final class TriggerEnchantmentEventHandler {
 		// Get reference to owner of arrow.
 		Entity owner = arrow.getOwner();
 		
-		// Cast owner to living entity.
-		LivingEntity shooter = (LivingEntity) owner;
-		
 		// IF: Owner is not living entity.
-		if(shooter == null) {
+		if (!(owner instanceof LivingEntity)) {
 
 			// Do nothing.
 			return;
 		}
+		
+		// Cast owner to living entity.
+		LivingEntity shooter = (LivingEntity) owner;
 
         // Get reference to level where code is executing.
         Level level = shooter.level();
@@ -139,7 +139,7 @@ public final class TriggerEnchantmentEventHandler {
         	level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 11);
         	
         	// Explode it.
-        	tnt.explode(level, blockPos);
+        	tnt.onCaughtFire(blockState, level, blockPos, null, shooter);
         	
     		return;
     	}

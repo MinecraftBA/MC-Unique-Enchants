@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.WeaponEnchantments;
-import ba.minecraft.uniquemagic.common.mobeffects.BeneficialMobEffects;
-import ba.minecraft.uniquemagic.common.mobeffects.HarmfulMobEffects;
+import ba.minecraft.uniquemagic.common.mobeffects.enchantments.BeneficialMobEffects;
+import ba.minecraft.uniquemagic.common.mobeffects.enchantments.HarmfulMobEffects;
 import net.minecraft.world.effect.MobEffects;
 
 public class ApplyEffectEnchantments {

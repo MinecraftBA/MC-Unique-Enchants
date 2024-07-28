@@ -1,7 +1,7 @@
-package ba.minecraft.uniquemagic.common.mobeffects;
+package ba.minecraft.uniquemagic.common.mobeffects.enchantments;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
-import ba.minecraft.uniquemagic.common.mobeffects.harmful.StunnedMobEffect;
+import ba.minecraft.uniquemagic.common.mobeffects.enchantments.harmful.StunnedMobEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

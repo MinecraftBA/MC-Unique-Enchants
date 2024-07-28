@@ -1,6 +1,7 @@
-package ba.minecraft.uniquemagic.common.event.enchantments.tools;
+package ba.minecraft.uniquemagic.common.events.enchantments.tools;
 
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
+import ba.minecraft.uniquemagic.common.core.UniqueMagicModConfig;
 import ba.minecraft.uniquemagic.common.enchantments.ToolEnchantments;
 import ba.minecraft.uniquemagic.common.helpers.ModEnchantmentHelper;
 import net.minecraft.core.BlockPos;
@@ -56,13 +57,16 @@ public final class TimberEnchantmentEventHandler {
 
 		// Get position of block that was hit.
 		BlockPos blockPos = event.getPos();
-
+		
+		// A counter for how many blocks were broken.
+		int depth = 0;
+		
 		// Try chop log at the position.
-		chopLog(serverLevel, blockPos, item, true);
+		chopLog(serverLevel, blockPos, item, true, depth);
 	}
 	
-	private static void chopLog(ServerLevel level, BlockPos blockPos, ItemStack item, boolean isStartingHit) {
-
+	private static void chopLog(ServerLevel level, BlockPos blockPos, ItemStack item, boolean isStartingHit, int depth) {
+		
 		// Get type of block that was hit.
 		BlockState blockState = level.getBlockState(blockPos);
 		
@@ -80,22 +84,31 @@ public final class TimberEnchantmentEventHandler {
 
         // Destroy the block without loot drops.
         level.destroyBlock(blockPos, false);
+        
+        // Increases the counter for blocks broken.
+        depth++;
+        
+		// IF: 128 blocks were broken.
+        
+		if(depth == UniqueMagicModConfig.TIMBER_MAX_DEPTH) {
+			return;
+		}
 
         // IF: It is not starting hit.
         if(!isStartingHit) {
         	// It is ok to chop branches that are hanging.
-    		chopLog(level, blockPos.below(), item, false);
+    		chopLog(level, blockPos.below(), item, false, depth);
         }
         
         // Mine nearby blocks.
-		chopLog(level, blockPos.north(), item, false);
-		chopLog(level, blockPos.south(), item, false);
-		chopLog(level, blockPos.east(), item, false);
-		chopLog(level, blockPos.west(), item, false);
-		chopLog(level, blockPos.above(), item, false);
-		chopLog(level, blockPos.above().north(), item, false);
-		chopLog(level, blockPos.above().south(), item, false);
-		chopLog(level, blockPos.above().east(), item, false);
-		chopLog(level, blockPos.above().west(), item, false);
+		chopLog(level, blockPos.north(), item, false, depth);
+		chopLog(level, blockPos.south(), item, false, depth);
+		chopLog(level, blockPos.east(), item, false, depth);
+		chopLog(level, blockPos.west(), item, false, depth);
+		chopLog(level, blockPos.above(), item, false, depth);
+		chopLog(level, blockPos.above().north(), item, false, depth);
+		chopLog(level, blockPos.above().south(), item, false, depth);
+		chopLog(level, blockPos.above().east(), item, false, depth);
+		chopLog(level, blockPos.above().west(), item, false, depth);
 	}
 }

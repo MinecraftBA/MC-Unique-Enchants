@@ -1,12 +1,15 @@
-package ba.minecraft.uniquemagic.common.event.enchantments.weapons;
+package ba.minecraft.uniquemagic.common.events.enchantments.weapons;
 
+import ba.minecraft.uniquemagic.common.capabilities.enchantments.stunned.StunnedCapabilityProvider;
 import ba.minecraft.uniquemagic.common.core.UniqueMagicMod;
-import ba.minecraft.uniquemagic.common.mobeffects.HarmfulMobEffects;
+import ba.minecraft.uniquemagic.common.helpers.ModResourceLocation;
+import ba.minecraft.uniquemagic.common.mobeffects.enchantments.HarmfulMobEffects;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -64,4 +67,16 @@ public final class StunEnchantmentEventHandler {
 		// Cancel the attack.
 		event.setCanceled(true);
 	}
+	
+    @SubscribeEvent
+    public static void onAttachCapabilities(final AttachCapabilitiesEvent<Entity> event) {
+
+    	// IF: Entity is living entity.
+    	if (event.getObject() instanceof LivingEntity) {
+    		
+    		// Attach stun capability.
+            event.addCapability(ModResourceLocation.create("stunned_capability"), new StunnedCapabilityProvider());
+        }
+    	
+    }
 }
