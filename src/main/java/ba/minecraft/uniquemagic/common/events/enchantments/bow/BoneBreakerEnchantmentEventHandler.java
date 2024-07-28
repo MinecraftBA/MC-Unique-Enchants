@@ -114,7 +114,7 @@ public final class BoneBreakerEnchantmentEventHandler {
     	Entity target = entityHitResult.getEntity();
     	
     	// IF: Target is not an instance of a skeleton.
-    	if(!(target instanceof Skeleton) || !(target instanceof WitherSkeleton)) {
+    	if(!(target instanceof Skeleton) && !(target instanceof WitherSkeleton)) {
     		
     		// Do nothing.
     		return;
