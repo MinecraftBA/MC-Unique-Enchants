@@ -48,15 +48,15 @@ public final class TriggerEnchantmentEventHandler {
 		// Get reference to owner of arrow.
 		Entity owner = arrow.getOwner();
 		
-		// Cast owner to living entity.
-		LivingEntity shooter = (LivingEntity) owner;
-		
 		// IF: Owner is not living entity.
-		if(shooter == null) {
+		if (!(owner instanceof LivingEntity)) {
 
 			// Do nothing.
 			return;
 		}
+		
+		// Cast owner to living entity.
+		LivingEntity shooter = (LivingEntity) owner;
 
         // Get reference to level where code is executing.
         Level level = shooter.level();
