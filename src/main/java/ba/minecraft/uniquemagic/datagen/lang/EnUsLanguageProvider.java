@@ -53,6 +53,7 @@ public final class EnUsLanguageProvider extends LanguageProvider {
 		
 		add(BowEnchantments.BONE_BREAKER, "Bone Breaker");
 		add(BowEnchantments.TRIGGER, "Trigger");
+		add(BowEnchantments.STORMSHOT, "Stormshot");
 		
 	}
 
