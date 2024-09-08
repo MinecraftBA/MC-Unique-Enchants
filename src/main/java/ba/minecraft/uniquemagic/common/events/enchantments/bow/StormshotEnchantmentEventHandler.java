@@ -119,7 +119,7 @@ public class StormshotEnchantmentEventHandler {
     		RandomSource random = level.getRandom();
     		
     		// Calculate proc chance - % for every level of enchantment.
-    		int hitChance = enchantmentLevel * UniqueMagicModConfig.THUNDERING_BASE_CHANCE;
+    		int hitChance = enchantmentLevel * UniqueMagicModConfig.STORMSHOT_BASE_CHANCE;
     		
     		// Get number between 0 and 99.
     		int roll = random.nextInt(100);
