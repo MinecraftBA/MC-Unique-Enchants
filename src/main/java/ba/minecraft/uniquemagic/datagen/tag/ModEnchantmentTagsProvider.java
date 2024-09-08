@@ -32,6 +32,7 @@ public final class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
 	        .add(ArmorEnchantments.SONIC_PROTECTION)
 	        .add(BowEnchantments.BONE_BREAKER)
 	        .add(BowEnchantments.TRIGGER)
+	        .add(BowEnchantments.STORMSHOT)
 	        .add(ToolEnchantments.TIMBER)
 	        .add(WeaponEnchantments.BLIND)
 	        .add(WeaponEnchantments.CONFUSE)
@@ -54,6 +55,7 @@ public final class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
 	        .add(WeaponEnchantments.THUNDERING)
 	        .add(WeaponEnchantments.WEAKEN)
 	        .add(WeaponEnchantments.WITHERING);
+	    	
 		
 	    tag(EnchantmentTags.IN_ENCHANTING_TABLE)
 	    	.addTag(ModEnchantmentTags.UNIQUE_MAGIC);

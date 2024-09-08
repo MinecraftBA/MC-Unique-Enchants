@@ -21,6 +21,10 @@ public final class UniqueMagicModConfig {
     private static final ForgeConfigSpec.IntValue BONE_BREAKER_BASE_CHANCE_CONFIG = BUILDER
     		.comment("Base chance for Bone Breaker enchantment to trigger.")
             .defineInRange("Bone Breaker base chance", 5, 1, 20);
+    
+    private static final ForgeConfigSpec.IntValue STORMSHOT_BASE_CHANCE_CONFIG = BUILDER
+    		.comment("Base chance for Stormshot enchantment to trigger.")
+            .defineInRange("Stormshot base chance", 5, 1, 20);
 
     private static final ForgeConfigSpec.IntValue CONFUSE_BASE_CHANCE_CONFIG = BUILDER
 		.comment("Base chance for Confuse enchantment to trigger.")
@@ -162,6 +166,7 @@ public final class UniqueMagicModConfig {
 
     public static int EXECUTE_BASE_CHANCE;
     public static int BONE_BREAKER_BASE_CHANCE;
+    public static int STORMSHOT_BASE_CHANCE;
     public static int KENSEI_BASE_RATIO;
     public static int LIFE_STEAL_BASE_RATIO;
     
@@ -230,6 +235,7 @@ public final class UniqueMagicModConfig {
 
     	EXECUTE_BASE_CHANCE = EXECUTE_BASE_CHANCE_CONFIG.get();
     	BONE_BREAKER_BASE_CHANCE = BONE_BREAKER_BASE_CHANCE_CONFIG.get();
+    	STORMSHOT_BASE_CHANCE = BONE_BREAKER_BASE_CHANCE_CONFIG.get();
     	KENSEI_BASE_RATIO = KENSEI_BASE_RATIO_CONFIG.get();
 
     	HARM_BASE_CHANCE = HARM_BASE_CHANCE_CONFIG.get();
