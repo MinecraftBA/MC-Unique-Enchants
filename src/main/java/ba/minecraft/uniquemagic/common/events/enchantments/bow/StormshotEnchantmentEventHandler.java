@@ -6,6 +6,7 @@ import ba.minecraft.uniquemagic.common.enchantments.BowEnchantments;
 import ba.minecraft.uniquemagic.common.helpers.ModEnchantmentHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -25,9 +26,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
-
 @EventBusSubscriber(modid = UniqueMagicMod.MODID, bus = Bus.FORGE)
 public class StormshotEnchantmentEventHandler {
+
 	@SubscribeEvent
 	public static void onProjectileImpact(final ProjectileImpactEvent event) {
 
@@ -66,6 +67,9 @@ public class StormshotEnchantmentEventHandler {
         	// Do nothing.
         	return;
         }
+        
+        // Cast level as server level.
+        ServerLevel serverLevel = (ServerLevel)level;
 
         // Get reference to bow that shooter is carrying.
     	ItemStack weapon = shooter.getItemBySlot(EquipmentSlot.MAINHAND);
@@ -80,7 +84,7 @@ public class StormshotEnchantmentEventHandler {
     	// Get reference to enchantment.
     	Holder<Enchantment> enchantment = ModEnchantmentHelper.getHolder(level, BowEnchantments.STORMSHOT);
 
-    	// Get enchantment level on helmet.
+    	// Get level of enchantment on bow.
     	int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(enchantment, weapon);
 
     	// IF: There is no enchantment.
@@ -90,23 +94,23 @@ public class StormshotEnchantmentEventHandler {
     		return;
     	}
 
-    	// Get reference to what was hit.
+    	// Get reference to target that was hit.
     	HitResult hitResult = event.getRayTraceResult();
 
     	// IF: Entity was hit.
-    	if(hitResult instanceof EntityHitResult entityHitResult) {
+    	if (hitResult instanceof EntityHitResult entityHitResult) {
 
     		// Get reference to entity that was hit.
         	Entity target = entityHitResult.getEntity();
         	
-        	// IF: Target is not an instance of a creeper.
+        	// IF: Target is not an instance of a living entity.
         	if(!(target instanceof LivingEntity)) {
         		
         		// Do nothing.
         		return;
         	}
         	
-        	// Try to cast entity as creeper.
+        	// Cast entity to living entity.
         	LivingEntity entity = (LivingEntity) target;
         	
         	// Create random generator.
@@ -129,12 +133,10 @@ public class StormshotEnchantmentEventHandler {
     		BlockPos targetPosition = entity.blockPosition();
     		
     		// Spawn lightning bolt at mob's location.
-    		EntityType.LIGHTNING_BOLT.spawn(null, targetPosition, MobSpawnType.TRIGGERED);
+    		EntityType.LIGHTNING_BOLT.spawn(serverLevel, targetPosition, MobSpawnType.TRIGGERED);
 
     		return;
     	}
-    	
-
     	
     }
 	

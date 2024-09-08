@@ -56,7 +56,6 @@ public final class ModEnchantmentTagsProvider extends EnchantmentTagsProvider {
 	        .add(WeaponEnchantments.WEAKEN)
 	        .add(WeaponEnchantments.WITHERING);
 	    	
-		
 	    tag(EnchantmentTags.IN_ENCHANTING_TABLE)
 	    	.addTag(ModEnchantmentTags.UNIQUE_MAGIC);
 	    
